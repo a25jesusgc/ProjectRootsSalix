@@ -10,17 +10,21 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput playerInput;
     private Rigidbody2D rb;
+    private PlayerShoot playerShoot;
 
     private Vector2 movement;
     private Vector2 aim;
 
     private bool isDashing;
 
+    public Vector2 GetAimDirection => aim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        playerShoot = GetComponent<PlayerShoot>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
+        crosshair.localPosition = aim * CROSSHAIR_RANGE;
     }
 
     void CheckInputs()
@@ -40,18 +45,26 @@ public class PlayerController : MonoBehaviour
         // Vector que representa la ubicación del cursor en pantalla
         InputAction aimAction = playerInput.actions["Aim"];
         Vector2 aimInput = aimAction.ReadValue<Vector2>();
-        // Vector que representa la ubicación del jugador en pantalla
-        Vector2 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        // Vector de apuntado, obteniendo la dirección en pantalla del cursor respecto al jugador
-        aim = (aimInput - playerScreenPos).normalized;
-        Debug.Log(aim);
-
-        crosshair.localPosition = aim * CROSSHAIR_RANGE;
+        if (aimAction.activeControl != null)
+        {
+            bool isGamepad = aimAction.activeControl.device is Gamepad;
+            if (isGamepad)
+            {
+                // Vector de apuntado usando el axis del joystick
+                aim = aimInput.normalized;
+            }else
+            {
+                // Vector que representa la ubicación del jugador en pantalla
+                Vector2 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+                // Vector de apuntado, obteniendo la dirección en pantalla del cursor respecto al jugador
+                aim = (aimInput - playerScreenPos).normalized;
+            }
+        }
 
         // Check de si se pulsa el botón para la acción de disparar
         if (playerInput.actions["Shoot"].triggered)
         {
-            Debug.Log("SHOOT");
+            playerShoot.Shoot();
         }
 
         // Check de si se pulsa el botón para la acción de dashear
