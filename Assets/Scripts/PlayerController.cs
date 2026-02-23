@@ -72,6 +72,18 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(DashCoroutine());
         }
+
+        // Check de si se pulsa el botón para cambiar al arma anterior
+        if (playerInput.actions["PreviousWeapon"].triggered)
+        {
+            // TODO implement weapon system
+        }
+
+        // Check de si se pulsa el botón para cambiar a la siguiente arma
+        if (playerInput.actions["NextWeapon"].triggered)
+        {
+            // TODO implement weapon system
+        }
         
     }
 
