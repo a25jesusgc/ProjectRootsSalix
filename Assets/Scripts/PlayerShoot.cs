@@ -25,6 +25,5 @@ public class PlayerShoot : MonoBehaviour
         // Se le asigna su movimiento
         Vector2 mov = playerController.GetAimDirection * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
-        Debug.Log(mov);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private const float CROSSHAIR_RANGE = 2f;
+    private const float SHOOT_CD = 0.25f;
+    private const float DASH_CD = 0.5f;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
 
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 aim;
 
     private bool isDashing;
+
+    private float dashCooldown;
+    private float shootCooldown;
 
     public Vector2 GetAimDirection => aim;
 
@@ -30,18 +35,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        crosshair.localPosition = aim * CROSSHAIR_RANGE;
+        
+        if(dashCooldown > 0) dashCooldown -= Time.deltaTime;
+        if(shootCooldown > 0) shootCooldown -= Time.deltaTime;
+        
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
+    }
+
+    void FixedUpdate() {
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
-        crosshair.localPosition = aim * CROSSHAIR_RANGE;
     }
 
     void CheckInputs()
     {
-        if(isDashing) return;
-        // Vector de movimiento del jugador
-        movement = playerInput.actions["Move"].ReadValue<Vector2>();
-
         // Vector que representa la ubicación del cursor en pantalla
         InputAction aimAction = playerInput.actions["Aim"];
         Vector2 aimInput = aimAction.ReadValue<Vector2>();
@@ -61,16 +69,25 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Check de si se pulsa el botón para la acción de disparar
-        if (playerInput.actions["Shoot"].triggered)
+        // Si no está dasheando, puede moverse / disparar / dashear
+        if (!isDashing)
         {
-            playerShoot.Shoot();
-        }
+            // Vector de movimiento del jugador
+            movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
-        // Check de si se pulsa el botón para la acción de dashear
-        if (playerInput.actions["Dash"].triggered)
-        {
-            StartCoroutine(DashCoroutine());
+            // Check de si se pulsa el botón para la acción de disparar
+            if (shootCooldown <= 0 && playerInput.actions["Shoot"].IsPressed())
+            {
+                playerShoot.Shoot();
+                shootCooldown = SHOOT_CD;
+            }
+
+            // Check de si se pulsa el botón para la acción de dashear
+            if (dashCooldown <= 0 && playerInput.actions["Dash"].triggered)
+            {
+                StartCoroutine(DashCoroutine());
+                dashCooldown = DASH_CD;
+            }
         }
 
         // Check de si se pulsa el botón para cambiar al arma anterior
