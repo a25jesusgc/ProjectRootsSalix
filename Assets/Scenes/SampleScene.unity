@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 1310968794}
   - component: {fileID: 1310968795}
   m_Layer: 0
-  m_Name: Bear
+  m_Name: BearLumberjack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
