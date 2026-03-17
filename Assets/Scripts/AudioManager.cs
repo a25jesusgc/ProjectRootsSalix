@@ -1,53 +1,119 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    private bool loopMusic;
-    private AudioSource musicSource;
+    public static AudioManager instance;
 
-    public AudioLoop music;
+    public AudioMixerGroup generalMixerGroup;
+    public AudioMixerGroup musicMixerGroup;
+    public AudioMixerGroup sfxMixerGroup;
 
+    public AudioSource music;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool isChangingClip;
+    private bool mute;
+    private bool customLoop;
+    private float muteValue;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
-        musicSource = GetComponent<AudioSource>();
-        
-    }
-    
-    public void PlayMusic(AudioLoop music)
-    {
-        musicSource.Stop();
-        musicSource.clip = music.GetAudioClip;
-        LoopMusic(music);
+        UpdateMixerVolume();
     }
 
-    public void LoopMusic(AudioLoop loop)
+    // Update is called once per frame
+    void Update()
     {
-        StartCoroutine(LoopMusicCoroutine(loop.GetStartLoopSample, loop.GetEndLoopSample));
-    }
-
-    private IEnumerator LoopMusicCoroutine(int loopStart, int loopEnd)
-    {
-        loopMusic = true;
-
-        yield return new WaitUntil(() => musicSource.clip != null);
-
-        musicSource.Play();
-        musicSource.timeSamples = 0;
-        musicSource.SetScheduledEndTime(AudioSettings.dspTime + (double)loopEnd / musicSource.clip.frequency);
-
-        while (loopMusic)
+        if (!isChangingClip)
         {
-            if (!musicSource.isPlaying)
+            music.volume = Mathf.MoveTowards(music.volume, mute ? muteValue : 1, Time.deltaTime);
+        }
+    }
+
+    public void PlayMusic(AudioLoop theme, bool instant = false)
+    {
+        if (instant)
+        {
+            StartCoroutine(PlayMusicCoroutine(theme));
+        }
+        else
+        {
+            StopCoroutine("PlayMusicFadeCoroutine");
+            StartCoroutine("PlayMusicFadeCoroutine", theme.GetAudioClip); 
+        }
+    }
+
+    private IEnumerator PlayMusicCoroutine(AudioLoop theme)
+    {
+        int loopStart = theme.GetStartLoopSample;
+        int loopEnd = theme.GetEndLoopSample;
+        customLoop = loopEnd > 0;
+
+        music.Stop();
+        music.clip = theme.GetAudioClip;
+        music.loop = !customLoop;
+        music.Play();
+
+        music.timeSamples = 0;
+
+        if(customLoop)
+        {
+            music.SetScheduledEndTime(AudioSettings.dspTime + (double)loopEnd / music.clip.frequency);
+
+            while (customLoop)
             {
-                musicSource.Play();
-                musicSource.timeSamples = loopStart;
-                musicSource.SetScheduledEndTime(AudioSettings.dspTime + (double)(loopEnd - loopStart) / musicSource.clip.frequency);
+
+                if (!music.isPlaying)
+                {
+                    music.Play();
+                    music.timeSamples = loopStart;
+                    music.SetScheduledEndTime(AudioSettings.dspTime + (double)(loopEnd - loopStart) / music.clip.frequency);
+                }
+
+
+                yield return null;
             }
+        } 
+    }
+
+    private IEnumerator PlayMusicFadeCoroutine(AudioClip clip)
+    {
+        isChangingClip = true;
+        while (music.volume > 0)
+        {
+            music.volume = Mathf.MoveTowards(music.volume, 0, Time.deltaTime);
             yield return null;
         }
-
+        music.Stop();
+        music.clip = clip;
+        music.loop = true;
+        music.Play();
+        isChangingClip = false;
     }
+
+    public void MuteMusic(bool isMuted, float value = 0f, bool instant = false)
+    {
+        mute = isMuted;
+        muteValue = value;
+        if (instant)
+        {
+            music.volume = mute ? muteValue : 1;
+        }
+    }
+
+    public void UpdateMixerVolume()
+    {
+        generalMixerGroup.audioMixer.SetFloat("GeneralVolume", Mathf.Log10((PlayerPrefs.GetInt(SettingConstants.VolumeGeneral, 50) + 1) / 100f) * 40);
+        musicMixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10((PlayerPrefs.GetInt(SettingConstants.VolumeMusic, 100) + 1) / 100f) * 40);
+        sfxMixerGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10((PlayerPrefs.GetInt(SettingConstants.VolumeSFX, 100) + 1) / 100f) * 40);
+    }
+
+
 }
