@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate() {
+        // Mueve al jugador
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
     }
 
