@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
             player.TakeDamage(10);
         }
     }

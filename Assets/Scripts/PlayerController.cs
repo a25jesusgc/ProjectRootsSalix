@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     private float shootCooldown;
 
     public Vector2 GetAimDirection => aim;
-    public int life = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -115,22 +114,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
     }
-
-    // Función para recibir daño
-    public void TakeDamage(int damage)
-    {
-        life -= damage;
-        if (life <= 0)
-        {
-            life = 0;
-            RestartGame();
-        }
-    }
-
-    void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
 
 }

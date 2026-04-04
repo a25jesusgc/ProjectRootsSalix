@@ -4,35 +4,35 @@ using UnityEngine;
 public class LifeBar : MonoBehaviour
 {
     // Referencia al componente Image que representa la barra de vida
-    public Image fillLifeBar;
+    [SerializeField] private Image fillLifeBar;
 
     // Sprites de Vida
-    public Sprite fullLife;
-    public Sprite mediumLife;
-    public Sprite lowLife;
-    private PlayerController player;
-    private float maxLife;
+    [SerializeField] private Sprite fullLife;
+    [SerializeField] private Sprite mediumLife;
+    [SerializeField] private Sprite lowLife;
+    [SerializeField] private PlayerHealthController player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Busca el componente PlayerController en el objeto llamado "Player" y lo asigna a la variable player
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
-        maxLife = player.life;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Porcentaje de vida actual del jugador
+        float healthPercent = player.GetHealthPercentage;
+
         // Actualiza el tamaño de la barra de vida según la vida actual del jugador
-        fillLifeBar.fillAmount = player.life / maxLife;
+        fillLifeBar.fillAmount = healthPercent;
 
         // Cambia el sprite de la barra de vida según el porcentaje de vida restante
-        if (player.life > maxLife * 0.5f)
+        if (healthPercent > 0.5f)
         {
             fillLifeBar.sprite = fullLife;
         }
-        else if (player.life > maxLife * 0.25f)
+        else if (healthPercent > 0.25f)
         {
             fillLifeBar.sprite = mediumLife;
         }

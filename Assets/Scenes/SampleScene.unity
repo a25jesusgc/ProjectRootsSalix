@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 115359135}
   - component: {fileID: 115359134}
   - component: {fileID: 115359137}
+  - component: {fileID: 115359141}
   - component: {fileID: 115359140}
   - component: {fileID: 115359136}
   - component: {fileID: 115359139}
@@ -276,7 +277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   crosshair: {fileID: 1406526232}
   movSpeed: 5
-  life: 100
 --- !u!50 &115359138
 Rigidbody2D:
   serializedVersion: 5
@@ -364,6 +364,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
   bullet: {fileID: 4800503804344322514, guid: bba9ab39eda0b4f4baaaae1244ca1d57, type: 3}
   bulletSpeed: 10
+--- !u!114 &115359141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115359133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93437692de82c564cbbc0b1e0108470c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthController
+  maxHP: 100
 --- !u!1 &268339278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1127,7 @@ MonoBehaviour:
   fullLife: {fileID: 6903375753181031912, guid: ab85684eb33eef74380bbedff222195a, type: 3}
   mediumLife: {fileID: -5102800179709613798, guid: fa35356667b0e8d4a8b5c77020cdd11d, type: 3}
   lowLife: {fileID: -4306586822851122852, guid: e99402e807c75294697f80223aefd0cc, type: 3}
+  player: {fileID: 115359141}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
