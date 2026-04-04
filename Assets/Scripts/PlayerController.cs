@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private const float CROSSHAIR_RANGE = 2f;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private float shootCooldown;
 
     public Vector2 GetAimDirection => aim;
+    public int life = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,15 +38,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         crosshair.localPosition = aim * CROSSHAIR_RANGE;
-        
-        if(dashCooldown > 0) dashCooldown -= Time.deltaTime;
-        if(shootCooldown > 0) shootCooldown -= Time.deltaTime;
-        
+
+        if (dashCooldown > 0) dashCooldown -= Time.deltaTime;
+        if (shootCooldown > 0) shootCooldown -= Time.deltaTime;
+
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         // Mueve al jugador
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
     }
@@ -61,7 +64,8 @@ public class PlayerController : MonoBehaviour
             {
                 // Vector de apuntado usando el axis del joystick
                 aim = aimInput.normalized;
-            }else
+            }
+            else
             {
                 // Vector que representa la ubicación del jugador en pantalla
                 Vector2 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -102,7 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             // TODO implement weapon system
         }
-        
+
     }
 
     private IEnumerator DashCoroutine()
@@ -111,4 +115,22 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
     }
+
+    // Función para recibir daño
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0)
+        {
+            life = 0;
+            RestartGame();
+        }
+    }
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }
