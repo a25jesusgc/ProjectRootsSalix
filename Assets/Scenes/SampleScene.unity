@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   crosshair: {fileID: 1406526232}
   movSpeed: 5
-  vida: 100
+  life: 100
 --- !u!50 &115359138
 Rigidbody2D:
   serializedVersion: 5
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4306586822851122852, guid: e99402e807c75294697f80223aefd0cc, type: 3}
+  m_Sprite: {fileID: 6903375753181031912, guid: ab85684eb33eef74380bbedff222195a, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1111,6 +1111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeBar
   fillLifeBar: {fileID: 268339280}
+  fullLife: {fileID: 6903375753181031912, guid: ab85684eb33eef74380bbedff222195a, type: 3}
+  mediumLife: {fileID: -5102800179709613798, guid: fa35356667b0e8d4a8b5c77020cdd11d, type: 3}
+  lowLife: {fileID: -4306586822851122852, guid: e99402e807c75294697f80223aefd0cc, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

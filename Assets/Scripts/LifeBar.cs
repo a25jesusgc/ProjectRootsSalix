@@ -5,6 +5,11 @@ public class LifeBar : MonoBehaviour
 {
     // Referencia al componente Image que representa la barra de vida
     public Image fillLifeBar;
+
+    // Sprites de Vida
+    public Sprite fullLife;
+    public Sprite mediumLife;
+    public Sprite lowLife;
     private PlayerController player;
     private float maxLife;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,5 +26,19 @@ public class LifeBar : MonoBehaviour
     {
         // Actualiza el tamaño de la barra de vida según la vida actual del jugador
         fillLifeBar.fillAmount = player.life / maxLife;
+
+        // Cambia el sprite de la barra de vida según el porcentaje de vida restante
+        if (player.life > maxLife * 0.5f)
+        {
+            fillLifeBar.sprite = fullLife;
+        }
+        else if (player.life > maxLife * 0.25f)
+        {
+            fillLifeBar.sprite = mediumLife;
+        }
+        else
+        {
+            fillLifeBar.sprite = lowLife;
+        }
     }
 }
