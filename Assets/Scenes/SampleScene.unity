@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
   bullet: {fileID: 4800503804344322514, guid: bba9ab39eda0b4f4baaaae1244ca1d57, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 20
 --- !u!1001 &257896527
 PrefabInstance:
   m_ObjectHideFlags: 0
