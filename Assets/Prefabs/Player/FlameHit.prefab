@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3690088388104149457}
   - component: {fileID: 279675594717102654}
   m_Layer: 0
-  m_Name: BulletHitFlower
+  m_Name: FlameHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7070496928890802934, guid: a4f1563967238eb4280b2df86be914bc, type: 3}
+  m_Sprite: {fileID: -6701386390017873267, guid: c36f226d390dc2c4197c172d9ddcf264, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32906fcf33bef9d40b14d24ea9eb7bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
-  duration: 0.5
+  duration: 1
 --- !u!95 &3690088388104149457
 Animator:
   serializedVersion: 7
@@ -117,7 +117,7 @@ Animator:
   m_GameObject: {fileID: 7758902820952965791}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 623541aaaa4325045b2fc3465df1dd79, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e287e55cc4a6234fa2c03f5dcb524ae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -143,7 +143,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 5b5e6526ca5677e4c8321a5e696b75d2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.1
   Loop: 0
   Mute: 0
   Spatialize: 0

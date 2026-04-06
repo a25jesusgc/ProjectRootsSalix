@@ -389,6 +389,7 @@ MonoBehaviour:
   shootCooldown: 0
   bulletSpeed: 10
   bullet: {fileID: 4800503804344322514, guid: 5b9e22e61b90f784c859e85ab93a2b60, type: 3}
+  playerHealthController: {fileID: 239301367792917374}
 --- !u!1 &9192904380161419190
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
