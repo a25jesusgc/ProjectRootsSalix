@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private const float CROSSHAIR_RANGE = 2f;
-    private const float SHOOT_CD = 0.25f;
     private const float DASH_CD = 0.5f;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
 
     private PlayerInput playerInput;
     private Rigidbody2D rb;
-    private PlayerShoot playerShoot;
+    private PlayerWeaponController playerWeaponController;
 
     private Vector2 movement;
     private Vector2 aim;
@@ -20,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;
 
     private float dashCooldown;
-    private float shootCooldown;
 
     public Vector2 GetAimDirection => aim;
 
@@ -29,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
-        playerShoot = GetComponent<PlayerShoot>();
+        playerWeaponController = GetComponent<PlayerWeaponController>();
     }
 
     // Update is called once per frame
@@ -38,7 +36,6 @@ public class PlayerController : MonoBehaviour
         crosshair.localPosition = aim * CROSSHAIR_RANGE;
         
         if(dashCooldown > 0) dashCooldown -= Time.deltaTime;
-        if(shootCooldown > 0) shootCooldown -= Time.deltaTime;
         
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
@@ -77,10 +74,9 @@ public class PlayerController : MonoBehaviour
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
             // Check de si se pulsa el botón para la acción de disparar
-            if (shootCooldown <= 0 && playerInput.actions["Shoot"].IsPressed())
+            if (playerInput.actions["Shoot"].IsPressed())
             {
-                playerShoot.Shoot();
-                shootCooldown = SHOOT_CD;
+                playerWeaponController.ShootCurrentWeapon();
             }
 
             // Check de si se pulsa el botón para la acción de dashear
@@ -94,13 +90,13 @@ public class PlayerController : MonoBehaviour
         // Check de si se pulsa el botón para cambiar al arma anterior
         if (playerInput.actions["PreviousWeapon"].triggered)
         {
-            // TODO implement weapon system
+            playerWeaponController.SelectPreviousWeapon();
         }
 
         // Check de si se pulsa el botón para cambiar a la siguiente arma
         if (playerInput.actions["NextWeapon"].triggered)
         {
-            // TODO implement weapon system
+            playerWeaponController.SelectNextWeapon();
         }
         
     }

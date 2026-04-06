@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3928783004344841604}
   - component: {fileID: -8833882751407456333}
   m_Layer: 6
-  m_Name: Bullet
+  m_Name: Flame
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7e83eef995f22cc40bb52a8a5d8ec8b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 647046b22cd28cb4bbbee7b78993418d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +130,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.4
 --- !u!50 &3801055859820296445
 Rigidbody2D:
   serializedVersion: 5
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32906fcf33bef9d40b14d24ea9eb7bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
-  duration: 3
+  duration: 1
 --- !u!114 &-8833882751407456333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ffe377e6c3caf4798752e8c7bec55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletHit
-  damage: 5
-  damageType: 0
+  damage: 2
+  damageType: 1
   hitEffect: {fileID: 7758902820952965791, guid: fd626dfe09aeda642a7d10e059d610f6, type: 3}

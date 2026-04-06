@@ -1,29 +1,22 @@
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class PlayerCannon : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float bulletSpeed;
-    private PlayerController playerController;
+    private const float SHOOT_CD = 0.25f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Shoot()
     {
-        playerController = GetComponent<PlayerController>();
-    }
+        // Si está recargándose, no dispara
+        if(shootCooldown > 0) return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Shoot()
-    {
         // Instancia el objeto de bala
         GameObject bulletObject = Instantiate(bullet, transform.position, Quaternion.LookRotation(Vector3.forward, playerController.GetAimDirection));
         // Se le asigna su movimiento
         Vector2 mov = playerController.GetAimDirection * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
+
+        // Tras disparar necesita recargarse
+        shootCooldown = SHOOT_CD;
     }
 }
