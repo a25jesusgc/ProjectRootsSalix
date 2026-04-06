@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 9045096008284689717}
   - component: {fileID: 3505206518982161523}
   - component: {fileID: 4362212975635820111}
+  - component: {fileID: 239301367792917374}
   - component: {fileID: 5231724347392526303}
   - component: {fileID: 5254579726816978479}
   - component: {fileID: 8245356897263334148}
@@ -160,6 +161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   crosshair: {fileID: 7742318735923331377}
   movSpeed: 5
+--- !u!114 &239301367792917374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952078851888561226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93437692de82c564cbbc0b1e0108470c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthController
+  maxHP: 100
 --- !u!114 &5231724347392526303
 MonoBehaviour:
   m_ObjectHideFlags: 0
