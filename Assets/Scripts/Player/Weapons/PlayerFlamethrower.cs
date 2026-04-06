@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerFlamethrower : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private PlayerHealthController playerHealthController;
     private const float SHOOT_CD = 0.05f;
     private const float ANGLE_SPREAD = 15f;
 
@@ -10,6 +11,9 @@ public class PlayerFlamethrower : PlayerWeapon
     {
         // Si está recargándose, no dispara
         if(shootCooldown > 0) return;
+
+        // Disparar consume vida
+        playerHealthController.TakeDamage(1);
 
         // Calcula la dirección
         Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-ANGLE_SPREAD, ANGLE_SPREAD)) * playerController.GetAimDirection;
