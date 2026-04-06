@@ -8,7 +8,8 @@ public class PlayerHealthController : MonoBehaviour
     // Vida actual
     private int currentHP;
 
-    public float GetHealthPercentage => (float) currentHP / maxHP;
+    // Propiedad para obtener el porcentaje de vida actual
+    public float GetHealthPercentage => (float)currentHP / maxHP;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,14 +20,14 @@ public class PlayerHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Función para curar al jugador
     public void Heal(int amount)
     {
         currentHP += amount;
-        if(currentHP > maxHP) currentHP = maxHP;
+        if (currentHP > maxHP) currentHP = maxHP;
     }
 
     // Función para recibir daño
