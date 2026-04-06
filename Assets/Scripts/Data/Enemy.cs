@@ -10,11 +10,14 @@ public class Enemy : ScriptableObject
     [SerializeField] private int bodyDamage;
     // El daño que inflinge con sus ataques
     [SerializeField] private int attackDamage;
+    // Velocidad de movimiento
+    [SerializeField] private float movSpeed;
     // Lista de resistencias para cada tipo de daño
     [SerializeField] private float[] resistances;
 
     public int GetHealth => health;
     public int GetBodyDamage => bodyDamage;
     public int GetAttackDamage => attackDamage;
+    public float GetMoveSpeed => movSpeed;
     public float[] GetResistances => resistances;
 }

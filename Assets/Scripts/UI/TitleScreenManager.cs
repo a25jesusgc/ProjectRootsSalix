@@ -3,11 +3,12 @@ using UnityEngine;
 public class TitleScreenManager : MonoBehaviour
 {
     [SerializeField] private GameObject settingsWindow;
+    [SerializeField] private AudioLoop music;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        AudioManager.instance.PlayMusic(music, true);
     }
 
     // Update is called once per frame

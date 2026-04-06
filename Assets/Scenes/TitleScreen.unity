@@ -2495,7 +2495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1501362773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3180,8 +3180,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5749452251042402748, guid: 5d7e01eebe4a54b40bf575c3af2227a2, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d2171d4d3136b1145ab1cc23d66a5ae7, type: 3}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: 7b3f20ffbeca2bd4489d1b177694eb9f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -3593,6 +3593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreenManager
   settingsWindow: {fileID: 699527122}
+  music: {fileID: 11400000, guid: fd66a23dc3e4cd645810e0e2fe05266b, type: 2}
 --- !u!1 &1990632831
 GameObject:
   m_ObjectHideFlags: 0
