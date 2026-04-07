@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93437692de82c564cbbc0b1e0108470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthController
-  maxHP: 100
+  maxHP: 200
 --- !u!114 &5231724347392526303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   availableWeapons:
   - {fileID: 5217826841906282858}
   - {fileID: 3639115448328701471}
+  weaponSelection: {fileID: 0}
 --- !u!114 &5254579726816978479
 MonoBehaviour:
   m_ObjectHideFlags: 0
