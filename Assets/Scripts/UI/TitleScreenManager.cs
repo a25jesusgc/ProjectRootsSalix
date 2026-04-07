@@ -8,7 +8,7 @@ public class TitleScreenManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudioManager.instance.PlayMusic(music, true);
+        AudioManager.instance.PlayMusic(music);
     }
 
     // Update is called once per frame

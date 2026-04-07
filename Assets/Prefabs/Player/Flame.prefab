@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3801055859820296445}
   - component: {fileID: -3928783004344841604}
   - component: {fileID: -8833882751407456333}
+  - component: {fileID: 9154932671782297365}
   m_Layer: 6
   m_Name: Flame
   m_TagString: Bullet
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 647046b22cd28cb4bbbee7b78993418d, type: 3}
+  m_Sprite: {fileID: -2663012827951764202, guid: fe5bf83201b83944a8d517a4f4367f89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +130,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_Radius: 0.4
 --- !u!50 &3801055859820296445
 Rigidbody2D:
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32906fcf33bef9d40b14d24ea9eb7bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelfDestruct
-  duration: 1
+  duration: 0.65
 --- !u!114 &-8833882751407456333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,4 +186,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletHit
   damage: 2
   damageType: 1
-  hitEffect: {fileID: 7758902820952965791, guid: fd626dfe09aeda642a7d10e059d610f6, type: 3}
+  hitEffect: {fileID: 7758902820952965791, guid: d68975f8aea52d94eba09b5f2316ab48, type: 3}
+--- !u!95 &9154932671782297365
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800503804344322514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a89ca6d2d96f3f04189918ad614d89f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioLoop
   clip: {fileID: 8300000, guid: 7e0e8e613e9c4f54abb625f341ef0bda, type: 3}
   startLoopSample: 0
-  endLoopSample: 4430670
+  endLoopSample: 4430336
   pitch: 1

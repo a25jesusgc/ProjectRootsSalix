@@ -5,13 +5,13 @@ public class PlayerFlamethrower : PlayerWeapon
     [SerializeField] private GameObject bullet;
     [SerializeField] private PlayerHealthController playerHealthController;
     private const float SHOOT_CD = 0.05f;
-    private const float ANGLE_SPREAD = 15f;
+    private const float ANGLE_SPREAD = 8f;
 
     public override void Shoot()
     {
         // Si está recargándose, no dispara
         if(shootCooldown > 0) return;
-
+        
         // Disparar consume vida
         playerHealthController.TakeDamage(1);
 

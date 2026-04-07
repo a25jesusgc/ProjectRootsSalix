@@ -17,8 +17,10 @@ public class BulletHit : MonoBehaviour
                 enemy.ReceiveDamage(damage, damageType);
             }
         }
+        
         // Instancia el efecto de la bala cuando impacta
         if(hitEffect != null) Instantiate(hitEffect, transform.position, Quaternion.identity);
+
         // Destruye la bala
         Destroy(gameObject);
     }

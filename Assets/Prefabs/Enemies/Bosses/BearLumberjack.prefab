@@ -160,7 +160,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5, y: 3}
+  m_Size: {x: 1.8, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &-4774871719865766298
 MonoBehaviour:

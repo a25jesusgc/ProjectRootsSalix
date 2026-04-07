@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             StopCoroutine("PlayMusicFadeCoroutine");
-            StartCoroutine("PlayMusicFadeCoroutine", theme.GetAudioClip); 
+            StartCoroutine("PlayMusicFadeCoroutine", theme); 
         }
     }
 
@@ -58,7 +58,6 @@ public class AudioManager : MonoBehaviour
 
         music.Stop();
         music.clip = theme.GetAudioClip;
-        music.loop = !customLoop;
         music.Play();
 
         music.timeSamples = 0;
@@ -83,7 +82,7 @@ public class AudioManager : MonoBehaviour
         } 
     }
 
-    private IEnumerator PlayMusicFadeCoroutine(AudioClip clip)
+    private IEnumerator PlayMusicFadeCoroutine(AudioLoop theme)
     {
         isChangingClip = true;
         while (music.volume > 0)
@@ -91,11 +90,9 @@ public class AudioManager : MonoBehaviour
             music.volume = Mathf.MoveTowards(music.volume, 0, Time.deltaTime);
             yield return null;
         }
-        music.Stop();
-        music.clip = clip;
-        music.loop = true;
-        music.Play();
         isChangingClip = false;
+        customLoop = false;
+        StartCoroutine(PlayMusicCoroutine(theme));
     }
 
     public void MuteMusic(bool isMuted, float value = 0f, bool instant = false)
