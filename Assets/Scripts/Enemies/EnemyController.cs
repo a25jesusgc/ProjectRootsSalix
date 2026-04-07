@@ -9,8 +9,13 @@ public class EnemyController : MonoBehaviour
     }
 
     [SerializeField] private Transform Player;
+    [SerializeField] private float idleMoveRadius = 2f; // Radio dentro del cual el enemigo se mueve aleatoriamente cuando está en estado Idle
+    [SerializeField] private Enemy enemyType; // Tipo de enemigo
+    [SerializeField] private float idleWaitTime = 2f; // Tiempo que el enemigo espera antes de generar una nueva posición objetivo en estado Idle
 
-    public float speed = 3f;
+
+    private Vector2 idleTargetPosition; // Posición objetivo para el movimiento aleatorio en estado Idle
+    private bool hadIdleTarget = false; // Variable para controlar si el enemigo ya tiene una posición objetivo en estado Idle
     public float detectionRadius = 5f;
     public float alertRadius = 3f;
 
@@ -24,6 +29,8 @@ public class EnemyController : MonoBehaviour
     // Temporizador para controlar cuánto tiempo el enemigo permanece alerta
     private float alertTimer;
 
+    private float idleWaitTimer = 0f; // Temporizador para controlar cuánto tiempo el enemigo espera antes de generar una nueva posición objetivo en estado Idle
+    private bool isWaiting = false; // Variable para controlar si el enemigo está esperando antes de generar una nueva posición objetivo en estado Idle
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,13 +76,49 @@ public class EnemyController : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Idle:
-                // Aquí puedes agregar lógica para el comportamiento de patrulla o quedarse quieto
+                if (isWaiting)
+                {
+                    idleWaitTimer += Time.fixedDeltaTime;
+                    if (idleWaitTimer >= idleWaitTime)
+                    {
+                        isWaiting = false;
+                        idleWaitTimer = 0f;
+                        hadIdleTarget = false; // Resetea la variable para generar una nueva posición objetivo
+                    }
+                    rb.linearVelocity = Vector2.zero; // Detiene el movimiento mientras espera
+                    return;
+                }
+
+                // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
+                if (!hadIdleTarget)
+                {
+                    // Si el enemigo no tiene una posición objetivo, genera una nueva posición aleatoria dentro del radio de movimiento
+                    idleTargetPosition = GetRandomIdlePosition();
+                    hadIdleTarget = true;
+                }
+                // Calcula la dirección hacia la posición objetivo y mueve al enemigo hacia esa posición
+                Vector2 directionIdle = idleTargetPosition - (Vector2)transform.position;
+
+                // 👇 comprobar distancia REAL
+                // Si el enemigo está lo suficientemente cerca de la posición objetivo, deja de moverse y genera una nueva posición objetivo en el siguiente ciclo
+                if (directionIdle.magnitude < 0.1f)
+                {
+                    // Si el enemigo ha llegado a la posición objetivo, resetea la variable para generar una 
+                    // nueva posición objetivo en el siguiente ciclo
+                    isWaiting = true; // El enemigo entra en estado de espera antes de generar una nueva posición objetivo
+                    rb.linearVelocity = Vector2.zero;
+                }
+                else
+                {
+                    // Mueve al enemigo hacia la posición objetivo a una velocidad constante
+                    rb.linearVelocity = directionIdle.normalized * enemyType.GetMoveSpeed;
+                }
 
                 break;
             case EnemyState.Chasing:
                 // El enemigo se mueve hacia el jugador
                 Vector3 direction = (Player.position - transform.position).normalized;
-                rb.MovePosition(transform.position + direction * speed * Time.fixedDeltaTime);
+                rb.MovePosition(transform.position + direction * enemyType.GetMoveSpeed * Time.fixedDeltaTime);
                 break;
         }
     }
@@ -109,7 +152,14 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
 
-
+    // Función para generar una posición aleatoria dentro de un radio alrededor de la posición del enemigo
+    Vector2 GetRandomIdlePosition()
+    {
+        // Genera un vector aleatorio dentro de un círculo unitario, 
+        // lo normaliza para obtener solo la dirección y luego lo escala por el radio de movimiento
+        Vector2 randomOffset = Random.insideUnitCircle.normalized;
+        return (Vector2)transform.position + randomOffset * idleMoveRadius;
     }
 }
