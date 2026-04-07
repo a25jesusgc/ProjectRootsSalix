@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: fe5bf83201b83944a8d517a4f4367f89
+guid: d0b5aa9aaed31b242ae00ce97a8fc3b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2663012827951764202
-    second: bullet_flame_rework_0
+      213: -4351607284457122783
+    second: player_health_bar_0
   - first:
-      213: 3811680511032399137
-    second: bullet_flame_rework_1
+      213: 6097450259245918647
+    second: player_health_bar_1
   - first:
-      213: 2580472868591407053
-    second: bullet_flame_rework_2
+      213: 1380714175073708935
+    second: player_health_bar_2
   - first:
-      213: -5289175675946802823
-    second: bullet_flame_rework_3
+      213: 4774378410172754426
+    second: player_health_bar_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,18 +49,18 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 4
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,89 +122,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullet_flame_rework_0
+      name: player_health_bar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 8, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61d60a531f31b0bd0800000000000000
-      internalID: -2663012827951764202
+      spriteID: 1245ee70b3cfb93c0800000000000000
+      internalID: -4351607284457122783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_flame_rework_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1259d59ca3fc5e430800000000000000
-      internalID: 3811680511032399137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullet_flame_rework_2
+      name: player_health_bar_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 8, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dcf8cece66eafc320800000000000000
-      internalID: 2580472868591407053
+      spriteID: 7b967f184be7e9450800000000000000
+      internalID: 6097450259245918647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_flame_rework_3
+      name: player_health_bar_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 8, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 971ed88feb21996b0800000000000000
-      internalID: -5289175675946802823
+      spriteID: 78b6d951a38492310800000000000000
+      internalID: 1380714175073708935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_health_bar_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 8, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af924a94edff14240800000000000000
+      internalID: 4774378410172754426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_health_bar_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 8, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be5fc80549cd6549a341f6dcaa92320
+      internalID: 441053509
       vertices: []
       indices: 
       edges: []
@@ -213,7 +235,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d6bf8a92f50a1d745b8f5dcdacb87357
+    spriteID: 76ae1f4445de4804fa08a2cd26521ced
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +245,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      bullet_flame_rework_0: -2663012827951764202
-      bullet_flame_rework_1: 3811680511032399137
-      bullet_flame_rework_2: 2580472868591407053
-      bullet_flame_rework_3: -5289175675946802823
+      player_health_bar_0: -4351607284457122783
+      player_health_bar_1: 6097450259245918647
+      player_health_bar_2: 1380714175073708935
+      player_health_bar_3: 4774378410172754426
+      player_health_bar_4: 441053509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
