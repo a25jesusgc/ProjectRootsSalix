@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cf4022befc8ef43832d40389779e5d, type: 3}
   m_Name: Leech
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 40
-  bodyDamage: 10
-  attackDamage: 30
+  health: 50
+  bodyDamage: 26
+  attackDamage: 68
+  movSpeed: 5
   resistances:
   - 1
   - 1

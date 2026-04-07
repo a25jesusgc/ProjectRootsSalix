@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BearLumberjack
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 320
-  bodyDamage: 20
-  attackDamage: 40
+  bodyDamage: 42
+  attackDamage: 90
+  movSpeed: 6
   resistances:
   - 0.6
-  - 0.8
+  - 1.2

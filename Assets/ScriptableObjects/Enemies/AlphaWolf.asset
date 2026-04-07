@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AlphaWolf
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 240
-  bodyDamage: 18
-  attackDamage: 45
+  bodyDamage: 32
+  attackDamage: 82
+  movSpeed: 8
   resistances:
-  - 0.4
+  - 0.8
   - 0.7
