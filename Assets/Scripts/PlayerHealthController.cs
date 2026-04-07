@@ -8,7 +8,8 @@ public class PlayerHealthController : MonoBehaviour
     // Vida actual
     private int currentHP;
 
-    // Propiedad para obtener el porcentaje de vida actual
+    // Propiedad para obtener valores de vida
+    public int GetMaxHP => maxHP;
     public float GetHealthPercentage => (float)currentHP / maxHP;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,13 @@ public class PlayerHealthController : MonoBehaviour
             currentHP = 0;
             RestartGame();
         }
+    }
+
+    // Funcion para cuando obtiene 
+    public void LifeUpgrade(int amount)
+    {
+        maxHP += amount;
+        currentHP = maxHP;
     }
 
     void RestartGame()

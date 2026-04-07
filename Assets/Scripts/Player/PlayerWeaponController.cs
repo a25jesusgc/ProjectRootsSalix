@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerWeapon[] availableWeapons;
+    [SerializeField] private PlayerWeaponSelection weaponSelection;
     private PlayerWeapon currentWeapon;
     private int currentWeaponIndex;
 
@@ -49,6 +50,7 @@ public class PlayerWeaponController : MonoBehaviour
     public void UpdateSelectedWeapon(int index)
     {
         currentWeapon = availableWeapons[index];
+        if(weaponSelection != null) weaponSelection.UpdateSelectedWeaponIcon(index);
     }
 
     // Dispara el arma seleccionada

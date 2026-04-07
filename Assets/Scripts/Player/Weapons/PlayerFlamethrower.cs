@@ -19,7 +19,7 @@ public class PlayerFlamethrower : PlayerWeapon
         Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-ANGLE_SPREAD, ANGLE_SPREAD)) * playerController.GetAimDirection;
 
         // Instancia el objeto de llama
-        GameObject bulletObject = Instantiate(bullet, transform.position, Quaternion.LookRotation(Vector3.forward, direction));
+        GameObject bulletObject = Instantiate(bullet, transform.position + new Vector3(playerController.GetAimDirection.x, playerController.GetAimDirection.y), Quaternion.LookRotation(Vector3.forward, direction));
         // Se le asigna su movimiento
         Vector2 mov = direction * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;

@@ -10,8 +10,10 @@ public class PlayerCannon : PlayerWeapon
         // Si está recargándose, no dispara
         if(shootCooldown > 0) return;
 
+        Vector3 position = transform.position + new Vector3(playerController.GetAimDirection.x, playerController.GetAimDirection.y);
+
         // Instancia el objeto de bala
-        GameObject bulletObject = Instantiate(bullet, transform.position, Quaternion.LookRotation(Vector3.forward, playerController.GetAimDirection));
+        GameObject bulletObject = Instantiate(bullet, position, Quaternion.LookRotation(Vector3.forward, playerController.GetAimDirection));
         // Se le asigna su movimiento
         Vector2 mov = playerController.GetAimDirection * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
