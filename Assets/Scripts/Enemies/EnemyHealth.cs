@@ -18,8 +18,8 @@ public class EnemyHealth : MonoBehaviour
     public void ReceiveDamage(int damage, DamageType damageType)
     {
         // Calcula el daño recibido teniendo en cuenta las resistencias
-        int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int) damageType]);
-        if(receivedDamage <= 0) receivedDamage = 1;
+        int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int)damageType]);
+        if (receivedDamage <= 0) receivedDamage = 1;
         currentHP -= receivedDamage;
         if (currentHP <= 0)
         {
@@ -32,7 +32,8 @@ public class EnemyHealth : MonoBehaviour
     public void Defeat()
     {
         Debug.Log("ENEMY DEFEATED");
+        Destroy(gameObject);
     }
 
-    public float GetHealthPercentage => (float) currentHP / enemyType.GetHealth;
+    public float GetHealthPercentage => (float)currentHP / enemyType.GetHealth;
 }

@@ -70,6 +70,7 @@ public class EnemyController : MonoBehaviour
         {
             case EnemyState.Idle:
                 // Aquí puedes agregar lógica para el comportamiento de patrulla o quedarse quieto
+
                 break;
             case EnemyState.Chasing:
                 // El enemigo se mueve hacia el jugador
