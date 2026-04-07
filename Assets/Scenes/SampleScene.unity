@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &381334235
 SpriteRenderer:
   serializedVersion: 2
@@ -504,7 +504,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -651,7 +651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.5, y: -22.8}
+  m_AnchoredPosition: {x: 13.5, y: -22.800049}
   m_SizeDelta: {x: 600, y: 64}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &603605430
@@ -1214,10 +1214,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3639115448328701471, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
-      propertyPath: playerHealthController
-      value: 
-      objectReference: {fileID: 1595381534}
     - target: {fileID: 6952078851888561226, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
       propertyPath: m_Name
       value: Player
