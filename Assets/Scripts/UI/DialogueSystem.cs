@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem instance;
+
+    // Para los Inputs del jugador
+    [SerializeField] private PlayerInput playerInput;
 
     // Elementos de la UI
     [SerializeField] private GameObject dialogueBox;
@@ -42,7 +46,7 @@ public class DialogueSystem : MonoBehaviour
 
     void LateUpdate()
     {
-        if (dialogueOpen && Input.GetKeyDown(KeyCode.Z))
+        if (dialogueOpen && playerInput.actions["Interact"].triggered)
         {
             ProgressDialogue();
         }
@@ -53,6 +57,7 @@ public class DialogueSystem : MonoBehaviour
     public void ShowDialogue(List<Dialogue> dialogues)
     {
         if(dialogues == null || dialogues.Count < 1) return;
+        GlobalUtils.pause = true;
         dialogueOpen = true;
         dialogueIndex = 0;
         currentDialogues = dialogues;
@@ -139,6 +144,7 @@ public class DialogueSystem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         dialogueOpen = false;
+        GlobalUtils.pause = false;
     }
 
     public void SetDialogueScale(Vector3 scale)

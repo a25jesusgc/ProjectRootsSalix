@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private const float INTERACT_RANGE = 1f;
     private const float CROSSHAIR_RANGE = 2f;
     private const float DASH_CD = 0.5f;
+    [SerializeField] private PlayerInteractor interactBox;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
 
@@ -33,15 +35,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GlobalUtils.pause) return;
+
+        interactBox.transform.localPosition = aim * INTERACT_RANGE;
         crosshair.localPosition = aim * CROSSHAIR_RANGE;
         
         if(dashCooldown > 0) dashCooldown -= Time.deltaTime;
-        
+
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
+        
     }
 
     void FixedUpdate() {
+        if(GlobalUtils.pause)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         // Mueve al jugador
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
     }
@@ -97,6 +108,12 @@ public class PlayerController : MonoBehaviour
         if (playerInput.actions["NextWeapon"].triggered)
         {
             playerWeaponController.SelectNextWeapon();
+        }
+
+        // Check de si se pulsa el botón para interactuar
+        if (playerInput.actions["Interact"].triggered)
+        {
+            interactBox.Interact();
         }
         
     }
