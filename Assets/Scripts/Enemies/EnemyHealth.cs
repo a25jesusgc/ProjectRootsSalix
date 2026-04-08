@@ -4,12 +4,14 @@ public class EnemyHealth : MonoBehaviour
 {
     // Tipo de enemigo, objeto que contiene sus stats
     [SerializeField] private Enemy enemyType;
+    private EnemyController enemyController;
 
     // Vida actual
     private int currentHP;
 
     void Start()
     {
+        enemyController = GetComponent<EnemyController>();
         // Inicializa su vida
         currentHP = enemyType.GetHealth;
     }
@@ -31,8 +33,8 @@ public class EnemyHealth : MonoBehaviour
     // Función de gestión de cuando la vida del enemigo llega a 0 y cae derrotado
     public void Defeat()
     {
-        Debug.Log("ENEMY DEFEATED");
-        Destroy(gameObject);
+        enemyController.SetDefeated();
+        Destroy(gameObject, 1f);
     }
 
     public float GetHealthPercentage => (float)currentHP / enemyType.GetHealth;
