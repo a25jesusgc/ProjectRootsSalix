@@ -13,7 +13,7 @@ public class PlayerFlamethrower : PlayerWeapon
         if(shootCooldown > 0) return;
         
         // Disparar consume vida
-        playerHealthController.TakeDamage(1);
+        playerHealthController.TakeDamage(1, true);
 
         // Calcula la dirección
         Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-ANGLE_SPREAD, ANGLE_SPREAD)) * playerController.GetAimDirection;

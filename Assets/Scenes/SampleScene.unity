@@ -914,18 +914,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1016028492}
     m_Modifications:
-    - target: {fileID: 4257212396175639104, guid: e2e58c6a21a03d941b1e4f2a0a343b2b, type: 3}
-      propertyPath: dialogues.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4257212396175639104, guid: e2e58c6a21a03d941b1e4f2a0a343b2b, type: 3}
-      propertyPath: dialogues.Array.data[0].text
-      value: Esto es un cartel de prueba.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4257212396175639104, guid: e2e58c6a21a03d941b1e4f2a0a343b2b, type: 3}
-      propertyPath: dialogues.Array.data[1].text
-      value: "Gracias por su atenci\xF3n."
-      objectReference: {fileID: 0}
     - target: {fileID: 5213315325103776607, guid: e2e58c6a21a03d941b1e4f2a0a343b2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.328136
@@ -59073,8 +59061,8 @@ SceneRoots:
   - {fileID: 1148951198}
   - {fileID: 1024929967}
   - {fileID: 1228186418}
-  - {fileID: 116389964}
-  - {fileID: 205954231}
   - {fileID: 103687533}
   - {fileID: 1631876162}
+  - {fileID: 116389964}
+  - {fileID: 205954231}
   - {fileID: 1016028492}

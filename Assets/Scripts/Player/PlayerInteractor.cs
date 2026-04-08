@@ -16,7 +16,11 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (collision.CompareTag("Interactable"))
         {
-            interactable = collision.GetComponent<Interactable>();
+            if (collision.TryGetComponent(out Interactable interactable))
+            {
+                this.interactable = interactable;
+                interactable.ShowInteractionIcon(true);
+            }
         }
     }
 
@@ -24,6 +28,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (collision.CompareTag("Interactable"))
         {
+            interactable.ShowInteractionIcon(false);
             interactable = null;
         }
     }

@@ -36,10 +36,10 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     // Función para recibir daño
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool selfInflicted = false)
     {
         currentHP -= damage;
-        anim.SetTrigger("hurt"); //
+        if(!selfInflicted) anim.SetTrigger("hurt"); //
         if (currentHP <= 0)
         {
             currentHP = 0;

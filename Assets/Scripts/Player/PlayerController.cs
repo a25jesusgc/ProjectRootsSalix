@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 aim;
     private Animator anim;
     private bool isDashing;
+    private bool isAttacking;
 
     private float dashCooldown;
 
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if(GlobalUtils.pause) return;
 
-        interactBox.transform.localPosition = aim * INTERACT_RANGE;
+        interactBox.transform.localPosition = (movement.magnitude > 0 ? movement : aim) * INTERACT_RANGE;
         crosshair.localPosition = aim * CROSSHAIR_RANGE;
         
         if(dashCooldown > 0) dashCooldown -= Time.deltaTime;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
         // Observa los inputs ejecutados por el jugador
         CheckInputs();
         
+        // Gestiona las animaciones
+        ManageAnims();
     }
 
     void FixedUpdate() {
@@ -87,22 +90,16 @@ public class PlayerController : MonoBehaviour
             // Vector de movimiento del jugador
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
-            anim.SetFloat("mov_x", movement.x);
-            anim.SetFloat("mov_y", movement.y);
-
-            anim.SetBool("is_moving", movement.magnitude > 0.1f ? true : false);
-
             // Check de si se pulsa el botón para la acción de disparar
             if (playerInput.actions["Shoot"].IsPressed())
             {
                 playerWeaponController.ShootCurrentWeapon();
-                anim.SetBool("attack", true);
-            } else
+                isAttacking = true;
+            }
+
+            if (playerInput.actions["Shoot"].WasReleasedThisFrame())
             {
-                if (anim.GetBool("attack") == true) //Si deja de atacar se pone en false
-                {
-                    anim.SetBool("attack", false);
-                }
+                isAttacking = false;
             }
 
             // Check de si se pulsa el botón para la acción de dashear
@@ -138,5 +135,15 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
+    }
+
+    private void ManageAnims()
+    {
+        anim.SetFloat("mov_x", movement.magnitude > 0 ? movement.x : aim.x);
+        anim.SetFloat("mov_y", movement.magnitude > 0 ? movement.y : aim.y);
+        anim.SetFloat("aim_x", aim.x);
+        anim.SetFloat("aim_y", aim.y);
+        anim.SetFloat("is_moving", movement.magnitude);
+        anim.SetBool("attack", isAttacking);
     }
 }
