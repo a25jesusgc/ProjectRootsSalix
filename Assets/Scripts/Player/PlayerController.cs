@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         playerWeaponController = GetComponent<PlayerWeaponController>();
+        transform.position = PlayerData.GetInstance.GetRespawn;
     }
 
     // Update is called once per frame
