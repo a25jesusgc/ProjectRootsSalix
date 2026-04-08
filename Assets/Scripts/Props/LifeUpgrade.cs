@@ -1,18 +1,13 @@
 using UnityEngine;
 
-public class LifeUpgrade : MonoBehaviour
+public class LifeUpgrade : PickUpItem
 {
-    [SerializeField] private int amount;
-
-    void OnTriggerEnter2D(Collider2D collision)
+    // Al coger mejora de vida, súma la vida a los datos del jugador
+    public override void OnPickup(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.TryGetComponent(out PlayerHealthController playerHealthController))
         {
-            if (collision.TryGetComponent(out PlayerHealthController playerHealthController))
-            {
-                playerHealthController.LifeUpgrade(amount);
-                Destroy(gameObject);
-            }
+            playerHealthController.LifeUpgrade();
         }
     }
 }
