@@ -9,7 +9,7 @@ public class PlayerHealthController : MonoBehaviour
     private int maxHP;
     // Vida actual
     private int currentHP;
-
+    private Animator anim;
     // Propiedad para obtener valores de vida
     public int GetMaxHP => maxHP;
     public float GetHealthPercentage => (float)currentHP / maxHP;
@@ -19,6 +19,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         maxHP = BASE_HP + LIFE_UPGRADE_AMOUNT * PlayerData.GetInstance.GetLifeUpgrades;
         currentHP = maxHP;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class PlayerHealthController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+        anim.SetTrigger("hurt"); //
         if (currentHP <= 0)
         {
             currentHP = 0;

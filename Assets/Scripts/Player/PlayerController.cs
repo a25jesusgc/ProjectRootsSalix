@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movement;
     private Vector2 aim;
-
+    private Animator anim;
     private bool isDashing;
 
     private float dashCooldown;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         playerWeaponController = GetComponent<PlayerWeaponController>();
+        anim = GetComponent<Animator>();
         transform.position = PlayerData.GetInstance.GetRespawn;
     }
 
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
     }
 
+
     void CheckInputs()
     {
         // Vector que representa la ubicación del cursor en pantalla
@@ -85,10 +87,22 @@ public class PlayerController : MonoBehaviour
             // Vector de movimiento del jugador
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
+            anim.SetFloat("mov_x", movement.x);
+            anim.SetFloat("mov_y", movement.y);
+
+            anim.SetBool("is_moving", movement.magnitude > 0.1f ? true : false);
+
             // Check de si se pulsa el botón para la acción de disparar
             if (playerInput.actions["Shoot"].IsPressed())
             {
                 playerWeaponController.ShootCurrentWeapon();
+                anim.SetBool("attack", true);
+            } else
+            {
+                if (anim.GetBool("attack") == true) //Si deja de atacar se pone en false
+                {
+                    anim.SetBool("attack", false);
+                }
             }
 
             // Check de si se pulsa el botón para la acción de dashear
