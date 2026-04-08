@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
+    [SerializeField] private GameObject settingsWindow;
     public bool isPaused = false;
 
 
@@ -54,4 +55,17 @@ public class PauseGame : MonoBehaviour
         isPaused = true;
 
     }
+
+
+    public void Settings(bool value)
+    {
+        // Activa o desactiva la ventana de configuración
+        settingsWindow.SetActive(value);
+    }
+
+    public void CloseSettings()
+    {
+        settingsWindow.SetActive(false);
+    }
+
 }
