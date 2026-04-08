@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthController : MonoBehaviour
 {
     // Vida máxima que puede tener el jugador
-    [SerializeField] private int maxHP = 100;
+    private const int BASE_HP = 200;
+    private const int LIFE_UPGRADE_AMOUNT = 15;
+    private int maxHP;
     // Vida actual
     private int currentHP;
 
@@ -15,6 +17,7 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        maxHP = BASE_HP + LIFE_UPGRADE_AMOUNT * PlayerData.GetInstance.GetLifeUpgrades;
         currentHP = maxHP;
     }
 
@@ -42,15 +45,17 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
-    // Funcion para cuando obtiene 
-    public void LifeUpgrade(int amount)
+    // Funcion para cuando obtiene mejora de vida
+    public void LifeUpgrade()
     {
-        maxHP += amount;
+        PlayerData.GetInstance.GotLifeUpgrade();
+        maxHP = BASE_HP + LIFE_UPGRADE_AMOUNT * PlayerData.GetInstance.GetLifeUpgrades;
         currentHP = maxHP;
     }
 
     void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GetComponent<PlayerController>().transform.position = PlayerData.GetInstance.GetRespawn;
+        currentHP = maxHP;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    [SerializeField] private PlayerWeapon[] availableWeapons;
+    [SerializeField] private PlayerWeapon[] weapons;
     [SerializeField] private PlayerWeaponSelection weaponSelection;
     private PlayerWeapon currentWeapon;
     private int currentWeaponIndex;
@@ -25,7 +25,7 @@ public class PlayerWeaponController : MonoBehaviour
         }
         else
         {
-            currentWeaponIndex = availableWeapons.Count() - 1;
+            currentWeaponIndex = PlayerData.GetInstance.GetAvailableWeapons.Count() - 1;
         }
         // Actualiza el arma seleccionada con el nuevo arma según el índice
         UpdateSelectedWeapon(currentWeaponIndex);
@@ -35,7 +35,7 @@ public class PlayerWeaponController : MonoBehaviour
     public void SelectNextWeapon()
     {
         // Actualiza el índice del arma
-        if (currentWeaponIndex < availableWeapons.Length - 1)
+        if (currentWeaponIndex < PlayerData.GetInstance.GetAvailableWeapons.Count - 1)
         {
             currentWeaponIndex += 1;
         } else
@@ -49,8 +49,9 @@ public class PlayerWeaponController : MonoBehaviour
     // Actualiza el arma seleccionada según el índice
     public void UpdateSelectedWeapon(int index)
     {
-        currentWeapon = availableWeapons[index];
-        if(weaponSelection != null) weaponSelection.UpdateSelectedWeaponIcon(index);
+        int weaponIndex = PlayerData.GetInstance.GetAvailableWeapons[index];
+        currentWeapon = weapons[weaponIndex];
+        if(weaponSelection != null) weaponSelection.UpdateSelectedWeaponIcon(weaponIndex);
     }
 
     // Dispara el arma seleccionada
