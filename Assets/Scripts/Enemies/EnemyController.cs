@@ -84,11 +84,16 @@ public class EnemyController : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Idle:
+                // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
+                // esto solo ocurre si el enemigo no está esperando antes de generar una nueva posición objetivo
                 if (isWaiting)
                 {
+                    // Si el enemigo está esperando, incrementa el temporizador de espera
                     idleWaitTimer += Time.fixedDeltaTime;
                     if (idleWaitTimer >= idleWaitTime)
                     {
+                        // Si el tiempo de espera ha pasado, el enemigo deja de esperar 
+                        // y puede generar una nueva posición objetivo
                         isWaiting = false;
                         idleWaitTimer = 0f;
                         hadIdleTarget = false; // Resetea la variable para generar una nueva posición objetivo
@@ -107,7 +112,6 @@ public class EnemyController : MonoBehaviour
                 // Calcula la dirección hacia la posición objetivo y mueve al enemigo hacia esa posición
                 direction = idleTargetPosition - (Vector2)transform.position;
 
-                // 👇 comprobar distancia REAL
                 // Si el enemigo está lo suficientemente cerca de la posición objetivo, deja de moverse y genera una nueva posición objetivo en el siguiente ciclo
                 if (direction.magnitude < 0.1f)
                 {
