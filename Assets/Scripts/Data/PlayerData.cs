@@ -42,12 +42,14 @@ public class PlayerData
         lifeUpgrades = 0;
     }
 
+    // Función para guardar los datos en un archivo de guardado
     public static void Save()
     {
         string data = JsonUtility.ToJson(instance);
         File.WriteAllText(GlobalUtils.SAVE_PATH, EncryptData(data));
     }
 
+    // Función para cargar los datos o crear datos nuevos si no existe el archivo de guardado
     public static PlayerData Load()
     {
         string filePath = GlobalUtils.SAVE_PATH;
