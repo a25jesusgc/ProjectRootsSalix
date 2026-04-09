@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
         Chasing
     }
 
-    [SerializeField] private Transform Player;
+    private Transform player;
     [SerializeField] private Collider2D hitbox;
     [SerializeField] private float idleMoveRadius = 2f; // Radio dentro del cual el enemigo se mueve aleatoriamente cuando está en estado Idle
     [SerializeField] private Enemy enemyType; // Tipo de enemigo
@@ -67,18 +67,22 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         // Verificar la distancia al jugador
-        if (Player == null || isDefeated) return;
+        if (isDefeated) return;
 
-        // Si el jugador está dentro del radio de alerta, el enemigo se mantiene alerta
-        float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
-        // Si el jugador está dentro del radio de detección o el enemigo está alerta, cambia al estado de persecución
-        if (distanceToPlayer <= detectionRadius || isAlerted)
+        if (player != null)
         {
-            currentState = EnemyState.Chasing;
-        }
-        else
-        {
-            currentState = EnemyState.Idle;
+            // Si el jugador está dentro del radio de alerta, el enemigo se mantiene alerta
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+            // Si el jugador está dentro del radio de detección o el enemigo está alerta, cambia al estado de persecución
+            if (distanceToPlayer <= detectionRadius || isAlerted)
+            {
+                currentState = EnemyState.Chasing;
+            }
+            else
+            {
+                currentState = EnemyState.Idle;
+            }
         }
 
         switch (currentState)
@@ -128,9 +132,10 @@ public class EnemyController : MonoBehaviour
 
                 break;
             case EnemyState.Chasing:
+                if(player == null) return;
                 // El enemigo se mueve hacia el jugador
                 isWaiting = false;
-                direction = (Player.position - transform.position).normalized;
+                direction = (player.position - transform.position).normalized;
                 rb.MovePosition(transform.position + (Vector3) direction * enemyType.GetMoveSpeed * Time.fixedDeltaTime);
                 break;
         }
@@ -156,6 +161,12 @@ public class EnemyController : MonoBehaviour
                 alertTimer = 0f; // Reiniciar el temporizador de alerta
             }
         }
+
+        // Si el jugador se acerca a su rango de visión, lo detecta
+        if (collision.CompareTag("Player"))
+        {
+            player = collision.transform;
+        }
     }
 
     // Función para recibir daño
@@ -164,7 +175,16 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
-            player.TakeDamage(10);
+            player.TakeDamage(enemyType.GetBodyDamage);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
+            player.TakeDamage(enemyType.GetBodyDamage);
         }
     }
 
