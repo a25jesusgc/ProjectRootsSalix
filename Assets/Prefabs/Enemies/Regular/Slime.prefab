@@ -4909,8 +4909,8 @@ GameObject:
   - component: {fileID: 2097904120778146487}
   - component: {fileID: 6413388556315471812}
   - component: {fileID: 7409007896478951930}
-  - component: {fileID: 5305792722226733143}
   - component: {fileID: 1769639208210811768}
+  - component: {fileID: 5305792722226733143}
   - component: {fileID: 5646576072022269723}
   m_Layer: 0
   m_Name: Slime
@@ -5122,21 +5122,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5305792722226733143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4831086944621234411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d002a42336614be4d948457fe0aada93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayEnemySound
-  soundEffects:
-  - {fileID: 8300000, guid: 4ea6df432ccb54745b3445b8f5a891ba, type: 3}
-  - {fileID: 8300000, guid: 01b4d07e1bcdd04499c2aa81094fe1ec, type: 3}
 --- !u!82 &1769639208210811768
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5234,6 +5219,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5305792722226733143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831086944621234411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d002a42336614be4d948457fe0aada93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayEnemySound
+  soundEffects:
+  - {fileID: 8300000, guid: 4ea6df432ccb54745b3445b8f5a891ba, type: 3}
+  - {fileID: 8300000, guid: 01b4d07e1bcdd04499c2aa81094fe1ec, type: 3}
 --- !u!114 &5646576072022269723
 MonoBehaviour:
   m_ObjectHideFlags: 0

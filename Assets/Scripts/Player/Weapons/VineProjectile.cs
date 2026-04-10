@@ -118,6 +118,7 @@ public class VineProjectile : MonoBehaviour
     {
         target = newTarget;
         attached = true;
+        grabbed = true;
         vineSound.Play();
     }
 
