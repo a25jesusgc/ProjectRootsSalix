@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2877131132129064000}
-  - component: {fileID: 692485204593169368}
+  - component: {fileID: 3100696474270943926}
   m_Layer: 3
   m_Name: Vine
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7972062696621146517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &692485204593169368
+--- !u!114 &3100696474270943926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 205664223747845642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c97009eea4b534d95c4d24f5aa6151, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cc6a1f4d179f1c43b4f642ed832adb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerFlamethrower
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerVine
   playerController: {fileID: 0}
   shootCooldown: 0
-  bulletSpeed: 10
-  bullet: {fileID: 4800503804344322514, guid: 5b9e22e61b90f784c859e85ab93a2b60, type: 3}
+  bulletSpeed: 25
   playerHealthController: {fileID: 239301367792917374}
+  vinePrefab: {fileID: 4800503804344322514, guid: 6d566f32541bf0a458a7d4ac22b48b8b, type: 3}
 --- !u!1 &2780800652168497584
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 5217826841906282858}
   - {fileID: 3639115448328701471}
-  - {fileID: 692485204593169368}
+  - {fileID: 3100696474270943926}
   - {fileID: 452913622758116726}
   - {fileID: 5995710946355121460}
   weaponSelection: {fileID: 0}

@@ -8,8 +8,8 @@ public class LineTargets : MonoBehaviour
     [SerializeField] private List<Transform> targets;
 
     private List<Vector3> positions;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = targets.Count;
@@ -30,5 +30,11 @@ public class LineTargets : MonoBehaviour
             positions.Add(t.position);
         }
         lineRenderer.SetPositions(positions.ToArray());
+    }
+
+    public void SetTargets(List<Transform> newTargets)
+    {
+        targets = newTargets;
+        lineRenderer.positionCount = newTargets.Count;
     }
 }

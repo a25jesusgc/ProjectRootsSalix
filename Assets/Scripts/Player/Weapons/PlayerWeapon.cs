@@ -7,13 +7,13 @@ public abstract class PlayerWeapon : MonoBehaviour
     public float bulletSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public virtual void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if(shootCooldown > 0) shootCooldown -= Time.deltaTime;
     }

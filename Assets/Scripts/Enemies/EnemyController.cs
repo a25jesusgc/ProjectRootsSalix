@@ -148,25 +148,21 @@ public class EnemyController : MonoBehaviour
         anim.SetFloat("mov_y", direction.y);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void AlertBullet(Transform bulletTransform)
     {
-        if (collision.CompareTag("Bullet"))
-        {
-            // Si el jugador dispara cerca del enemigo, el enemigo se alerta
-            float distance = Vector2.Distance(transform.position, collision.transform.position);
+        // Si el jugador dispara cerca del enemigo, el enemigo se alerta
+        float distance = Vector2.Distance(transform.position, bulletTransform.position);
 
-            if (distance <= alertRadius)
-            {
-                isAlerted = true;
-                alertTimer = 0f; // Reiniciar el temporizador de alerta
-            }
-        }
-
-        // Si el jugador se acerca a su rango de visión, lo detecta
-        if (collision.CompareTag("Player"))
+        if (distance <= alertRadius)
         {
-            player = collision.transform;
+            isAlerted = true;
+            alertTimer = 0f; // Reiniciar el temporizador de alerta
         }
+    }
+
+    public void DetectPlayer(Transform playerTransform)
+    {
+        player = playerTransform;
     }
 
     // Función para recibir daño

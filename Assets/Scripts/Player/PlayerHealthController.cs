@@ -36,7 +36,7 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     // Función para curar al jugador
-    public void Heal(int amount)
+    public void Heal(int amount, bool selfHeal = false)
     {
         currentHP += amount;
         if (currentHP > maxHP) currentHP = maxHP;

@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerWeaponController playerWeaponController;
 
     private Vector2 movement;
+    private float speed;
     private Vector2 aim;
     private Animator anim;
     private bool isDashing;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         playerWeaponController = GetComponent<PlayerWeaponController>();
         anim = GetComponent<Animator>();
         transform.position = PlayerData.GetInstance.GetRespawn;
+        speed = movSpeed;
     }
 
     // Update is called once per frame
@@ -59,7 +61,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         // Mueve al jugador
-        rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
+        rb.linearVelocity = movement * speed * (isDashing ? 4f : 1f);
     }
 
 
@@ -139,11 +141,21 @@ public class PlayerController : MonoBehaviour
 
     private void ManageAnims()
     {
+        anim.speed = GlobalUtils.pause ? 0 : 1;
         anim.SetFloat("mov_x", movement.magnitude > 0 ? movement.x : aim.x);
         anim.SetFloat("mov_y", movement.magnitude > 0 ? movement.y : aim.y);
         anim.SetFloat("aim_x", aim.x);
         anim.SetFloat("aim_y", aim.y);
         anim.SetFloat("is_moving", movement.magnitude);
         anim.SetBool("attack", isAttacking);
+        anim.SetBool("dash", isDashing);
+    }
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+    public void ResetSpeed()
+    {
+        speed = movSpeed;
     }
 }
