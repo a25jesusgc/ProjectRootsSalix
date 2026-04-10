@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             return;
         }
-        // Mueve al jugador
+        // Mueve al jugador, dependiendo de si se desplaza manualmente o está siendo desplazado con el gancho
         if (isHookJumping && hookTarget != null)
         {
             rb.linearVelocity = (hookTarget.position - transform.position).normalized * HOOK_JUMP_SPEED;

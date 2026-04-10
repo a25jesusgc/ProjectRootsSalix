@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class VineHook : MonoBehaviour
 {
+    // Referencia al jugador y al gancho
     private PlayerController player;
     private VineProjectile vine;
 
@@ -23,11 +24,14 @@ public class VineHook : MonoBehaviour
         {
             if (collision.TryGetComponent(out VineProjectile vineProjectile))
             {
+                // Si detecta un gancho, el gancho se agarra a este objeto
                 vine = vineProjectile;
                 if (!vine.grabbed)
                 {
+                    // El gancho se queda agarrado a este objeto y no puede agarrarse a otros
                     vine.grabbed = true;
                     vine.AttachTarget(transform);
+                    // El jugador es desplazado en dirección al objeto
                     player = vineProjectile.playerVine.playerController;
                     player.StartHookJump(transform);
                 }
@@ -41,6 +45,7 @@ public class VineHook : MonoBehaviour
         {
             if(player != null)
             {
+                // Si el jugador choca contra el objeto, ha llegado al objetivo y detiene el movimiento
                 TargetReached();
             }
         }
@@ -52,11 +57,14 @@ public class VineHook : MonoBehaviour
         {
             if(player != null)
             {
+                // Si el jugador choca contra el objeto, ha llegado al objetivo y detiene el movimiento
                 TargetReached();
             }
         }
     }
 
+    // Si el jugador choca contra el objeto, ha llegado al objetivo y detiene el movimiento
+    // Y el gancho regresa cumpliendo su función
     private void TargetReached()
     {
         player.StopHookJump();
