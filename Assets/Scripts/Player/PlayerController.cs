@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private const float INTERACT_RANGE = 1f;
     private const float CROSSHAIR_RANGE = 2f;
     private const float DASH_CD = 0.5f;
+    private const float DASH_SPEED = 20f;
     private const float HOOK_JUMP_SPEED = 20f;
     [SerializeField] private PlayerInteractor interactBox;
     [SerializeField] private Transform crosshair;
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = movement * speed * (isDashing ? 4f : 1f);
+            rb.linearVelocity = movement * (isDashing ? DASH_SPEED : speed);
         }
     }
 
