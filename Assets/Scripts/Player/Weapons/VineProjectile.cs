@@ -58,6 +58,7 @@ public class VineProjectile : MonoBehaviour
                 rb.linearVelocity = direction.normalized * speed;
                 if (Vector3.Distance(playerVine.transform.position, transform.position) < 0.5)
                 {
+                    playerVine.SetShotCooldown();
                     playerVine.playerController.ResetSpeed();
                     Destroy(gameObject);
                 }

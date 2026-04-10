@@ -11,15 +11,19 @@ public class PlayerVine : PlayerWeapon
     private EnemyHealth target;
     private GameObject vine;
     private VineProjectile vineProjectile;
+    private const float DMG_CD = 0.25f;
+    private float dmgCooldown;
     private const float SHOOT_CD = 0.25f;
 
     public override void Update()
     {
         base.Update();
+        if(dmgCooldown > 0) dmgCooldown -= Time.deltaTime;
     }
 
     public override void Shoot()
     {
+        if(shootCooldown > 0) return;
         if (vine == null)
         {
             Vector3 position = transform.position + new Vector3(playerController.GetAimDirection.x, playerController.GetAimDirection.y);
@@ -38,7 +42,7 @@ public class PlayerVine : PlayerWeapon
         {
             if(target != null)
             {
-                if(shootCooldown > 0) return;
+                if(dmgCooldown > 0) return;
                 if (target.GetHealthPercentage <= 0)
                 {
                     StopVine();
@@ -51,7 +55,7 @@ public class PlayerVine : PlayerWeapon
                 playerHealthController.Heal(2, true);
                 
                 // Cooldown para el daño
-                shootCooldown = SHOOT_CD;
+                dmgCooldown = DMG_CD;
             }
             
         }
@@ -80,5 +84,10 @@ public class PlayerVine : PlayerWeapon
     public override void StopShoot()
     {
         StopVine();
+    }
+
+    public void SetShotCooldown()
+    {
+        shootCooldown = SHOOT_CD;
     }
 }
