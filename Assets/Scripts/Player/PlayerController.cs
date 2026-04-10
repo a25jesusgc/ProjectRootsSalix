@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
 
             if (playerInput.actions["Shoot"].WasReleasedThisFrame())
             {
+                playerWeaponController.StopCurrentWeapon();
                 isAttacking = false;
             }
 

@@ -49,6 +49,7 @@ public class PlayerWeaponController : MonoBehaviour
     // Actualiza el arma seleccionada según el índice
     public void UpdateSelectedWeapon(int index)
     {
+        if(currentWeapon != null) currentWeapon.StopShoot();
         int weaponIndex = PlayerData.GetInstance.GetAvailableWeapons[index];
         currentWeapon = weapons[weaponIndex];
         if(weaponSelection != null) weaponSelection.UpdateSelectedWeaponIcon(weaponIndex);
@@ -58,5 +59,11 @@ public class PlayerWeaponController : MonoBehaviour
     public void ShootCurrentWeapon()
     {
         currentWeapon.Shoot();
+    }
+
+    // Detiene el arma seleccionada
+    public void StopCurrentWeapon()
+    {
+        currentWeapon.StopShoot();
     }
 }

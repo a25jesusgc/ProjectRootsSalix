@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 60
-  bodyDamage: 36
+  bodyDamage: 55
   attackDamage: 55
   movSpeed: 4
   resistances:
   - 0.5
-  - 1.4
   - 1
+  - 0.4

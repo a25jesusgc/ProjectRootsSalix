@@ -19,5 +19,6 @@ public abstract class PlayerWeapon : MonoBehaviour
     }
     
     public abstract void Shoot();
+    public abstract void StopShoot();
 
 }

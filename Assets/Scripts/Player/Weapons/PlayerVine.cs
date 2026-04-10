@@ -6,30 +6,22 @@ public class PlayerVine : PlayerWeapon
 
     [SerializeField] private PlayerHealthController playerHealthController;
     [SerializeField] private GameObject vinePrefab;
+    [SerializeField] private AudioSource vineSound;
+    [SerializeField] private AudioSource vineDamageSound;
     private EnemyHealth target;
     private GameObject vine;
     private VineProjectile vineProjectile;
-    private float timer;
     private const float SHOOT_CD = 0.25f;
-    private const float TIMER_TIME = 0.05f;
 
     public override void Update()
     {
         base.Update();
-        if(timer > 0) timer -= Time.deltaTime;
-        if (vine != null && timer <= 0)
-        {
-            target = null;
-            vineProjectile.ReturnVine();
-        }
     }
 
     public override void Shoot()
     {
         if (vine == null)
         {
-            if(timer > 0) return;
-            timer = TIMER_TIME;
             Vector3 position = transform.position + new Vector3(playerController.GetAimDirection.x, playerController.GetAimDirection.y);
 
             // Instancia el objeto de viña
@@ -40,16 +32,16 @@ public class PlayerVine : PlayerWeapon
             vineProjectile.SetPlayerVine(this);
             vineProjectile.SetVelocity(playerController.GetAimDirection, bulletSpeed);
 
+            vineSound.Play();
+
         }else
         {
-            timer = TIMER_TIME;
             if(target != null)
             {
                 if(shootCooldown > 0) return;
                 if (target.GetHealthPercentage <= 0)
                 {
-                    target = null;
-                    vineProjectile.ReturnVine();
+                    StopVine();
                     return;
                 }
 
@@ -65,8 +57,26 @@ public class PlayerVine : PlayerWeapon
         }
     }
 
+    public void StopVine()
+    {
+        target = null;
+        vineDamageSound.Stop();
+
+        vineProjectile.ReturnVine();
+    }
+
     public void SetTarget(EnemyHealth enemy)
     {
         target = enemy;
+        if(enemy != null)
+        {
+            vineDamageSound.Play();
+        }
+        
+    }
+
+    public override void StopShoot()
+    {
+        StopVine();
     }
 }

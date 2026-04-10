@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCannon : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private AudioSource shootSound;
     private const float SHOOT_CD = 0.25f;
 
     public override void Shoot()
@@ -18,7 +19,14 @@ public class PlayerCannon : PlayerWeapon
         Vector2 mov = playerController.GetAimDirection * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
 
+        shootSound.Play();
+
         // Tras disparar necesita recargarse
         shootCooldown = SHOOT_CD;
+    }
+
+    public override void StopShoot()
+    {
+        
     }
 }

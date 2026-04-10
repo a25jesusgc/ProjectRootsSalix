@@ -7,6 +7,7 @@ public class VineProjectile : MonoBehaviour
     private Transform target;
     private Rigidbody2D rb;
     private LineTargets lineTargets;
+    [SerializeField] private AudioSource vineSound;
 
     private float speed;
     private Vector2 direction;
@@ -31,13 +32,13 @@ public class VineProjectile : MonoBehaviour
         if(!attached) travelTime += Time.deltaTime;
         if(travelTime >= MAX_TRAVEL_TIME)
         {
-            ReturnVine();
+            playerVine.StopVine();
         }
         if (target != null)
         {
             if(Vector3.Distance(target.position, playerVine.transform.position) > MAX_RANGE)
             {
-                ReturnVine();
+                playerVine.StopVine();
             }
         }
     }
@@ -90,6 +91,7 @@ public class VineProjectile : MonoBehaviour
                 playerVine.SetTarget(enemy);
                 target = collision.transform;
                 attached = true;
+                vineSound.Play();
             }
         }
         if (collision.CompareTag("Player"))
@@ -105,6 +107,5 @@ public class VineProjectile : MonoBehaviour
     {
         attached = true;
         target = null;
-        playerVine.SetTarget(null);
     }
 }

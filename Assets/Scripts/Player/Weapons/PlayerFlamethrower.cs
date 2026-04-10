@@ -4,6 +4,7 @@ public class PlayerFlamethrower : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private PlayerHealthController playerHealthController;
+    [SerializeField] private AudioSource shootSound;
     private const float SHOOT_CD = 0.05f;
     private const float ANGLE_SPREAD = 8f;
 
@@ -25,7 +26,14 @@ public class PlayerFlamethrower : PlayerWeapon
         Vector2 mov = direction * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
 
+        if(!shootSound.isPlaying) shootSound.Play();
+
         // Tras disparar necesita recargarse
         shootCooldown = SHOOT_CD;
+    }
+
+    public override void StopShoot()
+    {
+        shootSound.Stop();
     }
 }
