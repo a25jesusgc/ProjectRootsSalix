@@ -63,6 +63,8 @@ public class PlayerVine : PlayerWeapon
         vineDamageSound.Stop();
 
         vineProjectile.ReturnVine();
+
+        playerController.StopHookJump();
     }
 
     public void SetTarget(EnemyHealth enemy)

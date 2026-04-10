@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8791882998463426655}
   - component: {fileID: 808652200410241108}
-  - component: {fileID: 7571355216185799187}
   - component: {fileID: 3635260731367699398}
   - component: {fileID: 2534006006994763200}
   - component: {fileID: 804801113106333689}
@@ -54,18 +53,6 @@ MonoBehaviour:
   breakSFX: {fileID: 6530089238366986750}
   isBroken: 0
   col: {fileID: 2534006006994763200}
---- !u!114 &7571355216185799187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8647120310479352031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62cb81dfbbf0034a8ec87a6c723525f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VineGrab
 --- !u!212 &3635260731367699398
 SpriteRenderer:
   serializedVersion: 2

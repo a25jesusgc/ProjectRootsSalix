@@ -26,7 +26,8 @@ public class VineGrab : MonoBehaviour
                 {
                     vineProjectile.grabbed = true;
                     vine = collision.transform;
-                    vineProjectile.ReturnVine();
+                    vineProjectile.AttachTarget(collision.transform);
+                    vineProjectile.RemoveTarget();
                 }
             }
         }

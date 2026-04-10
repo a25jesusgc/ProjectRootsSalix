@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VineProjectile : MonoBehaviour
 {
-    private PlayerVine playerVine;
+    public PlayerVine playerVine;
     private Transform target;
     private Rigidbody2D rb;
     private LineTargets lineTargets;
@@ -77,6 +77,12 @@ public class VineProjectile : MonoBehaviour
         this.speed = speed;
         rb.linearVelocity = direction.normalized * speed;
     }
+    public void AttachTarget(Transform newTarget)
+    {
+        target = newTarget;
+        attached = true;
+        vineSound.Play();
+    }
     public void RemoveTarget()
     {
         target = null;
@@ -89,9 +95,7 @@ public class VineProjectile : MonoBehaviour
             if (collision.TryGetComponent(out EnemyHealth enemy))
             {
                 playerVine.SetTarget(enemy);
-                target = collision.transform;
-                attached = true;
-                vineSound.Play();
+                AttachTarget(collision.transform);
             }
         }
         if (collision.CompareTag("Player"))

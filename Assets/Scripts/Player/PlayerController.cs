@@ -1,4 +1,5 @@
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private const float INTERACT_RANGE = 1f;
     private const float CROSSHAIR_RANGE = 2f;
     private const float DASH_CD = 0.5f;
+    private const float HOOK_JUMP_SPEED = 20f;
     [SerializeField] private PlayerInteractor interactBox;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
@@ -19,10 +21,11 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private Vector2 aim;
     private Animator anim;
-    private bool isDashing;
     private bool isAttacking;
-
+    private bool isDashing;
     private float dashCooldown;
+    private bool isHookJumping;
+    private Transform hookTarget;
 
     public Vector2 GetAimDirection => aim;
 
@@ -61,7 +64,14 @@ public class PlayerController : MonoBehaviour
             return;
         }
         // Mueve al jugador
-        rb.linearVelocity = movement * speed * (isDashing ? 4f : 1f);
+        if (isHookJumping && hookTarget != null)
+        {
+            rb.linearVelocity = (hookTarget.position - transform.position).normalized * HOOK_JUMP_SPEED;
+        }
+        else
+        {
+            rb.linearVelocity = movement * speed * (isDashing ? 4f : 1f);
+        }
     }
 
 
@@ -87,11 +97,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Si no está dasheando, puede moverse / disparar / dashear
-        if (!isDashing)
+        if (!isDashing && !isHookJumping)
         {
+            // MOVIMIENTO
             // Vector de movimiento del jugador
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
+            // DISPARO
             // Check de si se pulsa el botón para la acción de disparar
             if (playerInput.actions["Shoot"].IsPressed())
             {
@@ -99,36 +111,41 @@ public class PlayerController : MonoBehaviour
                 isAttacking = true;
             }
 
-            if (playerInput.actions["Shoot"].WasReleasedThisFrame())
-            {
-                playerWeaponController.StopCurrentWeapon();
-                isAttacking = false;
-            }
-
+            // DASH
             // Check de si se pulsa el botón para la acción de dashear
             if (dashCooldown <= 0 && playerInput.actions["Dash"].triggered)
             {
                 StartCoroutine(DashCoroutine());
                 dashCooldown = DASH_CD;
             }
+
+            // INTERACTUAR
+            // Check de si se pulsa el botón para interactuar
+            if (playerInput.actions["Interact"].triggered)
+            {
+                interactBox.Interact();
+            }
         }
 
+        // DETENER DISPARO
+        if (playerInput.actions["Shoot"].WasReleasedThisFrame())
+        {
+            playerWeaponController.StopCurrentWeapon();
+            isAttacking = false;
+        }
+
+        // ARMA ANTERIOR
         // Check de si se pulsa el botón para cambiar al arma anterior
         if (playerInput.actions["PreviousWeapon"].triggered)
         {
             playerWeaponController.SelectPreviousWeapon();
         }
 
+        // ARMA SIGUIENTE
         // Check de si se pulsa el botón para cambiar a la siguiente arma
         if (playerInput.actions["NextWeapon"].triggered)
         {
             playerWeaponController.SelectNextWeapon();
-        }
-
-        // Check de si se pulsa el botón para interactuar
-        if (playerInput.actions["Interact"].triggered)
-        {
-            interactBox.Interact();
         }
         
     }
@@ -149,7 +166,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("aim_y", aim.y);
         anim.SetFloat("is_moving", movement.magnitude);
         anim.SetBool("attack", isAttacking);
-        anim.SetBool("dash", isDashing);
+        anim.SetBool("dash", isDashing || isHookJumping);
     }
     public void SetSpeed(float newSpeed)
     {
@@ -158,5 +175,17 @@ public class PlayerController : MonoBehaviour
     public void ResetSpeed()
     {
         speed = movSpeed;
+    }
+
+    public void StartHookJump(Transform newTarget)
+    {
+        isHookJumping = true;
+        hookTarget = newTarget;
+    }
+
+    public void StopHookJump()
+    {
+        isHookJumping = false;
+        hookTarget = null;
     }
 }
