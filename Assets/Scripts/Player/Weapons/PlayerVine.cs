@@ -87,7 +87,7 @@ public class PlayerVine : PlayerWeapon
         vineDamageSound.Stop();
 
         // Llama el proyectil de vuelta hacia el jugador
-        vineProjectile.ReturnVine();
+        if(vineProjectile != null) vineProjectile.ReturnVine();
 
         // Y detiene el salto con gancho del jugador en caso de que estuviese en proceso
         playerController.StopHookJump();
