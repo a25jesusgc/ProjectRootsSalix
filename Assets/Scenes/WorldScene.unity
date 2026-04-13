@@ -3521,7 +3521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SettingsController
   audioGeneralSlider: {fileID: 2085779111}
   audioMusicSlider: {fileID: 405803484}
-  audioSFXSlider: {fileID: 405803484}
+  audioSFXSlider: {fileID: 936348408}
   audioGeneralValue: {fileID: 1356012007}
   audioMusicValue: {fileID: 521368432}
   audioSFXValue: {fileID: 1669647019}
