@@ -23,7 +23,6 @@ public class EnemyHealth : MonoBehaviour
         int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int)damageType]);
         if (receivedDamage <= 0) receivedDamage = 1;
         currentHP -= receivedDamage;
-        Debug.Log("HP: " + currentHP + " - Damage: " + receivedDamage);
         if (currentHP <= 0)
         {
             currentHP = 0;
