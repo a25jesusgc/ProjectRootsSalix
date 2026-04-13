@@ -4,7 +4,6 @@ public class PlayerCannon : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private AudioSource shootSound;
-    private const float SHOOT_CD = 0.25f;
 
     public override void Shoot()
     {
@@ -18,11 +17,12 @@ public class PlayerCannon : PlayerWeapon
         // Se le asigna su movimiento
         Vector2 mov = playerController.GetAimDirection * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
+        bulletObject.GetComponent<BulletHit>().damage = PlayerWeaponConstants.CANNON_DAMAGE;
 
         shootSound.Play();
 
         // Tras disparar necesita recargarse
-        shootCooldown = SHOOT_CD;
+        shootCooldown = PlayerWeaponConstants.CANNON_CD;
     }
 
     public override void StopShoot()

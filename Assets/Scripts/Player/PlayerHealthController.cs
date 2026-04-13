@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthController : MonoBehaviour
 {
     // Vida máxima que puede tener el jugador
-    private const int BASE_HP = 200;
-    private const int LIFE_UPGRADE_AMOUNT = 15;
+    private const int BASE_HP = 2000;
+    private const int LIFE_UPGRADE_AMOUNT = 150;
     private int maxHP;
     // Vida actual
     private int currentHP;

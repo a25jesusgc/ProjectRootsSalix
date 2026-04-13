@@ -8,6 +8,7 @@ public class PlayerVine : PlayerWeapon
 
     // Proyectil que se lanza y engancha
     [SerializeField] private GameObject vinePrefab;
+    
     // Efectos de sonido
     [SerializeField] private AudioSource vineSound;
     [SerializeField] private AudioSource vineDamageSound;
@@ -18,9 +19,7 @@ public class PlayerVine : PlayerWeapon
     private GameObject vine;
     // Referencia al VineProjectile del proyectil instanciado
     private VineProjectile vineProjectile;
-    private const float DMG_CD = 0.25f;
     private float dmgCooldown;
-    private const float SHOOT_CD = 0.25f;
 
     // Se reducen los cooldowns
     public override void Update()
@@ -68,12 +67,13 @@ public class PlayerVine : PlayerWeapon
 
                 // En caso de estar agarrado a un enemigo vivo, le hace daño y drena vida
                 // Le inflinge daño
-                enemyTarget.ReceiveDamage(3, DamageType.THORN);
+                enemyTarget.ReceiveDamage(PlayerWeaponConstants.VINE_DAMAGE, DamageType.THORN);
                 // Y se cura
-                playerHealthController.Heal(2, true);
+                int healAmount = Mathf.Clamp(Mathf.RoundToInt(PlayerWeaponConstants.VINE_DRAIN_BASE_HEALING * enemyTarget.GetDrainEffectiveness), PlayerWeaponConstants.VINE_DRAIN_MIN_HEALING, PlayerWeaponConstants.VINE_DRAIN_MAX_HEALING);
+                playerHealthController.Heal(healAmount, true);
                 
                 // Se resetea el cooldown para el daño
-                dmgCooldown = DMG_CD;
+                dmgCooldown = PlayerWeaponConstants.VINE_DAMAGE_CD;
             }
             
         }
@@ -112,6 +112,6 @@ public class PlayerVine : PlayerWeapon
 
     public void SetShotCooldown()
     {
-        shootCooldown = SHOOT_CD;
+        shootCooldown = PlayerWeaponConstants.VINE_CD;
     }
 }

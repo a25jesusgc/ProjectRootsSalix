@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletHit : MonoBehaviour
 {
-    [SerializeField] private int damage;
+    public int damage;
     [SerializeField] private DamageType damageType;
     [SerializeField] private GameObject hitEffect;
 

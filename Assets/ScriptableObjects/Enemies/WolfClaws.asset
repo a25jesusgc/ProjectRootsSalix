@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cf4022befc8ef43832d40389779e5d, type: 3}
   m_Name: WolfClaws
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 160
-  bodyDamage: 32
-  attackDamage: 75
+  health: 1600
+  bodyDamage: 320
+  attackDamage: 750
   movSpeed: 7
   resistances:
   - 0.75

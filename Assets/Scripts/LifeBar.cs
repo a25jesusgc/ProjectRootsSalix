@@ -16,7 +16,7 @@ public class LifeBar : MonoBehaviour
 
     private const float BAR_RESIZE_SPEED = 200f;
     private const float BAR_SPEED = 1f;
-    private const float BAR_SIZE_MULT = 2f;
+    private const float BAR_SIZE_MULT = 0.2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

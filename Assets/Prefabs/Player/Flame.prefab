@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ffe377e6c3caf4798752e8c7bec55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletHit
-  damage: 2
+  damage: 0
   damageType: 1
   hitEffect: {fileID: 7758902820952965791, guid: d68975f8aea52d94eba09b5f2316ab48, type: 3}
 --- !u!95 &9154932671782297365
