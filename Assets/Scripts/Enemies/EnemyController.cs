@@ -8,10 +8,10 @@ public class EnemyController : MonoBehaviour
         Chasing
     }
 
-    private Transform player;
+    protected Transform player;
     [SerializeField] private Collider2D hitbox;
     [SerializeField] private float idleMoveRadius = 2f; // Radio dentro del cual el enemigo se mueve aleatoriamente cuando está en estado Idle
-    [SerializeField] private Enemy enemyType; // Tipo de enemigo
+    [SerializeField] protected Enemy enemyType; // Tipo de enemigo
     [SerializeField] private float idleWaitTime = 2f; // Tiempo que el enemigo espera antes de generar una nueva posición objetivo en estado Idle
 
 
@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rb;
     private EnemyState currentState;
-    private Animator anim;
+    protected Animator anim;
 
     // Variable para controlar si el enemigo está alerta
     private bool isAlerted;
@@ -137,6 +137,7 @@ public class EnemyController : MonoBehaviour
                 isWaiting = false;
                 direction = (player.position - transform.position).normalized;
                 rb.MovePosition(transform.position + (Vector3) direction * enemyType.GetMoveSpeed * Time.fixedDeltaTime);
+                Attack();
                 break;
         }
     }
@@ -205,5 +206,11 @@ public class EnemyController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         hitbox.enabled = false;
         anim.SetTrigger("hurt");
+    }
+
+    //Metodo que define el ataque de cada enemigo al heredar
+    protected virtual void Attack()
+    {
+        
     }
 }
