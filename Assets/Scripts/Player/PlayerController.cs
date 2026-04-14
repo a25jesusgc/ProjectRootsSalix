@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private Rigidbody2D rb;
     private PlayerWeaponController playerWeaponController;
+    private FertilizerSelector fertilizerSelector;
 
     private Vector2 movement;
     private float speed;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         playerWeaponController = GetComponent<PlayerWeaponController>();
+        fertilizerSelector = GetComponent<FertilizerSelector>();
         anim = GetComponent<Animator>();
         transform.position = PlayerData.GetInstance.GetRespawn;
         speed = movSpeed;
@@ -147,6 +149,20 @@ public class PlayerController : MonoBehaviour
         if (playerInput.actions["NextWeapon"].triggered)
         {
             playerWeaponController.SelectNextWeapon();
+        }
+
+        // FERTILIZANTE ANTERIOR
+        // Check de si se pulsa el botón para cambiar al fertilizante anterior
+        if (playerInput.actions["PreviousFertilizer"].triggered)
+        {
+            fertilizerSelector.SelectPreviousFertilizer();
+        }
+
+        // FERTILIZANTE SIGUIENTE
+        // Check de si se pulsa el botón para cambiar al siguiente fertilizante
+        if (playerInput.actions["NextFertilizer"].triggered)
+        {
+            fertilizerSelector.SelectNextFertilizer();
         }
         
     }

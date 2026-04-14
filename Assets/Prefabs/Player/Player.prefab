@@ -297,6 +297,12 @@ MonoBehaviour:
   bulletSpeed: 20
   bullet: {fileID: 4800503804344322514, guid: bba9ab39eda0b4f4baaaae1244ca1d57, type: 3}
   shootSound: {fileID: 8665711597780674271}
+  fertilizerSelector: {fileID: 7453268270012308027}
+  fertilizers:
+  - {fileID: 11400000, guid: 4b0ae23ab2101c347ace82eaafd4008c, type: 2}
+  - {fileID: 11400000, guid: e28c0eb84fff21b468d24b3b314119de, type: 2}
+  - {fileID: 11400000, guid: 99be148a0c566c14eaa6053f0f4342a1, type: 2}
+  fertilizerSelection: {fileID: 0}
 --- !u!82 &8665711597780674271
 AudioSource:
   m_ObjectHideFlags: 0
@@ -549,6 +555,7 @@ GameObject:
   - component: {fileID: 4362212975635820111}
   - component: {fileID: 239301367792917374}
   - component: {fileID: 5231724347392526303}
+  - component: {fileID: 7453268270012308027}
   - component: {fileID: 5254579726816978479}
   - component: {fileID: 8245356897263334148}
   - component: {fileID: 2582024137661005646}
@@ -704,6 +711,20 @@ MonoBehaviour:
   - {fileID: 452913622758116726}
   - {fileID: 5995710946355121460}
   weaponSelection: {fileID: 0}
+  fertilizerSelection: {fileID: 0}
+--- !u!114 &7453268270012308027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952078851888561226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f5ca9b99f00604f8d213775b038238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FertilizerSelector
+  playerCannon: {fileID: 5217826841906282858}
 --- !u!114 &5254579726816978479
 MonoBehaviour:
   m_ObjectHideFlags: 0

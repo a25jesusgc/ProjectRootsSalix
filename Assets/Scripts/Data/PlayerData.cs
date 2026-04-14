@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -15,6 +16,7 @@ public class PlayerData
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
     [SerializeField] private int lifeUpgrades;
+    [SerializeField] private List<PlayerFertilizer> playerFertilizers;
 
     public Vector3 GetRespawn => respawnPoint;
     public void SetRepawnPoint(Vector3 value) => respawnPoint = value;
@@ -28,6 +30,31 @@ public class PlayerData
     public int GetLifeUpgrades => lifeUpgrades;
     public void GotLifeUpgrade() => lifeUpgrades++;
 
+    public List<PlayerFertilizer> GetPlayerFertilizers => playerFertilizers;
+
+    public void AddFertilizer(PlayerFertilizer fertilizer)
+    {
+        if (playerFertilizers.Contains(fertilizer))
+        {
+            playerFertilizers.First((f) => f.GetFertilizerType == fertilizer.GetFertilizerType).ChangeAmount(fertilizer.GetFertilizerAmount);
+        }
+        else
+        {
+            playerFertilizers.Add(fertilizer);
+        }
+    }
+
+    public bool UseFertilizer(PlayerFertilizer fertilizer)
+    {
+        fertilizer.ChangeAmount(-1);
+        if (fertilizer.GetFertilizerAmount <= 0)
+        {
+            playerFertilizers.Remove(fertilizer);
+            return true;
+        }
+        return false;
+    }
+
     public PlayerData()
     {
         respawnPoint = Vector3.zero;
@@ -40,6 +67,8 @@ public class PlayerData
         itemsPicked = new List<string>();
 
         lifeUpgrades = 0;
+
+        playerFertilizers = new List<PlayerFertilizer>();
     }
 
     // Función para guardar los datos en un archivo de guardado
