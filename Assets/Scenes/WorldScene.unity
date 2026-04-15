@@ -5245,6 +5245,14 @@ PrefabInstance:
       propertyPath: fertilizerSelection
       value: 
       objectReference: {fileID: 1843041796}
+    - target: {fileID: 5217826841906282858, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: fertilizers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217826841906282858, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: 'fertilizers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ac8bc40823daea4fa5a478fbd489e61, type: 2}
     - target: {fileID: 5231724347392526303, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
       propertyPath: weaponSelection
       value: 

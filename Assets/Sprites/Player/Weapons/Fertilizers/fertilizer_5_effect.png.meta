@@ -1,16 +1,40 @@
 fileFormatVersion: 2
-guid: 8108ed6e67db95846b71626e0cca736d
+guid: 782447b2b8de42841a0300c7a5b7c067
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4207326106016121813
-    second: fertilizer_box_0
+      213: -464136128133284851
+    second: fertilizer_5_effect_0
   - first:
-      213: -8998208302529756385
-    second: fertilizer_box_1
+      213: -540803205505001460
+    second: fertilizer_5_effect_1
   - first:
-      213: -7825844620938885450
-    second: fertilizer_box_2
+      213: 2826291583046198756
+    second: fertilizer_5_effect_2
+  - first:
+      213: -8380016273329706691
+    second: fertilizer_5_effect_3
+  - first:
+      213: -2827423011436035493
+    second: fertilizer_5_effect_4
+  - first:
+      213: 4304636462354060107
+    second: fertilizer_5_effect_5
+  - first:
+      213: -2698083692029847985
+    second: fertilizer_5_effect_6
+  - first:
+      213: 617329674138690105
+    second: fertilizer_5_effect_7
+  - first:
+      213: -8857907747884774203
+    second: fertilizer_5_effect_8
+  - first:
+      213: 295161104496510397
+    second: fertilizer_5_effect_9
+  - first:
+      213: 5333883990557748364
+    second: fertilizer_5_effect_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,13 +143,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fertilizer_box_0
+      name: fertilizer_5_effect_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,42 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2c7eaca2339c95c0800000000000000
-      internalID: -4207326106016121813
+      spriteID: d0cb03b86ae0f89f0800000000000000
+      internalID: -464136128133284851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fertilizer_box_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f134eb03931ff1380800000000000000
-      internalID: -8998208302529756385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fertilizer_box_2
+      name: fertilizer_5_effect_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,96 +180,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b64985c7c3056390800000000000000
-      internalID: -7825844620938885450
+      spriteID: c085b72995eae78f0800000000000000
+      internalID: -540803205505001460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fertilizer_box_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa33f094fe7054f4494a3399c5d62a90
-      internalID: -1089917691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fertilizer_box_4
+      name: fertilizer_5_effect_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dac36948ded7bff419b1e9e7c1fe9f6f
-      internalID: -2021520739
+      spriteID: 4e5252f6831093720800000000000000
+      internalID: 2826291583046198756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fertilizer_box_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fdbf4dface66514599c135daf789997
-      internalID: -1654569365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fertilizer_box_6
+      name: fertilizer_5_effect_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e7dca455cd405b54b81c20bce206e666
-      internalID: -1482279157
+      spriteID: d39a030499334bb80800000000000000
+      internalID: -8380016273329706691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fertilizer_5_effect_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52079d50c9f2c8d0800000000000000
+      internalID: -2827423011436035493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fertilizer_5_effect_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43dec93e042dbb30800000000000000
+      internalID: 4304636462354060107
       vertices: []
       indices: 
       edges: []
@@ -276,7 +278,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6ed96e2bb6f49954986aee7e9dfebe96
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -286,15 +288,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      fertilizer_box_0: -4207326106016121813
-      fertilizer_box_1: -8998208302529756385
-      fertilizer_box_2: -7825844620938885450
-      fertilizer_box_3: -1089917691
-      fertilizer_box_4: -2021520739
-      fertilizer_box_5: -1654569365
-      fertilizer_box_6: -1482279157
+      fertilizer_5_effect_0: -464136128133284851
+      fertilizer_5_effect_1: -540803205505001460
+      fertilizer_5_effect_2: 2826291583046198756
+      fertilizer_5_effect_3: -8380016273329706691
+      fertilizer_5_effect_4: -2827423011436035493
+      fertilizer_5_effect_5: 4304636462354060107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

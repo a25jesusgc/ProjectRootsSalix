@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileAimbot : MonoBehaviour
+public class FertilizerAimbot : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     private Transform target;

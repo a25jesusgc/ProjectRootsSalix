@@ -22,5 +22,7 @@ public enum FertilizerType
 {
     AUTOAIM,
     PIERCING,
-    BIG
+    BIG,
+    REBOUND,
+    EXPLOSIVE
 }
