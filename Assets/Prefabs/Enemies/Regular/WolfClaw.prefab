@@ -5169,8 +5169,8 @@ GameObject:
   - component: {fileID: 1189911639686851921}
   - component: {fileID: 2356888078335877594}
   - component: {fileID: -4807789731604898752}
-  - component: {fileID: -1036344777182736137}
   - component: {fileID: 5142932967821432468}
+  - component: {fileID: -1036344777182736137}
   - component: {fileID: 4649988647023499211}
   - component: {fileID: -6287937738559168745}
   - component: {fileID: 174856132200728342}
@@ -5332,19 +5332,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-1036344777182736137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5571558818745231509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2fa2da725cfac439cdec618c71e6ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
 --- !u!114 &5142932967821432468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5367,6 +5354,19 @@ MonoBehaviour:
   attackRange: 2
   rb: {fileID: 0}
   currentState: 0
+--- !u!114 &-1036344777182736137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571558818745231509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fa2da725cfac439cdec618c71e6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
 --- !u!95 &4649988647023499211
 Animator:
   serializedVersion: 7
