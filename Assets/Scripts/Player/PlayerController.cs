@@ -205,4 +205,21 @@ public class PlayerController : MonoBehaviour
         isHookJumping = false;
         hookTarget = null;
     }
+
+    // Si choca contra el jugador, o el jugador contra el enemigo, evitar que sea empujado
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
 }

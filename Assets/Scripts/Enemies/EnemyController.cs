@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private enum EnemyState
+    public enum EnemyState
     {
         Idle,
-        Chasing
+        Chasing,
+        Attack
     }
 
     protected Transform player;
@@ -20,9 +21,12 @@ public class EnemyController : MonoBehaviour
     private bool hadIdleTarget = false; // Variable para controlar si el enemigo ya tiene una posición objetivo en estado Idle
     public float detectionRadius = 5f;
     public float alertRadius = 3f;
+    public GameObject attack;
+    private Animator attackAnim;
+    public float attackRange = 1f;
 
-    private Rigidbody2D rb;
-    private EnemyState currentState;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public EnemyState currentState;
     protected Animator anim;
 
     // Variable para controlar si el enemigo está alerta
@@ -41,6 +45,10 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        if (attack.TryGetComponent(out Animator atkAnim))
+        {
+            attackAnim = atkAnim;
+        }
         currentState = EnemyState.Idle;
     }
 
@@ -69,17 +77,19 @@ public class EnemyController : MonoBehaviour
         // Verificar la distancia al jugador
         if (isDefeated) return;
 
-        if (player != null)
+        if (player != null && currentState != EnemyState.Attack)
         {
             // Si el jugador está dentro del radio de alerta, el enemigo se mantiene alerta
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // Si el jugador está dentro del radio de detección o el enemigo está alerta, cambia al estado de persecución
-            if (distanceToPlayer <= detectionRadius || isAlerted)
+            //Si esta en rango de ataque, ataca
+            if(distanceToPlayer <= attackRange)
+            {
+                currentState = EnemyState.Attack;
+            } else if(distanceToPlayer <= detectionRadius || isAlerted)
             {
                 currentState = EnemyState.Chasing;
-            }
-            else
+            } else
             {
                 currentState = EnemyState.Idle;
             }
@@ -88,58 +98,77 @@ public class EnemyController : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Idle:
-                // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
-                // esto solo ocurre si el enemigo no está esperando antes de generar una nueva posición objetivo
-                if (isWaiting)
-                {
-                    // Si el enemigo está esperando, incrementa el temporizador de espera
-                    idleWaitTimer += Time.fixedDeltaTime;
-                    if (idleWaitTimer >= idleWaitTime)
-                    {
-                        // Si el tiempo de espera ha pasado, el enemigo deja de esperar 
-                        // y puede generar una nueva posición objetivo
-                        isWaiting = false;
-                        idleWaitTimer = 0f;
-                        hadIdleTarget = false; // Resetea la variable para generar una nueva posición objetivo
-                    }
-                    rb.linearVelocity = Vector2.zero; // Detiene el movimiento mientras espera
-                    return;
-                }
-
-                // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
-                if (!hadIdleTarget)
-                {
-                    // Si el enemigo no tiene una posición objetivo, genera una nueva posición aleatoria dentro del radio de movimiento
-                    idleTargetPosition = GetRandomIdlePosition();
-                    hadIdleTarget = true;
-                }
-                // Calcula la dirección hacia la posición objetivo y mueve al enemigo hacia esa posición
-                direction = idleTargetPosition - (Vector2)transform.position;
-
-                // Si el enemigo está lo suficientemente cerca de la posición objetivo, deja de moverse y genera una nueva posición objetivo en el siguiente ciclo
-                if (direction.magnitude < 0.1f)
-                {
-                    // Si el enemigo ha llegado a la posición objetivo, resetea la variable para generar una 
-                    // nueva posición objetivo en el siguiente ciclo
-                    isWaiting = true; // El enemigo entra en estado de espera antes de generar una nueva posición objetivo
-                    rb.linearVelocity = Vector2.zero;
-                }
-                else
-                {
-                    // Mueve al enemigo hacia la posición objetivo a una velocidad constante
-                    rb.linearVelocity = direction.normalized * enemyType.GetMoveSpeed;
-                }
-
+                Idle();
                 break;
             case EnemyState.Chasing:
-                if(player == null) return;
-                // El enemigo se mueve hacia el jugador
-                isWaiting = false;
-                direction = (player.position - transform.position).normalized;
-                rb.MovePosition(transform.position + (Vector3) direction * enemyType.GetMoveSpeed * Time.fixedDeltaTime);
+                Chase();
+                break;
+            case EnemyState.Attack:
                 Attack();
                 break;
         }
+    }
+
+    //Metodo que define el estado idle
+    private void Idle()
+    {
+        // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
+        // esto solo ocurre si el enemigo no está esperando antes de generar una nueva posición objetivo
+        if (isWaiting)
+        {
+            // Si el enemigo está esperando, incrementa el temporizador de espera
+            idleWaitTimer += Time.fixedDeltaTime;
+            if (idleWaitTimer >= idleWaitTime)
+            {
+                // Si el tiempo de espera ha pasado, el enemigo deja de esperar 
+                // y puede generar una nueva posición objetivo
+                isWaiting = false;
+                idleWaitTimer = 0f;
+                hadIdleTarget = false; // Resetea la variable para generar una nueva posición objetivo
+            }
+            rb.linearVelocity = Vector2.zero; // Detiene el movimiento mientras espera
+            return;
+        }
+
+        // El enemigo se mueve aleatoriamente dentro de un radio alrededor de su posición inicial
+        if (!hadIdleTarget)
+        {
+            // Si el enemigo no tiene una posición objetivo, genera una nueva posición aleatoria dentro del radio de movimiento
+            idleTargetPosition = GetRandomIdlePosition();
+            hadIdleTarget = true;
+        }
+        // Calcula la dirección hacia la posición objetivo y mueve al enemigo hacia esa posición
+        direction = idleTargetPosition - (Vector2)transform.position;
+
+        // Si el enemigo está lo suficientemente cerca de la posición objetivo, deja de moverse y genera una nueva posición objetivo en el siguiente ciclo
+        if (direction.magnitude < 0.1f)
+        {
+            // Si el enemigo ha llegado a la posición objetivo, resetea la variable para generar una 
+            // nueva posición objetivo en el siguiente ciclo
+            isWaiting = true; // El enemigo entra en estado de espera antes de generar una nueva posición objetivo
+            rb.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            // Mueve al enemigo hacia la posición objetivo a una velocidad constante
+            rb.linearVelocity = direction.normalized * enemyType.GetMoveSpeed;
+        }
+    }
+
+    //Metodo que define el estado chase
+    private void Chase()
+    {
+        if(player == null) return;
+        // El enemigo se mueve hacia el jugador
+        isWaiting = false;
+        direction = (player.position - transform.position).normalized;
+        rb.MovePosition(transform.position + (Vector3) direction * enemyType.GetMoveSpeed * Time.fixedDeltaTime);
+    }
+
+    // Metodo que define el estado attack, definido por herencia
+    protected virtual void Attack()
+    {
+        currentState = EnemyState.Chasing;
     }
 
     private void ManageAnims()
@@ -173,6 +202,9 @@ public class EnemyController : MonoBehaviour
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
             player.TakeDamage(enemyType.GetBodyDamage);
+
+            // Al chocar, impedir que sea empujado
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -182,6 +214,9 @@ public class EnemyController : MonoBehaviour
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
             player.TakeDamage(enemyType.GetBodyDamage);
+
+            // Al chocar, impedir que sea empujado
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -207,10 +242,14 @@ public class EnemyController : MonoBehaviour
         hitbox.enabled = false;
         anim.SetTrigger("hurt");
     }
-
-    //Metodo que define el ataque de cada enemigo al heredar
-    protected virtual void Attack()
+    public void ActivateAttack()
     {
-        
+        attack.SetActive(true);
+        if(attackAnim != null) attackAnim.SetTrigger("attack");
+    }
+
+    public void StopAttack()
+    {
+        attack.SetActive(false);
     }
 }

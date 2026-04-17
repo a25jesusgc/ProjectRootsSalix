@@ -69,6 +69,17 @@ public class PlayerHealthController : MonoBehaviour
 
     void RestartGame()
     {
+        StartCoroutine(DefeatedCoroutine());
+    }
+
+    private IEnumerator DefeatedCoroutine()
+    {
+        GlobalUtils.pause = true;
+
+        yield return new WaitForSeconds(0.15f);
+
+        GlobalUtils.pause = false;
+
         GetComponent<PlayerController>().transform.position = PlayerData.GetInstance.GetRespawn;
         currentHP = maxHP;
     }

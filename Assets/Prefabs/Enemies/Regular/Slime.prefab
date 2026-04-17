@@ -5087,6 +5087,10 @@ MonoBehaviour:
   idleWaitTime: 2
   detectionRadius: 5
   alertRadius: 5
+  attack: {fileID: 4831086944621234411}
+  attackRange: 1
+  rb: {fileID: 0}
+  currentState: 0
 --- !u!114 &6413388556315471812
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,33 +1,31 @@
+using System.Collections;
 using UnityEngine;
 public class EnemyWolfClaw : EnemyController
 {
-    //Rango del ataque
-    [SerializeField] private float range = 1.5f;
-    //Enfriamiento del ataque
-    [SerializeField] private float cooldown = 2f; 
-    //Temporizador para ejecutar de nuevo el ataque
-    private float timer;
+    // Bool para ejecutar de nuevo el ataque
+    private bool canAttack = true;
 
     protected override void Attack()
     {
-        if (player == null) return; //Si no hay jugador, se corta
+        if (player == null || !canAttack) return; //Si no hay jugador o no puede atacar, se corta
 
-        //Calcula la distancia al jugador
-        float distance = Vector2.Distance(transform.position, player.position);
-        //Si esta en rango, ataca
-        if (range >=distance)
-        {
-            timer += Time.deltaTime;
-  
-            //Si ya acabo el cooldown, aplica el ataque
-            if (timer >= cooldown)
-            {
-                anim.SetTrigger("attack");
+        StartCoroutine(WolfClawAttackCoroutine());
+    }
 
-                player.GetComponent<PlayerHealthController>().TakeDamage(enemyType.GetAttackDamage);
+    private IEnumerator WolfClawAttackCoroutine()
+    {
+        canAttack = false; // No puede iniciar ataque porque ya está atacando
+        rb.linearVelocity = Vector2.zero; // Detiene el movimiento mientras ataca
 
-                timer = 0f;
-            }
-        }
+        anim.SetTrigger("attack"); // Animación de ataque
+        Vector3 playerDirection = (player.position - transform.position).normalized;
+        attack.transform.localPosition = playerDirection * 1f;
+        attack.transform.rotation = Quaternion.LookRotation(Vector3.forward, playerDirection);
+
+        yield return new WaitForSeconds(0.65f); // Duración del ataque
+
+        // Vuelve a estado perseguir (lo cual volverá a ataque en caso de seguir en el rango), y puede volver a atacar
+        currentState = EnemyState.Chasing;
+        canAttack = true;
     }
 }
