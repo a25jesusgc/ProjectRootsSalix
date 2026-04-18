@@ -7,7 +7,6 @@ public class PotBreakable : BreakableProp
 
     public override void OnBreak()
     {
-        Debug.Log("Pot Broken");
         col.enabled = false;
     }
 }

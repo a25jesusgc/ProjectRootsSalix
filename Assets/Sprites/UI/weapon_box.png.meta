@@ -128,7 +128,7 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 6, y: 6, z: 6, w: 6}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -184,6 +184,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: weapon_box_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b742f416b176b4c8d2d2ce4e716c9b
+      internalID: -674635767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -203,6 +225,7 @@ TextureImporter:
       weapon_box_0: 2335569858215583765
       weapon_box_1: -4941991821978846925
       weapon_box_2: 8506456779090639032
+      weapon_box_3: -674635767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

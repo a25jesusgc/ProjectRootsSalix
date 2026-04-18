@@ -1,4 +1,5 @@
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private const float INTERACT_RANGE = 1f;
     private const float CROSSHAIR_RANGE = 2f;
     private const float DASH_CD = 0.5f;
+    private const float DASH_SPEED = 20f;
+    private const float HOOK_JUMP_SPEED = 20f;
     [SerializeField] private PlayerInteractor interactBox;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
@@ -14,14 +17,17 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private Rigidbody2D rb;
     private PlayerWeaponController playerWeaponController;
+    private FertilizerSelector fertilizerSelector;
 
     private Vector2 movement;
+    private float speed;
     private Vector2 aim;
     private Animator anim;
-    private bool isDashing;
     private bool isAttacking;
-
+    private bool isDashing;
     private float dashCooldown;
+    private bool isHookJumping;
+    private Transform hookTarget;
 
     public Vector2 GetAimDirection => aim;
 
@@ -31,8 +37,10 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         playerWeaponController = GetComponent<PlayerWeaponController>();
+        fertilizerSelector = GetComponent<FertilizerSelector>();
         anim = GetComponent<Animator>();
         transform.position = PlayerData.GetInstance.GetRespawn;
+        speed = movSpeed;
     }
 
     // Update is called once per frame
@@ -58,8 +66,15 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             return;
         }
-        // Mueve al jugador
-        rb.linearVelocity = movement * movSpeed * (isDashing ? 4f : 1f);
+        // Mueve al jugador, dependiendo de si se desplaza manualmente o está siendo desplazado con el gancho
+        if (isHookJumping && hookTarget != null)
+        {
+            rb.linearVelocity = (hookTarget.position - transform.position).normalized * HOOK_JUMP_SPEED;
+        }
+        else
+        {
+            rb.linearVelocity = movement * (isDashing ? DASH_SPEED : speed);
+        }
     }
 
 
@@ -85,11 +100,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Si no está dasheando, puede moverse / disparar / dashear
-        if (!isDashing)
+        if (!isDashing && !isHookJumping)
         {
+            // MOVIMIENTO
             // Vector de movimiento del jugador
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
+            // DISPARO
             // Check de si se pulsa el botón para la acción de disparar
             if (playerInput.actions["Shoot"].IsPressed())
             {
@@ -97,35 +114,55 @@ public class PlayerController : MonoBehaviour
                 isAttacking = true;
             }
 
-            if (playerInput.actions["Shoot"].WasReleasedThisFrame())
-            {
-                isAttacking = false;
-            }
-
+            // DASH
             // Check de si se pulsa el botón para la acción de dashear
             if (dashCooldown <= 0 && playerInput.actions["Dash"].triggered)
             {
                 StartCoroutine(DashCoroutine());
                 dashCooldown = DASH_CD;
             }
+
+            // INTERACTUAR
+            // Check de si se pulsa el botón para interactuar
+            if (playerInput.actions["Interact"].triggered)
+            {
+                interactBox.Interact();
+            }
         }
 
+        // DETENER DISPARO
+        if (playerInput.actions["Shoot"].WasReleasedThisFrame())
+        {
+            playerWeaponController.StopCurrentWeapon();
+            isAttacking = false;
+        }
+
+        // ARMA ANTERIOR
         // Check de si se pulsa el botón para cambiar al arma anterior
         if (playerInput.actions["PreviousWeapon"].triggered)
         {
             playerWeaponController.SelectPreviousWeapon();
         }
 
+        // ARMA SIGUIENTE
         // Check de si se pulsa el botón para cambiar a la siguiente arma
         if (playerInput.actions["NextWeapon"].triggered)
         {
             playerWeaponController.SelectNextWeapon();
         }
 
-        // Check de si se pulsa el botón para interactuar
-        if (playerInput.actions["Interact"].triggered)
+        // FERTILIZANTE ANTERIOR
+        // Check de si se pulsa el botón para cambiar al fertilizante anterior
+        if (playerInput.actions["PreviousFertilizer"].triggered)
         {
-            interactBox.Interact();
+            fertilizerSelector.SelectPreviousFertilizer();
+        }
+
+        // FERTILIZANTE SIGUIENTE
+        // Check de si se pulsa el botón para cambiar al siguiente fertilizante
+        if (playerInput.actions["NextFertilizer"].triggered)
+        {
+            fertilizerSelector.SelectNextFertilizer();
         }
         
     }
@@ -139,11 +176,50 @@ public class PlayerController : MonoBehaviour
 
     private void ManageAnims()
     {
+        anim.speed = GlobalUtils.pause ? 0 : 1;
         anim.SetFloat("mov_x", movement.magnitude > 0 ? movement.x : aim.x);
         anim.SetFloat("mov_y", movement.magnitude > 0 ? movement.y : aim.y);
         anim.SetFloat("aim_x", aim.x);
         anim.SetFloat("aim_y", aim.y);
         anim.SetFloat("is_moving", movement.magnitude);
         anim.SetBool("attack", isAttacking);
+        anim.SetBool("dash", isDashing || isHookJumping);
+    }
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+    public void ResetSpeed()
+    {
+        speed = movSpeed;
+    }
+
+    public void StartHookJump(Transform newTarget)
+    {
+        isHookJumping = true;
+        hookTarget = newTarget;
+    }
+
+    public void StopHookJump()
+    {
+        isHookJumping = false;
+        hookTarget = null;
+    }
+
+    // Si choca contra el jugador, o el jugador contra el enemigo, evitar que sea empujado
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 }

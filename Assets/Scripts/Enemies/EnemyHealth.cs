@@ -38,4 +38,5 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public float GetHealthPercentage => (float)currentHP / enemyType.GetHealth;
+    public float GetDrainEffectiveness => enemyType.GetResistances[(int) DamageType.THORN];
 }

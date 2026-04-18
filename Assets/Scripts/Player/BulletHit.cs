@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class BulletHit : MonoBehaviour
 {
-    [SerializeField] private int damage;
-    [SerializeField] private DamageType damageType;
-    [SerializeField] private GameObject hitEffect;
+    public int damage;
+    public DamageType damageType;
+    public GameObject hitEffect;
 
     void OnCollisionEnter2D(Collision2D collision)
+    {
+        HitEnemy(collision);
+    }
+
+    public virtual void HitEnemy(Collision2D collision)
     {
         // Si ha chocado contra un enemigo, éste recibe daño
         if (collision.collider.CompareTag("Enemy"))

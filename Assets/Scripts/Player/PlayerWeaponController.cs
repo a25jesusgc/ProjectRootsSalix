@@ -5,6 +5,7 @@ public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerWeapon[] weapons;
     [SerializeField] private PlayerWeaponSelection weaponSelection;
+    [SerializeField] private PlayerFertilizerSelection fertilizerSelection;
     private PlayerWeapon currentWeapon;
     private int currentWeaponIndex;
 
@@ -49,14 +50,22 @@ public class PlayerWeaponController : MonoBehaviour
     // Actualiza el arma seleccionada según el índice
     public void UpdateSelectedWeapon(int index)
     {
+        if(currentWeapon != null) currentWeapon.StopShoot();
         int weaponIndex = PlayerData.GetInstance.GetAvailableWeapons[index];
         currentWeapon = weapons[weaponIndex];
         if(weaponSelection != null) weaponSelection.UpdateSelectedWeaponIcon(weaponIndex);
+        if(fertilizerSelection != null) fertilizerSelection.ShowFertilizerBox(currentWeapon is PlayerCannon);
     }
 
     // Dispara el arma seleccionada
     public void ShootCurrentWeapon()
     {
         currentWeapon.Shoot();
+    }
+
+    // Detiene el arma seleccionada
+    public void StopCurrentWeapon()
+    {
+        currentWeapon.StopShoot();
     }
 }

@@ -4,8 +4,7 @@ public class PlayerFlamethrower : PlayerWeapon
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private PlayerHealthController playerHealthController;
-    private const float SHOOT_CD = 0.05f;
-    private const float ANGLE_SPREAD = 8f;
+    [SerializeField] private AudioSource shootSound;
 
     public override void Shoot()
     {
@@ -13,10 +12,10 @@ public class PlayerFlamethrower : PlayerWeapon
         if(shootCooldown > 0) return;
         
         // Disparar consume vida
-        playerHealthController.TakeDamage(1, true);
+        playerHealthController.TakeDamage(PlayerWeaponConstants.FLAMETHROWER_SELF_DAMAGE, true);
 
         // Calcula la dirección
-        Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-ANGLE_SPREAD, ANGLE_SPREAD)) * playerController.GetAimDirection;
+        Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-PlayerWeaponConstants.FLAMETHROWER_ANGLE_SPREAD, PlayerWeaponConstants.FLAMETHROWER_ANGLE_SPREAD)) * playerController.GetAimDirection;
         Vector3 position = transform.position + new Vector3(direction.x, direction.y);
 
         // Instancia el objeto de llama
@@ -24,8 +23,16 @@ public class PlayerFlamethrower : PlayerWeapon
         // Se le asigna su movimiento
         Vector2 mov = direction * bulletSpeed;
         bulletObject.GetComponent<Rigidbody2D>().linearVelocity = mov;
+        bulletObject.GetComponent<BulletHit>().damage = PlayerWeaponConstants.FLAMETHROWER_DAMAGE;
+
+        if(!shootSound.isPlaying) shootSound.Play();
 
         // Tras disparar necesita recargarse
-        shootCooldown = SHOOT_CD;
+        shootCooldown = PlayerWeaponConstants.FLAMETHROWER_CD;
+    }
+
+    public override void StopShoot()
+    {
+        shootSound.Stop();
     }
 }
