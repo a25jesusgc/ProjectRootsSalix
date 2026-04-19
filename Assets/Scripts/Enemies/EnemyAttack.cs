@@ -4,6 +4,8 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Enemy enemyType;
 
+    private float multiplier = 1f;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         DamagePlayer(collision);
@@ -20,8 +22,13 @@ public class EnemyAttack : MonoBehaviour
         {
             if (collision.TryGetComponent(out PlayerHealthController playerHealth))
             {
-                playerHealth.TakeDamage(enemyType.GetAttackDamage);
+                playerHealth.TakeDamage(Mathf.RoundToInt(enemyType.GetAttackDamage * multiplier));
             }
         }
+    }
+
+    public void SetMultiplier(float value)
+    {
+        multiplier = value;
     }
 }

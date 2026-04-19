@@ -54,7 +54,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueContinueIcon.SetActive(!isWrittingText);
     }
 
-    public void ShowDialogue(List<Dialogue> dialogues)
+    public void ShowDialogue(List<Dialogue> dialogues, bool startAlready = false)
     {
         if(dialogues == null || dialogues.Count < 1) return;
         GlobalUtils.pause = true;
@@ -63,6 +63,7 @@ public class DialogueSystem : MonoBehaviour
         currentDialogues = dialogues;
         dialogueText.text = "";
         dialogueBox.SetActive(true);
+        if(startAlready) ProgressDialogue();
     }
 
     public void ProgressDialogue()
