@@ -3,18 +3,24 @@ using UnityEngine;
 public class EnemyWolfClaw : EnemyController
 {
     // Bool para ejecutar de nuevo el ataque
-    private bool canAttack = true;
+    private bool isAttacking = false;
 
     protected override void Attack()
     {
-        if (player == null || !canAttack) return; //Si no hay jugador o no puede atacar, se corta
+        if (player == null) return; //Si no hay jugador, no continua
+        if (isAttacking)
+        {
+            // Si ya está atacando, se queda quieto mientras ataca y no continua
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
         StartCoroutine(WolfClawAttackCoroutine());
     }
 
     private IEnumerator WolfClawAttackCoroutine()
     {
-        canAttack = false; // No puede iniciar ataque porque ya está atacando
+        isAttacking = true; // No puede iniciar ataque porque ya está atacando
         rb.linearVelocity = Vector2.zero; // Detiene el movimiento mientras ataca
 
         anim.SetTrigger("attack"); // Animación de ataque
@@ -26,6 +32,6 @@ public class EnemyWolfClaw : EnemyController
 
         // Vuelve a estado perseguir (lo cual volverá a ataque en caso de seguir en el rango), y puede volver a atacar
         currentState = EnemyState.Chasing;
-        canAttack = true;
+        isAttacking = false;
     }
 }
