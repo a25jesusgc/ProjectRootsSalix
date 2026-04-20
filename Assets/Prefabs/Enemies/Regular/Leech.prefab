@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 128444817306487366}
   - component: {fileID: 7065506271789341696}
   - component: {fileID: 4542537230144230353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leech
   m_TagString: Enemy
   m_Icon: {fileID: 0}

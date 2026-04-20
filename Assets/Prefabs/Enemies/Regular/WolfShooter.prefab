@@ -4994,7 +4994,7 @@ GameObject:
   - component: {fileID: 6425329431257040553}
   - component: {fileID: -1362685165160848782}
   - component: {fileID: 5388584903367393178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WolfShooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5175,8 +5175,9 @@ MonoBehaviour:
   currentState: 0
   firePoint: {fileID: 2709098595665501562}
   bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 10
   shootSound: {fileID: 6425329431257040553}
+  attackDuration: 0.65
 --- !u!114 &-2667206874788406347
 MonoBehaviour:
   m_ObjectHideFlags: 0

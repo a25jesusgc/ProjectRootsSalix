@@ -2182,7 +2182,7 @@ Camera:
   far clip plane: 5000
   field of view: 5
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -96631,14 +96631,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WolfShooter
       objectReference: {fileID: 0}
-    - target: {fileID: 1679417531625705626, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1679417531625705626, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6110091050426103004, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -96678,14 +96670,6 @@ PrefabInstance:
     - target: {fileID: 6110091050426103004, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8883383113691302204, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
-      propertyPath: bulletSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8883383113691302204, guid: 78ae69c09f1382f4296f684e3f480b36, type: 3}
-      propertyPath: attackDuration
-      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

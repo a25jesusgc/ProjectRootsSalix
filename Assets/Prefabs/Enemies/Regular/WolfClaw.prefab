@@ -5175,7 +5175,7 @@ GameObject:
   - component: {fileID: -6287937738559168745}
   - component: {fileID: 174856132200728342}
   - component: {fileID: -122120408878430356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WolfClaw
   m_TagString: Enemy
   m_Icon: {fileID: 0}

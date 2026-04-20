@@ -205,6 +205,7 @@ public class EnemyController : MonoBehaviour
 
             // Al chocar, impedir que sea empujado
             rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
         }
     }
 
@@ -217,6 +218,15 @@ public class EnemyController : MonoBehaviour
 
             // Al chocar, impedir que sea empujado
             rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Al dejar de chocar que se vuelva a mover de forma normal
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
