@@ -11,19 +11,29 @@ public class AlphaWolfBoss : MonoBehaviour
     private Collider2D col;
 
     [SerializeField] private Enemy enemy;
+    [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private Transform dashIndicator;
     [SerializeField] private Transform leftDashPoint;
     [SerializeField] private Transform rightDashPoint;
+    [SerializeField] private Transform arenaCenter;
     [SerializeField] private float minArenaY;
     [SerializeField] private float maxArenaY;
+    [SerializeField] private Animator clawAttack;
     [SerializeField] private EnemyAttack dashAttack;
+    [SerializeField] private GameObject bulletPrefab;
 
+    private const float CLAW_ATTACK_RANGE = 3f;
     private const float DASH_INDICATOR_TIME = 0.25f;
     private const float DASH_SPEED = 80f;
     private const float MULTIDASH_INDICATOR_TIME = 0.15f;
     private const float MULTIDASH_SPEED = 160f;
+    private const float BULLET_SPEED = 18f;
+    private const float BULLET_SPREAD = 5f;
+    private const float BULLET_FIRE_RATE = 0.2f;
+    private const float BARRAGE_FIRE_RATE = 0.05f;
 
 
+    private Vector2 mov;
     private bool chooseAttack;
     private int chosenAttack;
     private int lastAttackUsed;
@@ -44,15 +54,16 @@ public class AlphaWolfBoss : MonoBehaviour
     {
         if(player == null || GlobalUtils.pause) return;
 
+        mov = (player.position - transform.position).normalized;
+
         if (chooseAttack)
         {
             do{
-                chosenAttack = Random.Range(0, 5);
+                chosenAttack = Random.Range(0, enemyHealth.GetHealthPercentage <= 0.5f ? 5 : 3);
             }while(chosenAttack == lastAttackUsed);
-
-            Debug.Log("ATTACK " + chosenAttack);
             
             chooseAttack = false;
+            lastAttackUsed = chosenAttack;
             
             StartCoroutine(GetAttack(chosenAttack));
         }
@@ -87,8 +98,31 @@ public class AlphaWolfBoss : MonoBehaviour
     // Se acerca al jugador y le da un arañazo
     private IEnumerator ClawAttack()
     {
+        anim.SetBool("walking", true);
+        float distance = Vector3.Distance(player.position, transform.position);
+        while (distance > CLAW_ATTACK_RANGE)
+        {
+            distance = Vector3.Distance(player.position, transform.position);
+            mov = (player.position - transform.position).normalized;
+            anim.SetFloat("x", mov.x);
+            anim.SetFloat("y", mov.y);
+
+            rb.linearVelocity = mov * enemy.GetMoveSpeed;
+
+            yield return null;
+        }
+
+        // Claw Attack
+        anim.SetBool("walking", false);
+        anim.SetTrigger("attack");
+        rb.linearVelocity = Vector2.zero;
+
+        clawAttack.transform.localPosition = mov * CLAW_ATTACK_RANGE;
+        clawAttack.transform.GetChild(0).rotation = Quaternion.LookRotation(Vector3.forward, mov);
+
         yield return new WaitForSeconds(1f);
-        chooseAttack = true;
+
+        yield return StartCoroutine(EndAttackRecovery());
     }
 
     // Se abalanza de un lado a otro del campo
@@ -114,21 +148,92 @@ public class AlphaWolfBoss : MonoBehaviour
         anim.SetBool("dashing", false);
         yield return new WaitForSeconds(1f); // Espera a terminar la animación de regreso
 
-        chooseAttack = true;
+        anim.SetFloat("x", mov.x);
+        anim.SetFloat("y", mov.y);
+
+        yield return StartCoroutine(EndAttackRecovery());
     }
 
     // Dispara con el cañón hacia el jugador
     private IEnumerator ShootAttack()
     {
-        yield return new WaitForSeconds(1f);
-        chooseAttack = true;
+        anim.SetBool("shooting", true);
+        anim.SetTrigger("open_cannon");
+        yield return new WaitForSeconds(0.65f); // Espera a terminar la animación de abrir cañón
+
+        yield return new WaitForSeconds(0.25f); // Pequeña espera para dar tiempo de reacción
+
+        int bulletAmount = Random.Range(10, 24);
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            anim.SetFloat("x", mov.x);
+            anim.SetFloat("y", mov.y);
+
+            //Instancia la bala donde se encuentra el enemigo
+            Vector2 direction = Quaternion.Euler(0f, 0f, Random.Range(-BULLET_SPREAD, BULLET_SPREAD)) * mov;
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, direction));
+            //Le da velocidad
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * BULLET_SPEED;
+            // Le pasa el daño que debe hacer a bullet
+            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
+
+            yield return new WaitForSeconds(BULLET_FIRE_RATE); // Cadencia de disparo
+        }
+        anim.SetBool("shooting", false);
+
+        yield return StartCoroutine(EndAttackRecovery());
     }
 
     // Dispara con el cañón en todas direcciones
     private IEnumerator BarrageAttack()
     {
-        yield return new WaitForSeconds(1f);
-        chooseAttack = true;
+        // Va al centro de la arena primero
+        anim.SetBool("walking", true);
+        float distance = Vector3.Distance(arenaCenter.position, transform.position);
+        Vector2 arenaDirection;
+        while (distance > 0.2f)
+        {
+            distance = Vector3.Distance(arenaCenter.position, transform.position);
+            arenaDirection = (arenaCenter.position - transform.position).normalized;
+            anim.SetFloat("x", arenaDirection.x);
+            anim.SetFloat("y", arenaDirection.y);
+
+            rb.linearVelocity = arenaDirection * enemy.GetMoveSpeed;
+
+            yield return null;
+        }
+        anim.SetBool("walking", false);
+        rb.linearVelocity = Vector2.zero;
+
+        // Realiza la ráfaga de disparos
+
+        anim.SetBool("shooting", true);
+        anim.SetTrigger("open_cannon");
+        yield return new WaitForSeconds(0.65f); // Espera a terminar la animación de abrir cañón
+
+        yield return new WaitForSeconds(0.25f); // Pequeña espera para dar tiempo de reacción
+
+        int bulletAmount = Random.Range(80, 100);
+        Vector2 aim = mov;
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            anim.SetFloat("x", aim.x);
+            anim.SetFloat("y", aim.y);
+
+            //Instancia la bala donde se encuentra el enemigo
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, aim));
+            //Le da velocidad
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = aim * BULLET_SPEED;
+            // Le pasa el daño que debe hacer a bullet
+            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
+
+            aim = Quaternion.Euler(0f, 0f, 16f) * aim;
+
+            yield return new WaitForSeconds(BARRAGE_FIRE_RATE); // Cadencia de disparo
+        }
+        anim.SetBool("shooting", false);
+
+        yield return StartCoroutine(EndAttackRecovery());
     }
 
     // Se abalanza de un lado a otro del campo varias veces
@@ -153,8 +258,11 @@ public class AlphaWolfBoss : MonoBehaviour
         dashAttack.gameObject.SetActive(false);
         anim.SetBool("dashing", false);
         yield return new WaitForSeconds(1f); // Espera a terminar la animación de regreso
+        
+        anim.SetFloat("x", mov.x);
+        anim.SetFloat("y", mov.y);
 
-        chooseAttack = true;
+        yield return StartCoroutine(EndAttackRecovery());
     }
 
 
@@ -216,5 +324,38 @@ public class AlphaWolfBoss : MonoBehaviour
 
             rb.linearVelocity = Vector2.zero;
         }
+    }
+
+    private IEnumerator EndAttackRecovery()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 0.5f));
+
+        chooseAttack = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
+            player.TakeDamage(enemy.GetBodyDamage);
+        }
+    }
+
+    public void ActivateClawAttack()
+    {
+        clawAttack.gameObject.SetActive(true);
+        if(clawAttack != null)
+        {
+            clawAttack.SetFloat("x", mov.x);
+            clawAttack.SetFloat("y", mov.y);
+            clawAttack.SetTrigger("attack");
+        }
+            
+    }
+
+    public void StopClawAttack()
+    {
+        clawAttack.gameObject.SetActive(false);
     }
 }

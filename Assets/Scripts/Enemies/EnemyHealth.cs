@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
     // Función de gestión de cuando la vida del enemigo llega a 0 y cae derrotado
     public void Defeat()
     {
-        enemyController.SetDefeated();
+        if(enemyController != null) enemyController.SetDefeated();
         Destroy(gameObject, 1f);
     }
 

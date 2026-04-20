@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 362339144502882998}
   - component: {fileID: 24616639362629573}
   - component: {fileID: -4774871719865766298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BearLumberjack
   m_TagString: Enemy
   m_Icon: {fileID: 0}
