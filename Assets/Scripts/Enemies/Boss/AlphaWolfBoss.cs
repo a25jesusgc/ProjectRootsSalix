@@ -9,6 +9,7 @@ public class AlphaWolfBoss : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private Collider2D col;
+    private AudioSource audioSource;
 
     [SerializeField] private Enemy enemy;
     [SerializeField] private EnemyHealth enemyHealth;
@@ -21,6 +22,7 @@ public class AlphaWolfBoss : MonoBehaviour
     [SerializeField] private Animator clawAttack;
     [SerializeField] private EnemyAttack dashAttack;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private AudioClip[] sfx;
 
     private const float CLAW_ATTACK_RANGE = 3f;
     private const float DASH_INDICATOR_TIME = 0.25f;
@@ -34,6 +36,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
 
     private Vector2 mov;
+    private Vector2 attackDirection;
     private bool chooseAttack;
     private int chosenAttack;
     private int lastAttackUsed;
@@ -44,6 +47,7 @@ public class AlphaWolfBoss : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        audioSource = GetComponent<AudioSource>();
 
         dashAttack.SetMultiplier(1f);
 
@@ -115,10 +119,12 @@ public class AlphaWolfBoss : MonoBehaviour
         // Claw Attack
         anim.SetBool("walking", false);
         anim.SetTrigger("attack");
+        PlaySfxAtPoint(0);
         rb.linearVelocity = Vector2.zero;
 
-        clawAttack.transform.localPosition = mov * CLAW_ATTACK_RANGE;
-        clawAttack.transform.GetChild(0).rotation = Quaternion.LookRotation(Vector3.forward, mov);
+        attackDirection = mov;
+        clawAttack.transform.localPosition = attackDirection * CLAW_ATTACK_RANGE;
+        clawAttack.transform.GetChild(0).rotation = Quaternion.LookRotation(Vector3.forward, attackDirection);
 
         yield return new WaitForSeconds(1f);
 
@@ -142,7 +148,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        transform.position = new Vector3(Random.Range(leftDashPoint.position.x, rightDashPoint.position.x), Random.Range(minArenaY, maxArenaY), 0);
+        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(minArenaY, maxArenaY), 0);
         col.enabled = true;
         dashAttack.gameObject.SetActive(false);
         anim.SetBool("dashing", false);
@@ -159,6 +165,7 @@ public class AlphaWolfBoss : MonoBehaviour
     {
         anim.SetBool("shooting", true);
         anim.SetTrigger("open_cannon");
+        PlaySfx(4);
         yield return new WaitForSeconds(0.65f); // Espera a terminar la animación de abrir cañón
 
         yield return new WaitForSeconds(0.25f); // Pequeña espera para dar tiempo de reacción
@@ -176,6 +183,7 @@ public class AlphaWolfBoss : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * BULLET_SPEED;
             // Le pasa el daño que debe hacer a bullet
             bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
+            PlaySfx(5);
 
             yield return new WaitForSeconds(BULLET_FIRE_RATE); // Cadencia de disparo
         }
@@ -209,6 +217,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
         anim.SetBool("shooting", true);
         anim.SetTrigger("open_cannon");
+        PlaySfx(4);
         yield return new WaitForSeconds(0.65f); // Espera a terminar la animación de abrir cañón
 
         yield return new WaitForSeconds(0.25f); // Pequeña espera para dar tiempo de reacción
@@ -228,6 +237,7 @@ public class AlphaWolfBoss : MonoBehaviour
             bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
 
             aim = Quaternion.Euler(0f, 0f, 16f) * aim;
+            PlaySfx(5);
 
             yield return new WaitForSeconds(BARRAGE_FIRE_RATE); // Cadencia de disparo
         }
@@ -253,7 +263,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        transform.position = new Vector3(Random.Range(leftDashPoint.position.x, rightDashPoint.position.x), Random.Range(minArenaY, maxArenaY), 0);
+        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(minArenaY, maxArenaY), 0);
         col.enabled = true;
         dashAttack.gameObject.SetActive(false);
         anim.SetBool("dashing", false);
@@ -278,10 +288,12 @@ public class AlphaWolfBoss : MonoBehaviour
         transform.position = new Vector3(leftSide ? leftDashPoint.position.x : rightDashPoint.position.x, dashIndicator.position.y, 0);
 
         dashIndicator.gameObject.SetActive(true);
+        PlaySfxAtPoint(2);
         yield return new WaitForSeconds(DASH_INDICATOR_TIME);
         dashIndicator.gameObject.SetActive(false);
 
         rb.linearVelocity = new Vector2(leftSide ? DASH_SPEED : -DASH_SPEED, 0);
+        PlaySfx(3);
 
         yield return new WaitUntil(() => leftSide ? transform.position.x > rightDashPoint.position.x : transform.position.x < leftDashPoint.position.x);
 
@@ -303,6 +315,7 @@ public class AlphaWolfBoss : MonoBehaviour
             dashPositions[i] = dashIndicator.position.y;
 
             dashIndicator.gameObject.SetActive(true);
+            PlaySfxAtPoint(2);
             yield return new WaitForSeconds(MULTIDASH_INDICATOR_TIME);
             dashIndicator.gameObject.SetActive(false);
         }
@@ -319,6 +332,7 @@ public class AlphaWolfBoss : MonoBehaviour
             transform.position = new Vector3(leftSide ? leftDashPoint.position.x : rightDashPoint.position.x, dashPositions[i], 0);
 
             rb.linearVelocity = new Vector2(leftSide ? MULTIDASH_SPEED : -MULTIDASH_SPEED, 0);
+            PlaySfx(3);
 
             yield return new WaitUntil(() => leftSide ? transform.position.x > rightDashPoint.position.x : transform.position.x < leftDashPoint.position.x);
 
@@ -345,17 +359,28 @@ public class AlphaWolfBoss : MonoBehaviour
     public void ActivateClawAttack()
     {
         clawAttack.gameObject.SetActive(true);
-        if(clawAttack != null)
-        {
-            clawAttack.SetFloat("x", mov.x);
-            clawAttack.SetFloat("y", mov.y);
-            clawAttack.SetTrigger("attack");
-        }
+        clawAttack.SetFloat("x", attackDirection.x);
+        clawAttack.SetFloat("y", attackDirection.y);
+        PlaySfx(1);
+        clawAttack.SetTrigger("attack");
             
     }
 
     public void StopClawAttack()
     {
         clawAttack.gameObject.SetActive(false);
+    }
+
+    private void PlaySfx(int index)
+    {
+        audioSource.spatialBlend = 1;
+        audioSource.clip = sfx[index];
+        audioSource.Play();
+    }
+    private void PlaySfxAtPoint(int index)
+    {
+        audioSource.spatialBlend = 0;
+        audioSource.clip = sfx[index];
+        audioSource.Play();
     }
 }
