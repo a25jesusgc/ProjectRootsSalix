@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
 
     [SerializeField] private CinemachineCamera cinemachineCamera;
+    [SerializeField] private CinemachineConfiner2D cinemachineConfiner;
 
     [SerializeField] private Transform player;
 
@@ -22,6 +23,11 @@ public class CameraController : MonoBehaviour
     public void ResetTrackingTarget()
     {
         cinemachineCamera.Follow = player;
+    }
+
+    public void SetConfiner(Collider2D bounding)
+    {
+        cinemachineConfiner.BoundingShape2D = bounding;
     }
 
 }

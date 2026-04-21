@@ -52,15 +52,6 @@ public class VineProjectile : MonoBehaviour
         {
             playerVine.StopVine();
         }
-        
-        // Si tiene un objetivo pero se sale de la distancia máxima de agarre, el gancho vuelve
-        if (target != null)
-        {
-            if(Vector3.Distance(target.position, playerVine.transform.position) > MAX_RANGE)
-            {
-                playerVine.StopVine();
-            }
-        }
     }
 
     void FixedUpdate()
@@ -71,6 +62,11 @@ public class VineProjectile : MonoBehaviour
             // Mientras el objetivo sea válido, se mantiene enganchado
             if (target != null)
             {
+                if(Vector3.Distance(target.position, playerVine.transform.position) > MAX_RANGE)
+                {
+                    playerVine.StopVine();
+                    return;
+                }
                 transform.position = target.position;
                 rb.linearVelocity = Vector2.zero;
             }
