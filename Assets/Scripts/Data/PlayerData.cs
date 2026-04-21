@@ -12,24 +12,24 @@ public class PlayerData
     public static PlayerData GetInstance => instance != null ? instance : Load();
     public static void ResetInstance() => instance = new PlayerData();
 
-    [SerializeField] private Vector3 respawnPoint;
-    [SerializeField] private string zone;
+    [SerializeField] private Checkpoint checkpoint;
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
+    [SerializeField] private List<string> checkpointsDiscovered;
     [SerializeField] private int lifeUpgrades;
     [SerializeField] private List<PlayerFertilizer> playerFertilizers;
 
-    public Vector3 GetRespawn => respawnPoint;
-    public void SetRepawnPoint(Vector3 value) => respawnPoint = value;
-
-    public string GetZone => zone;
-    public void SetZone(string value) => zone = value;
+    public Checkpoint GetCheckpoint => checkpoint;
+    public void SetCheckpoint(Checkpoint value) => checkpoint = value;
     
     public List<int> GetAvailableWeapons => availableWeapons;
     public void UnlockWeapon(int index) => availableWeapons.Add(index);
     
     public bool WasItemPicked(string id) => itemsPicked.Contains(id);
     public void PickItem(string id) => itemsPicked.Add(id);
+    
+    public bool WasCheckpointDiscovered(Checkpoint checkpoint) => checkpointsDiscovered.Contains(checkpoint.GetID);
+    public void DiscoverCheckpoint(Checkpoint checkpoint) => checkpointsDiscovered.Add(checkpoint.GetID);
     
     public int GetLifeUpgrades => lifeUpgrades;
     public void GotLifeUpgrade() => lifeUpgrades++;
@@ -61,15 +61,14 @@ public class PlayerData
 
     public PlayerData()
     {
-        respawnPoint = new Vector3(-58f, 27f, 0f);
-        zone = "L0Cave";
+        checkpoint = null;
 
         // Empieza con las tres primeras armas desbloqueadas
         availableWeapons = new List<int>() {0, 1, 2};
 
         itemsPicked = new List<string>();
 
-        itemsPicked = new List<string>();
+        checkpointsDiscovered = new List<string>();
 
         lifeUpgrades = 0;
 

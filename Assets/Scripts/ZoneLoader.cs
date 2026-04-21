@@ -49,7 +49,8 @@ public class ZoneLoader : MonoBehaviour
     {
         GlobalUtils.pause = true;
         
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(PlayerData.GetInstance.GetZone, LoadSceneMode.Additive);
+        string scene = PlayerData.GetInstance.GetCheckpoint != null ? PlayerData.GetInstance.GetCheckpoint.GetScene : "L0Cave";
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         yield return new WaitUntil(() => asyncLoad.isDone);
 
         transitionController.PlayTransition(true);

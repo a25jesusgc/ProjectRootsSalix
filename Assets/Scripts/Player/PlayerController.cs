@@ -39,7 +39,10 @@ public class PlayerController : MonoBehaviour
         playerWeaponController = GetComponent<PlayerWeaponController>();
         fertilizerSelector = GetComponent<FertilizerSelector>();
         anim = GetComponent<Animator>();
-        transform.position = PlayerData.GetInstance.GetRespawn;
+
+        Vector3 startPosition = PlayerData.GetInstance.GetCheckpoint != null ? PlayerData.GetInstance.GetCheckpoint.GetPosition : new Vector3(-58f, 27f, 0f);
+        transform.position = startPosition;
+
         speed = movSpeed;
     }
 
