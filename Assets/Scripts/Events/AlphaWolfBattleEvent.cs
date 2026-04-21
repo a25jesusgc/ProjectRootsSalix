@@ -7,8 +7,10 @@ public class AlphaWolfBattleEvent : MonoBehaviour
     [SerializeField] private Animator bossAnim;
     [SerializeField] private AlphaWolfBoss boss;
     [SerializeField] private List<Dialogue> preBattleDialogues;
+    [SerializeField] private List<Dialogue> postBattleDialogues;
     [SerializeField] private Transform battlePosition;
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private AudioLoop forestTheme;
     [SerializeField] private AudioLoop battleTheme;
 
     private bool battleStarted;
@@ -18,19 +20,20 @@ public class AlphaWolfBattleEvent : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if(!battleStarted) StartBattle(collision.transform);
+            if(!battleStarted) Battle(collision.transform);
         }
     }
 
-    private void StartBattle(Transform player)
+    private void Battle(Transform player)
     {
         battleStarted = true;
-        StartCoroutine(StartBattleCoroutine(player));
+        StartCoroutine(BattleCoroutine(player));
     }
 
-    private IEnumerator StartBattleCoroutine(Transform player)
+    private IEnumerator BattleCoroutine(Transform player)
     {
         GlobalUtils.pause = true;
+        AudioManager.instance.MuteMusic(true);
 
         CameraController.instance.SetTrackingTarget(boss.transform);
 
@@ -49,6 +52,7 @@ public class AlphaWolfBattleEvent : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bossAnim.SetBool("howling", true);
+        AudioManager.instance.MuteMusic(false, 0f, true);
         AudioManager.instance.PlayMusic(battleTheme, true);
 
         yield return new WaitForSeconds(1f);
@@ -60,6 +64,20 @@ public class AlphaWolfBattleEvent : MonoBehaviour
         bossAnim.SetBool("howling", false);
         healthBar.SetActive(true);
         boss.SetPlayer(player);
+        GlobalUtils.pause = false;
+
+        yield return new WaitUntil(() => boss.isDefeated);
+
+        GlobalUtils.pause = true;
+        healthBar.SetActive(false);
+        AudioManager.instance.MuteMusic(true);
+
+        DialogueSystem.instance.ShowDialogue(postBattleDialogues, true);
+        yield return new WaitUntil(() => !DialogueSystem.instance.IsDialogueOpen);
+        GlobalUtils.pause = true;
+
+        AudioManager.instance.MuteMusic(false);
+        AudioManager.instance.PlayMusic(forestTheme);
         GlobalUtils.pause = false;
     }
 }

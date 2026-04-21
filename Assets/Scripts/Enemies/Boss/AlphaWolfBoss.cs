@@ -40,6 +40,7 @@ public class AlphaWolfBoss : MonoBehaviour
     private bool chooseAttack;
     private int chosenAttack;
     private int lastAttackUsed;
+     public bool isDefeated {get; private set;}
 
 
     void Start()
@@ -56,7 +57,15 @@ public class AlphaWolfBoss : MonoBehaviour
 
     void Update()
     {
-        if(player == null || GlobalUtils.pause) return;
+        if(player == null || GlobalUtils.pause || isDefeated) return;
+
+        if (!isDefeated && enemyHealth.GetHealthPercentage <= 0f)
+        {
+            isDefeated = true;
+            StopAllCoroutines();
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
         mov = (player.position - transform.position).normalized;
 
