@@ -15,9 +15,11 @@ public class RespawnInteractable : Interactable
         UpdateAvailableTravelPoints();
     }
 
-    // Al interactuar con un punto de respawn, se establece la ubicación y se guarda la partida
-    public override void OnInteract()
+    // Al interactuar con un punto de respawn, se recupera la vida, se establece el checkpoint y se guarda la partida
+    public override void OnInteract(Transform player)
     {
+        player.GetComponent<PlayerHealthController>().FullRecovery();
+
         if(!PlayerData.GetInstance.WasCheckpointDiscovered(checkpoint)) PlayerData.GetInstance.DiscoverCheckpoint(checkpoint);
         PlayerData.GetInstance.SetCheckpoint(checkpoint);
         PlayerData.Save();

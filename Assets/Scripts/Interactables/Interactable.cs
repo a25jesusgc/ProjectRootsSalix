@@ -8,5 +8,5 @@ public abstract class Interactable : MonoBehaviour
     {
         if(icon != null) icon.SetActive(value);
     }
-    public abstract void OnInteract();
+    public abstract void OnInteract(Transform player);
 }

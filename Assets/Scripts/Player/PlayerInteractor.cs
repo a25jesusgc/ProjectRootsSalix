@@ -8,7 +8,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (interactable != null)
         {
-            interactable.OnInteract();
+            interactable.OnInteract(transform.parent);
         }
     }
 

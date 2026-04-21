@@ -42,6 +42,12 @@ public class PlayerHealthController : MonoBehaviour
         if (currentHP > maxHP) currentHP = maxHP;
     }
 
+    // Función para curar al jugador completamente
+    public void FullRecovery()
+    {
+        currentHP = maxHP;
+    }
+
     // Función para recibir daño
     public void TakeDamage(int damage, bool selfInflicted = false)
     {

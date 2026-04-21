@@ -5,7 +5,7 @@ public class TextInteractable : Interactable
 {
     [SerializeField] private List<Dialogue> dialogues;
     
-    public override void OnInteract()
+    public override void OnInteract(Transform player)
     {
         DialogueSystem.instance.ShowDialogue(dialogues);
     }
