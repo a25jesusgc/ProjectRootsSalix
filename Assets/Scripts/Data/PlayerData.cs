@@ -13,6 +13,7 @@ public class PlayerData
     public static void ResetInstance() => instance = new PlayerData();
 
     [SerializeField] private Vector3 respawnPoint;
+    [SerializeField] private string zone;
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
     [SerializeField] private int lifeUpgrades;
@@ -20,6 +21,9 @@ public class PlayerData
 
     public Vector3 GetRespawn => respawnPoint;
     public void SetRepawnPoint(Vector3 value) => respawnPoint = value;
+
+    public string GetZone => zone;
+    public void SetZone(string value) => zone = value;
     
     public List<int> GetAvailableWeapons => availableWeapons;
     public void UnlockWeapon(int index) => availableWeapons.Add(index);
@@ -57,7 +61,8 @@ public class PlayerData
 
     public PlayerData()
     {
-        respawnPoint = Vector3.zero;
+        respawnPoint = new Vector3(-58f, 27f, 0f);
+        zone = "L0Cave";
 
         // Empieza con las tres primeras armas desbloqueadas
         availableWeapons = new List<int>() {0, 1, 2};

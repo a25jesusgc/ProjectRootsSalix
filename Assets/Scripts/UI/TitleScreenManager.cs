@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -19,14 +20,13 @@ public class TitleScreenManager : MonoBehaviour
 
     public void NewGame()
     {
-        // TODO empezar partida nueva
-        Debug.Log("Start New Game");
+        PlayerData.ResetInstance();
+        SceneManager.LoadScene("WorldScene");
     }
 
     public void Continue()
     {
-        // TODO continuar partida guardada
-        Debug.Log("Continue");
+        SceneManager.LoadScene("WorldScene");
     }
 
     public void Settings(bool value)

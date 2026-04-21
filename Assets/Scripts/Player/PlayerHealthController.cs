@@ -79,9 +79,8 @@ public class PlayerHealthController : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         GlobalUtils.pause = false;
-
-        GetComponent<PlayerController>().transform.position = PlayerData.GetInstance.GetRespawn;
-        currentHP = maxHP;
+        
+        SceneManager.LoadScene("WorldScene");
     }
 
     private IEnumerator InvulnerabilityCoroutine()

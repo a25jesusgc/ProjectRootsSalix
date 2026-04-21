@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
@@ -66,6 +67,12 @@ public class PauseGame : MonoBehaviour
     public void CloseSettings()
     {
         settingsWindow.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("TitleScreen");
     }
 
 }
