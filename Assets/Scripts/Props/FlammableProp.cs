@@ -1,0 +1,37 @@
+using System.Collections;
+using UnityEngine;
+
+public class FlammableProp : MonoBehaviour
+{
+    [SerializeField] private  Animator anim;
+    [SerializeField] private AudioSource burnSFX;
+    [SerializeField] private Collider2D col;
+
+    private bool isBurned;
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(isBurned) return;
+        if (collision.collider.CompareTag("Bullet"))
+        {
+            if (collision.collider.TryGetComponent(out BulletHit bullet))
+            {
+                if (bullet.damageType == DamageType.FIRE)
+                {
+                    StartCoroutine(BurnCoroutine());
+                }
+            }
+        }
+    }
+
+    private IEnumerator BurnCoroutine()
+    {
+        isBurned = true;
+        if(anim != null) anim.SetTrigger("burn");
+        if(burnSFX != null) burnSFX.Play();
+
+        yield return new WaitForSeconds(0.5f);
+
+        col.enabled = false;
+    }
+}
