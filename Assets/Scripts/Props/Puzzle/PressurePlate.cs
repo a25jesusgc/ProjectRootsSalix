@@ -10,6 +10,7 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
         anim = GetComponent<Animator>();
     }
 
+    // Está activo cuando tiene por lo menos un objeto encima suya
     public bool Activated()
     {
         return pressingAmount > 0;
@@ -17,6 +18,7 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
     
     private int pressingAmount;
 
+    // Cuando algo se pone encima, si es el jugador, un enemigo o un grabbable, se suma a la cantidad de elementos encima de la placa de presión
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))
@@ -27,6 +29,7 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
         }
     }
 
+    // Cuando algo se pone sale, si es el jugador, un enemigo o un grabbable, se resta de la cantidad de elementos encima de la placa de presión
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))

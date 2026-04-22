@@ -11,7 +11,10 @@ public class FlammableProp : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Si ya ardió, da igual
         if(isBurned) return;
+        
+        // Si una bala impacta contra el prop, comprueba si es daño de fuego, y en caso de serlo, arde
         if (collision.collider.CompareTag("Bullet"))
         {
             if (collision.collider.TryGetComponent(out BulletHit bullet))
@@ -24,6 +27,8 @@ public class FlammableProp : MonoBehaviour
         }
     }
 
+
+    // Corrutina que activa la animación de quemar y, tras un pequeño lapso, desactiva el collider
     private IEnumerator BurnCoroutine()
     {
         isBurned = true;

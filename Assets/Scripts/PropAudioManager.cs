@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+// Componente para hacer que props solo suenen mientras se esté dentro de su zona
 public class PropAudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource[] props;

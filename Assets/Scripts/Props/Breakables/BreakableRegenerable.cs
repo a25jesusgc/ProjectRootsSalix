@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Prop que es destruíble y forma parte de un puzzle, de forma que está activo cuando está destruído, pero éste puede regenerarse con el tiempo
 public class BreakableRegenerable : BreakableProp
 {
     [SerializeField] private Collider2D col;
