@@ -6,7 +6,7 @@ public class BreakableRegenerable : BreakableProp
     [SerializeField] private PuzzleDoor puzzleDoor;
     [SerializeField] private float duration;
     private float timer;
-    private bool canRegen = true;
+    public bool canRegen = true;
 
     public override void OnBreak()
     {

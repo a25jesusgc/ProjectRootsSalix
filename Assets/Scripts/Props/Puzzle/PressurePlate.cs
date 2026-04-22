@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour, IActivatedProp
 {
-    [SerializeField] PuzzleDoor puzzleDoor;
+    [SerializeField] private PuzzleDoor puzzleDoor;
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public bool Activated()
     {
@@ -16,6 +22,7 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))
         {
             pressingAmount++;
+            ManageAnim();
             puzzleDoor.CheckAllActivated();
         }
     }
@@ -25,7 +32,13 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))
         {
             pressingAmount--;
+            ManageAnim();
             puzzleDoor.CheckAllActivated();
         } 
+    }
+
+    private void ManageAnim()
+    {
+        anim.SetBool("pressed", Activated());
     }
 }
