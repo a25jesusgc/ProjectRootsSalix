@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8791882998463426655}
   - component: {fileID: 808652200410241108}
+  - component: {fileID: 3526457967969345377}
   - component: {fileID: 3635260731367699398}
   - component: {fileID: 2534006006994763200}
   - component: {fileID: 804801113106333689}
@@ -53,6 +54,28 @@ MonoBehaviour:
   breakSFX: {fileID: 6530089238366986750}
   isBroken: 0
   col: {fileID: 2534006006994763200}
+  dropSpawner: {fileID: 3526457967969345377}
+--- !u!114 &3526457967969345377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647120310479352031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 420570844651619123, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
+  - {fileID: 6912121666195558556, guid: 6eab1ebfe27be8a4d87a8225c8c1245e, type: 3}
+  dropTypeChances:
+  - 100
+  - 20
+  minDropAmount: 4
+  maxDropAmount: 12
 --- !u!212 &3635260731367699398
 SpriteRenderer:
   serializedVersion: 2

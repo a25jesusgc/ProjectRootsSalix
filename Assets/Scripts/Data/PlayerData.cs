@@ -15,6 +15,7 @@ public class PlayerData
     [SerializeField] private Checkpoint checkpoint;
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
+    [SerializeField] private int currency;
     [SerializeField] private List<string> checkpointsDiscovered;
     [SerializeField] private int lifeUpgrades;
     [SerializeField] private List<PlayerFertilizer> playerFertilizers;
@@ -27,6 +28,9 @@ public class PlayerData
     
     public bool WasItemPicked(string id) => itemsPicked.Contains(id);
     public void PickItem(string id) => itemsPicked.Add(id);
+
+    public int GetCurrency => currency;
+    public void ChangeCurrency(int amount) => currency += amount;
     
     public bool WasCheckpointDiscovered(Checkpoint checkpoint) => checkpointsDiscovered.Contains(checkpoint.GetID);
     public void DiscoverCheckpoint(Checkpoint checkpoint) => checkpointsDiscovered.Add(checkpoint.GetID);
@@ -38,7 +42,7 @@ public class PlayerData
 
     public void AddFertilizer(PlayerFertilizer fertilizer)
     {
-        if (playerFertilizers.Contains(fertilizer))
+        if (playerFertilizers.Count((f) => f.GetFertilizerType == fertilizer.GetFertilizerType) > 0)
         {
             playerFertilizers.First((f) => f.GetFertilizerType == fertilizer.GetFertilizerType).ChangeAmount(fertilizer.GetFertilizerAmount);
         }
@@ -67,6 +71,8 @@ public class PlayerData
         availableWeapons = new List<int>() {0, 1, 2};
 
         itemsPicked = new List<string>();
+
+        currency = 0;
 
         checkpointsDiscovered = new List<string>();
 

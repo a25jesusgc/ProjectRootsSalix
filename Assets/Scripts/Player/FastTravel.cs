@@ -15,5 +15,6 @@ public class FastTravel : MonoBehaviour
     {
         ZoneLoader.instance.ChangeZone(PlayerData.GetInstance.GetCheckpoint.GetScene, checkpoint.GetScene, checkpoint.GetPosition);
         PlayerData.GetInstance.SetCheckpoint(checkpoint);
+        PlayerData.Save();
     }
 }

@@ -21,5 +21,14 @@ public class FertilizerPierce : BulletHit
                 if(hitEffect != null) Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
         }
+
+        // Si choca contra pared o algo que no es enemigo, muere
+        if (collision.CompareTag("Default"))
+        {
+            Destroy(gameObject);
+
+            // Instancia el efecto de la bala cuando impacta
+            if(hitEffect != null) Instantiate(hitEffect, transform.position, Quaternion.identity);
+        }
     }
 }
