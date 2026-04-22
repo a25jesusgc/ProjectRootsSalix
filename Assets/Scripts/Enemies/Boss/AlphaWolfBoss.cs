@@ -2,27 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphaWolfBoss : MonoBehaviour
+public class AlphaWolfBoss : BossController
 {
-    private Transform player;
-
-    private Animator anim;
-    private Rigidbody2D rb;
-    private Collider2D col;
-    private AudioSource audioSource;
-
-    [SerializeField] private Enemy enemy;
-    [SerializeField] private EnemyHealth enemyHealth;
+    
     [SerializeField] private Transform dashIndicator;
     [SerializeField] private Transform leftDashPoint;
     [SerializeField] private Transform rightDashPoint;
-    [SerializeField] private Transform arenaCenter;
-    [SerializeField] private float minArenaY;
-    [SerializeField] private float maxArenaY;
     [SerializeField] private Animator clawAttack;
     [SerializeField] private EnemyAttack dashAttack;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private AudioClip[] sfx;
 
     private const float CLAW_ATTACK_RANGE = 3f;
     private const float DASH_INDICATOR_TIME = 0.25f;
@@ -34,62 +22,13 @@ public class AlphaWolfBoss : MonoBehaviour
     private const float BULLET_FIRE_RATE = 0.2f;
     private const float BARRAGE_FIRE_RATE = 0.05f;
 
-
-    private Vector2 mov;
-    private Vector2 attackDirection;
-    private bool chooseAttack;
-    private int chosenAttack;
-    private int lastAttackUsed;
-     public bool isDefeated {get; private set;}
-
-
-    void Start()
+    public override void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
-        audioSource = GetComponent<AudioSource>();
-
-        dashAttack.SetMultiplier(1f);
-
-        lastAttackUsed = -1;
+        base.Start();
+        dashAttack.SetMultiplier(1.25f);
     }
 
-    void Update()
-    {
-        if(player == null || GlobalUtils.pause || isDefeated) return;
-
-        if (!isDefeated && enemyHealth.GetHealthPercentage <= 0f)
-        {
-            isDefeated = true;
-            StopAllCoroutines();
-            rb.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        mov = (player.position - transform.position).normalized;
-
-        if (chooseAttack)
-        {
-            do{
-                chosenAttack = Random.Range(0, enemyHealth.GetHealthPercentage <= 0.5f ? 5 : 3);
-            }while(chosenAttack == lastAttackUsed);
-            
-            chooseAttack = false;
-            lastAttackUsed = chosenAttack;
-            
-            StartCoroutine(GetAttack(chosenAttack));
-        }
-
-    }
-
-    public void SetPlayer(Transform target)
-    {
-        player = target;
-        chooseAttack = true;
-    }
-
-    private IEnumerator GetAttack(int attackIndex)
+    public override IEnumerator GetAttack(int attackIndex)
     {
         switch (attackIndex)
         {
@@ -157,7 +96,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(minArenaY, maxArenaY), 0);
+        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(arenaMin.position.y, arenaMax.position.y), 0);
         col.enabled = true;
         dashAttack.gameObject.SetActive(false);
         anim.SetBool("dashing", false);
@@ -272,7 +211,7 @@ public class AlphaWolfBoss : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(minArenaY, maxArenaY), 0);
+        transform.position = new Vector3(Random.Range(leftDashPoint.position.x + 5, rightDashPoint.position.x - 5), Random.Range(arenaMin.position.y, arenaMax.position.y), 0);
         col.enabled = true;
         dashAttack.gameObject.SetActive(false);
         anim.SetBool("dashing", false);
@@ -293,7 +232,7 @@ public class AlphaWolfBoss : MonoBehaviour
         anim.SetFloat("y", 0);
 
         float yPos = Random.Range(player.transform.position.y - 2f, player.transform.position.y + 2f);
-        dashIndicator.position = new Vector3(dashIndicator.position.x, Mathf.Clamp(yPos, minArenaY, maxArenaY), 0f);
+        dashIndicator.position = new Vector3(dashIndicator.position.x, Mathf.Clamp(yPos, arenaMin.position.y, arenaMax.position.y), 0f);
         transform.position = new Vector3(leftSide ? leftDashPoint.position.x : rightDashPoint.position.x, dashIndicator.position.y, 0);
 
         dashIndicator.gameObject.SetActive(true);
@@ -319,7 +258,7 @@ public class AlphaWolfBoss : MonoBehaviour
         {
 
             float yPos = Random.Range(player.transform.position.y - (3f * i), player.transform.position.y + (3f * i));
-            dashIndicator.position = new Vector3(dashIndicator.position.x, Mathf.Clamp(yPos, minArenaY, maxArenaY), 0f);
+            dashIndicator.position = new Vector3(dashIndicator.position.x, Mathf.Clamp(yPos, arenaMin.position.y, arenaMax.position.y), 0f);
 
             dashPositions[i] = dashIndicator.position.y;
 
@@ -356,15 +295,6 @@ public class AlphaWolfBoss : MonoBehaviour
         chooseAttack = true;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
-            player.TakeDamage(enemy.GetBodyDamage);
-        }
-    }
-
     public void ActivateClawAttack()
     {
         clawAttack.gameObject.SetActive(true);
@@ -378,18 +308,5 @@ public class AlphaWolfBoss : MonoBehaviour
     public void StopClawAttack()
     {
         clawAttack.gameObject.SetActive(false);
-    }
-
-    private void PlaySfx(int index)
-    {
-        audioSource.spatialBlend = 1;
-        audioSource.clip = sfx[index];
-        audioSource.Play();
-    }
-    private void PlaySfxAtPoint(int index)
-    {
-        audioSource.spatialBlend = 0;
-        audioSource.clip = sfx[index];
-        audioSource.Play();
     }
 }

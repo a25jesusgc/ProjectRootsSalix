@@ -12,7 +12,7 @@ public class PlayerData
     public static PlayerData GetInstance => instance != null ? instance : Load();
     public static void ResetInstance() => instance = new PlayerData();
 
-    [SerializeField] private Checkpoint checkpoint;
+    [SerializeField] private string checkpointID;
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
     [SerializeField] private int currency;
@@ -20,8 +20,9 @@ public class PlayerData
     [SerializeField] private int lifeUpgrades;
     [SerializeField] private List<PlayerFertilizer> playerFertilizers;
 
-    public Checkpoint GetCheckpoint => checkpoint;
-    public void SetCheckpoint(Checkpoint value) => checkpoint = value;
+    public string GetCheckpointID => checkpointID;
+    public void SetCheckpoint(string value) => checkpointID = value;
+    public void SetCheckpoint(Checkpoint value) => checkpointID = value.GetZoneID;
     
     public List<int> GetAvailableWeapons => availableWeapons;
     public void UnlockWeapon(int index) => availableWeapons.Add(index);
@@ -32,8 +33,8 @@ public class PlayerData
     public int GetCurrency => currency;
     public void ChangeCurrency(int amount) => currency += amount;
     
-    public bool WasCheckpointDiscovered(Checkpoint checkpoint) => checkpointsDiscovered.Contains(checkpoint.GetID);
-    public void DiscoverCheckpoint(Checkpoint checkpoint) => checkpointsDiscovered.Add(checkpoint.GetID);
+    public bool WasCheckpointDiscovered(Checkpoint checkpoint) => checkpointsDiscovered.Contains(checkpoint.GetZoneID);
+    public void DiscoverCheckpoint(Checkpoint checkpoint) => checkpointsDiscovered.Add(checkpoint.GetZoneID);
     
     public int GetLifeUpgrades => lifeUpgrades;
     public void GotLifeUpgrade() => lifeUpgrades++;
@@ -65,7 +66,7 @@ public class PlayerData
 
     public PlayerData()
     {
-        checkpoint = null;
+        checkpointID = null;
 
         // Empieza con las tres primeras armas desbloqueadas
         availableWeapons = new List<int>() {0, 1, 2};

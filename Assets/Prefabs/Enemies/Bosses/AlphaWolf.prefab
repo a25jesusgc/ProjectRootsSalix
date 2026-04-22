@@ -560,15 +560,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlphaWolfBoss
   enemy: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
   enemyHealth: {fileID: 1616321969705308507}
-  dashIndicator: {fileID: 0}
-  leftDashPoint: {fileID: 0}
-  rightDashPoint: {fileID: 0}
   arenaCenter: {fileID: 0}
+  minArenaX: 200
+  maxArenaX: 231
   minArenaY: -2
   maxArenaY: 18
-  clawAttack: {fileID: 8047568609252869637}
-  dashAttack: {fileID: 2486428909198393220}
-  bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
   sfx:
   - {fileID: 8300000, guid: 7e6b641d8f1ca4e44ab5e2a8622b8bd4, type: 3}
   - {fileID: 8300000, guid: a10af418e8f5ac440bb05d26a7cbf153, type: 3}
@@ -576,6 +572,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6e40f09ca4712c540aa4339a140bd3d8, type: 3}
   - {fileID: 8300000, guid: c5de9dc3e289c1549803566191fccbf4, type: 3}
   - {fileID: 8300000, guid: 9ac81723deacd3541a25135b087f5b7b, type: 3}
+  mov: {x: 0, y: 0}
+  attackDirection: {x: 0, y: 0}
+  chooseAttack: 0
+  chosenAttack: 0
+  lastAttackUsed: 0
+  isDefeated: 0
+  firstPhaseAttacksCount: 3
+  secondPhaseAttacksCount: 5
+  dashIndicator: {fileID: 0}
+  leftDashPoint: {fileID: 0}
+  rightDashPoint: {fileID: 0}
+  clawAttack: {fileID: 8047568609252869637}
+  dashAttack: {fileID: 2486428909198393220}
+  bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
 --- !u!82 &1654071982329790868
 AudioSource:
   m_ObjectHideFlags: 0

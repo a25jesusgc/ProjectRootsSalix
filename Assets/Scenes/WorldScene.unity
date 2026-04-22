@@ -662,6 +662,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneLoader
   transitionController: {fileID: 446272964}
   player: {fileID: 2051650939}
+  checkpoints:
+  - {fileID: 11400000, guid: f42887a16c9ac774385755dfba4ab0da, type: 2}
+  - {fileID: 11400000, guid: 6fb1bcc6c7c779f4186d996fa7ebb05d, type: 2}
 --- !u!1 &181474140
 GameObject:
   m_ObjectHideFlags: 0
@@ -5970,6 +5973,7 @@ MonoBehaviour:
   hidePos: {fileID: 1943484064}
   txtCurrentAmount: {fileID: 1976091832}
   txtAmountToAdd: {fileID: 28130930}
+  forceShow: 0
 --- !u!1 &2045512261
 GameObject:
   m_ObjectHideFlags: 0
