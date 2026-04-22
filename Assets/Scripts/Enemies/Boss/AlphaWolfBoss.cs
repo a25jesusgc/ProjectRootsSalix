@@ -302,7 +302,6 @@ public class AlphaWolfBoss : BossController
         clawAttack.SetFloat("y", attackDirection.y);
         PlaySfx(1);
         clawAttack.SetTrigger("attack");
-            
     }
 
     public void StopClawAttack()

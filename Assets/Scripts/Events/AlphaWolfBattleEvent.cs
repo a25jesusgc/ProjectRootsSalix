@@ -12,6 +12,7 @@ public class AlphaWolfBattleEvent : MonoBehaviour
     [SerializeField] private GameObject healthBar;
     [SerializeField] private AudioLoop forestTheme;
     [SerializeField] private AudioLoop battleTheme;
+    [SerializeField] private GameObject barriers;
 
     private bool battleStarted;
 
@@ -66,10 +67,11 @@ public class AlphaWolfBattleEvent : MonoBehaviour
         // Se devuelve el enfoque de la cámara al jugador y se activa la barra de vida
         CameraController.instance.ResetTrackingTarget();
         healthBar.SetActive(true);
+        barriers.SetActive(true);
 
         yield return new WaitForSeconds(2f);
 
-        // Deja de auillar, se establece su objetivo como el jugador y empieza la batalla
+        // Deja de aullar, se establece su objetivo como el jugador y empieza la batalla
         bossAnim.SetBool("howling", false);
         boss.SetPlayer(player);
         GlobalUtils.pause = false;

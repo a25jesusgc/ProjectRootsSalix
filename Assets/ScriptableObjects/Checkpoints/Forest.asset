@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e60b609bd908e4e87dca6e26eed4f7, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
-  id: forest
+  zoneID: forest
   zoneName: Bosque Patato
   position: {x: 125.5, y: -2, z: 0}
   scene: L0Forest

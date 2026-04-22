@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 6800
   bodyDamage: 420
-  attackDamage: 900
+  attackDamage: 0
   movSpeed: 6
   resistances:
   - 0.6

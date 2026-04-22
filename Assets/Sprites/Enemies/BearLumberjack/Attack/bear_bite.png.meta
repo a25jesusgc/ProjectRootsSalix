@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: cf0a1743b1e20334aa76afc75eb5bfd2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6746220330977797362
+    second: bear_bite_0
+  - first:
+      213: -4792026976026652197
+    second: bear_bite_1
+  - first:
+      213: -8989446205837669544
+    second: bear_bite_2
+  - first:
+      213: 8517390635703205609
+    second: bear_bite_3
+  - first:
+      213: -7715491159150334727
+    second: bear_bite_4
+  - first:
+      213: -8756609965497635938
+    second: bear_bite_5
+  - first:
+      213: 1321900659958732141
+    second: bear_bite_6
+  - first:
+      213: -6189746841440013518
+    second: bear_bite_7
+  - first:
+      213: 5188558730005952449
+    second: bear_bite_8
+  - first:
+      213: -7406447619534420403
+    second: bear_bite_9
+  - first:
+      213: -5546589820114132933
+    second: bear_bite_10
+  - first:
+      213: -1534018481315162431
+    second: bear_bite_11
+  - first:
+      213: -6738942822508414975
+    second: bear_bite_12
+  - first:
+      213: -2372477613990182585
+    second: bear_bite_13
+  - first:
+      213: 5094183202256277272
+    second: bear_bite_14
+  - first:
+      213: -5784073932944302020
+    second: bear_bite_15
+  - first:
+      213: 7902298336744836514
+    second: bear_bite_16
+  - first:
+      213: -980724782906759467
+    second: bear_bite_17
+  - first:
+      213: 265567669033868056
+    second: bear_bite_18
+  - first:
+      213: -1366188566295663477
+    second: bear_bite_19
+  - first:
+      213: -6966226580409686584
+    second: bear_bite_20
+  - first:
+      213: 3979069098207194380
+    second: bear_bite_21
+  - first:
+      213: -7970384191583284426
+    second: bear_bite_22
+  - first:
+      213: 792143985470236346
+    second: bear_bite_23
+  - first:
+      213: -7490420194757572753
+    second: bear_bite_24
+  - first:
+      213: 3262753969506394005
+    second: bear_bite_25
+  - first:
+      213: 1218545530491644475
+    second: bear_bite_26
+  - first:
+      213: 7324147486144910839
+    second: bear_bite_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bear_bite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f42374e5a36f9d50800000000000000
+      internalID: 6746220330977797362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear_bite_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd197d3cadc4f7db0800000000000000
+      internalID: -4792026976026652197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear_bite_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b009dcd421f3380800000000000000
+      internalID: -8989446205837669544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 577bbbeb682087e4d8e876b1dbf0b25f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      bear_bite_0: 6746220330977797362
+      bear_bite_1: -4792026976026652197
+      bear_bite_2: -8989446205837669544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
