@@ -13,6 +13,7 @@ public class ShopInteractable : Interactable
     public void ShowShop(bool value)
     {
         shopWindow.SetActive(value);
+        PlayerCurrency.instance.forceShow = value;
         GlobalUtils.pause = value;
     }
 }

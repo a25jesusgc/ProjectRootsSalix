@@ -16,6 +16,7 @@ public class PlayerCurrency : MonoBehaviour
     private int amountToAdd;
 
     private bool show;
+    public bool forceShow;
     private float speed = 2000f;
 
     void Awake()
@@ -32,7 +33,7 @@ public class PlayerCurrency : MonoBehaviour
 
     void Update()
     {
-        layout.position = Vector3.MoveTowards(layout.position, show ? showPos.position : hidePos.position, Time.deltaTime * speed);
+        layout.position = Vector3.MoveTowards(layout.position, forceShow || show ? showPos.position : hidePos.position, Time.deltaTime * speed);
     }
 
     public void ChangeCurrency(int amountToAdd)
@@ -74,6 +75,6 @@ public class PlayerCurrency : MonoBehaviour
     private void UpdateTexts()
     {
         txtCurrentAmount.text = currentAmount.ToString();
-        txtAmountToAdd.text = (amountToAdd > 0 ? "+" : "") + amountToAdd.ToString();
+        txtAmountToAdd.text = amountToAdd == 0 ? "" : (amountToAdd > 0 ? "+" : "") + amountToAdd.ToString();
     }
 }
