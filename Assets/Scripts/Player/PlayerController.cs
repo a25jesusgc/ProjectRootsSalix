@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking;
     private bool isDashing;
     private float dashCooldown;
-    private bool isHookJumping;
+    public bool isHookJumping {get; private set;}
     private Transform hookTarget;
 
     public Vector2 GetAimDirection => aim;

@@ -37,6 +37,26 @@ public class VineHook : MonoBehaviour
                 }
             }
         }
+        if (collision.CompareTag("Player"))
+        {
+            if(player != null)
+            {
+                // Si el jugador choca contra el objeto, ha llegado al objetivo y detiene el movimiento
+                TargetReached();
+            }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if(player != null)
+            {
+                // Si el jugador choca contra el objeto, ha llegado al objetivo y detiene el movimiento
+                TargetReached();
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
