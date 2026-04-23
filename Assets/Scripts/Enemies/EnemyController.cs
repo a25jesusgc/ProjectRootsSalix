@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
 
     private Vector2 idleTargetPosition; // Posición objetivo para el movimiento aleatorio en estado Idle
-    private Vector2 direction; // Dirección de movimiento
+    [HideInInspector] public Vector2 direction; // Dirección de movimiento
     private bool hadIdleTarget = false; // Variable para controlar si el enemigo ya tiene una posición objetivo en estado Idle
     public float detectionRadius = 5f;
     public float alertRadius = 3f;

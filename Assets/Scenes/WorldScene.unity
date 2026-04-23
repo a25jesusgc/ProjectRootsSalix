@@ -1729,11 +1729,11 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1741,14 +1741,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,6 +1922,14 @@ MonoBehaviour:
   cinemachineCamera: {fileID: 808323194}
   cinemachineConfiner: {fileID: 808323196}
   player: {fileID: 2051650939}
+--- !u!81 &519420036
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
 --- !u!1 &521368431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,14 +6123,6 @@ PrefabInstance:
       propertyPath: fertilizerSelection
       value: 
       objectReference: {fileID: 1843041796}
-    - target: {fileID: 5217826841906282858, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
-      propertyPath: fertilizers.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5217826841906282858, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
-      propertyPath: 'fertilizers.Array.data[4]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 0ac8bc40823daea4fa5a478fbd489e61, type: 2}
     - target: {fileID: 5231724347392526303, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
       propertyPath: weaponSelection
       value: 

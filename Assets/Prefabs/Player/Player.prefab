@@ -394,6 +394,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e28c0eb84fff21b468d24b3b314119de, type: 2}
   - {fileID: 11400000, guid: 99be148a0c566c14eaa6053f0f4342a1, type: 2}
   - {fileID: 11400000, guid: f5aa61aa5c0bccb4ab49965eb9b03290, type: 2}
+  - {fileID: 11400000, guid: 0ac8bc40823daea4fa5a478fbd489e61, type: 2}
   fertilizerSelection: {fileID: 0}
 --- !u!82 &8665711597780674271
 AudioSource:

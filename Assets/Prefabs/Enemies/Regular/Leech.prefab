@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1934739318600421434}
   - component: {fileID: 7906835622343844277}
   - component: {fileID: 6999496146269147574}
-  - component: {fileID: 2846360017438958397}
+  - component: {fileID: 3921598047895536302}
   - component: {fileID: 5747759106772671497}
   - component: {fileID: 4682872218257899345}
   - component: {fileID: 128444817306487366}
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2846360017438958397
+--- !u!114 &3921598047895536302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,17 +184,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7601141411783080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ec946197f598747a1c2f5f381e5862, type: 3}
+  m_Script: {fileID: 11500000, guid: cc26ce388377c694d86158b841f90c1d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  m_EditorClassIdentifier: Assembly-CSharp::Leech
   hitbox: {fileID: 7906835622343844277}
   idleMoveRadius: 2
   enemyType: {fileID: 11400000, guid: 0335da1fdb8bd4a45ab030dead1cab04, type: 2}
   idleWaitTime: 2
+  direction: {x: 0, y: 0}
   detectionRadius: 5
   alertRadius: 5
   attack: {fileID: 7601141411783080}
-  attackRange: 1
+  attackRange: 4
   rb: {fileID: 0}
   currentState: 0
 --- !u!114 &5747759106772671497
@@ -254,8 +255,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 15
+  MinDistance: 15
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -5334,7 +5335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8602ee1662c15884b8d040d23584c49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetect
-  enemyController: {fileID: 2846360017438958397}
+  enemyController: {fileID: 3921598047895536302}
 --- !u!1 &7411598947415479540
 GameObject:
   m_ObjectHideFlags: 0

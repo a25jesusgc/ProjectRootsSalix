@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
+  multiplier: 1
 --- !u!212 &4322715576844941623
 SpriteRenderer:
   serializedVersion: 2
@@ -5349,6 +5350,7 @@ MonoBehaviour:
   idleMoveRadius: 2
   enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
   idleWaitTime: 2
+  direction: {x: 0, y: 0}
   detectionRadius: 5
   alertRadius: 5
   attack: {fileID: 1586434977117384139}
@@ -5411,11 +5413,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 15
+  MaxDistance: 25
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
