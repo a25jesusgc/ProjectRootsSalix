@@ -9,7 +9,6 @@ public class RoomAudioManager : MonoBehaviour
     void Start()
     {
         props = GetComponentsInChildren<AudioSource>();
-        Debug.Log("FOUND " + props.Length);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +26,7 @@ public class RoomAudioManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            props = GetComponentsInChildren<AudioSource>();
             foreach (AudioSource audioSource in props)
             {
                 audioSource.volume = 0f;

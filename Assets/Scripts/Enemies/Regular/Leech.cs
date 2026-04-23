@@ -33,7 +33,7 @@ public class Leech : EnemyController
         rb.linearVelocity = playerDirection * LEECH_DASH_SPEED;
 
         float timer = 1f;
-        while (rb.linearVelocity != Vector2.zero && timer > 0)
+        while (rb.linearVelocity != Vector2.zero && timer > 0 && !isDefeated)
         {
             timer -= Time.deltaTime;
             yield return null;

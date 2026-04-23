@@ -27,6 +27,9 @@ public class RespawnInteractable : Interactable
         PlayerData.GetInstance.SetCheckpoint(checkpoint);
         PlayerData.Save();
 
+        // Se reviven los enemigos
+        ReviveEnemies();
+
         // Se abre el panel de viaje rápido
         ShowTravelMenu(true);
     }
@@ -56,6 +59,16 @@ public class RespawnInteractable : Interactable
 
             // Activa el botón o no de ese destino si es un destino válido (disponible y no es el actual)
             travelButtonsList[i].SetActive(canTravel);
+        }
+    }
+
+    private void ReviveEnemies()
+    {
+        foreach (EnemyHealth enemy in FindObjectsByType<EnemyHealth>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if(!enemy.deactivateOnDefeat) return;
+            enemy.gameObject.SetActive(true);
+            enemy.Revive();
         }
     }
 }
