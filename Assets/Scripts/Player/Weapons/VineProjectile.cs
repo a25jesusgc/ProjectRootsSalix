@@ -8,6 +8,7 @@ public class VineProjectile : MonoBehaviour
 
     // Referencia al objetivo para engancharse a él
     private Transform target;
+    private Collider2D targetCollider;
 
     // Componentes esenciales
     private Rigidbody2D rb;
@@ -62,7 +63,14 @@ public class VineProjectile : MonoBehaviour
             // Mientras el objetivo sea válido, se mantiene enganchado
             if (target != null)
             {
+                // Si se sale de rango, se cancela
                 if(Vector3.Distance(target.position, playerVine.transform.position) > MAX_RANGE)
+                {
+                    playerVine.StopVine();
+                    return;
+                }
+                // Si el objetivo deja de tener hitbox, se cancela
+                if (targetCollider != null && !targetCollider.enabled)
                 {
                     playerVine.StopVine();
                     return;
@@ -113,6 +121,14 @@ public class VineProjectile : MonoBehaviour
     public void AttachTarget(Transform newTarget)
     {
         target = newTarget;
+        if (target.TryGetComponent(out Collider2D collider))
+        {
+            targetCollider = collider;
+        }
+        else
+        {
+            targetCollider = null;
+        }
         attached = true;
         grabbed = true;
         vineSound.Play();
@@ -122,6 +138,7 @@ public class VineProjectile : MonoBehaviour
     public void RemoveTarget()
     {
         target = null;
+        targetCollider = null;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

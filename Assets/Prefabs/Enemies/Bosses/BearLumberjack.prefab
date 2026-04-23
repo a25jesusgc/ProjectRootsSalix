@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   enemyType: {fileID: 11400000, guid: 36173468d863ce74f91ab0567f3fb18b, type: 2}
-  multiplier: 1.25
+  multiplier: 1.5
 --- !u!1 &3489877571538942052
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 2318540811773828379}
   - component: {fileID: 9090606511604251913}
   - component: {fileID: 362339144502882998}
-  - component: {fileID: 24616639362629573}
+  - component: {fileID: 4611162296437158674}
   - component: {fileID: 823977235364057972}
   - component: {fileID: -4774871719865766298}
   - component: {fileID: 450498442603365665}
@@ -596,8 +596,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &24616639362629573
-BoxCollider2D:
+--- !u!70 &4611162296437158674
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -631,17 +631,8 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.8, y: 2.5}
-  m_EdgeRadius: 0
+  m_Size: {x: 2, y: 3.5}
+  m_Direction: 0
 --- !u!50 &823977235364057972
 Rigidbody2D:
   serializedVersion: 5
@@ -710,8 +701,12 @@ MonoBehaviour:
   firstPhaseAttacksCount: 3
   secondPhaseAttacksCount: 5
   biteAttack: {fileID: 2679081495301404357}
-  slamAttack: {fileID: 0}
   shadow: {fileID: 4957270925069789539}
+  trees:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  treeAttack: {fileID: 277894912885647107, guid: f92bf10178c1a1f4d97c3754ce2a62ce, type: 3}
 --- !u!82 &4598195301698451154
 AudioSource:
   m_ObjectHideFlags: 0
