@@ -17,10 +17,9 @@ public class EnemyController : MonoBehaviour
 
 
     private Vector2 idleTargetPosition; // Posición objetivo para el movimiento aleatorio en estado Idle
-    private Vector2 direction; // Dirección de movimiento
+    [HideInInspector] public Vector2 direction; // Dirección de movimiento
     private bool hadIdleTarget = false; // Variable para controlar si el enemigo ya tiene una posición objetivo en estado Idle
     public float detectionRadius = 5f;
-    public float alertRadius = 3f;
     public GameObject attack;
     private Animator attackAnim;
     public float attackRange = 1f;
@@ -38,7 +37,7 @@ public class EnemyController : MonoBehaviour
 
     private float idleWaitTimer = 0f; // Temporizador para controlar cuánto tiempo el enemigo espera antes de generar una nueva posición objetivo en estado Idle
     private bool isWaiting = false; // Variable para controlar si el enemigo está esperando antes de generar una nueva posición objetivo en estado Idle
-    private bool isDefeated = false; // Variable para controlar si el enemigo está derrotado
+    [HideInInspector] public bool isDefeated = false; // Variable para controlar si el enemigo está derrotado
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -183,7 +182,7 @@ public class EnemyController : MonoBehaviour
         // Si el jugador dispara cerca del enemigo, el enemigo se alerta
         float distance = Vector2.Distance(transform.position, bulletTransform.position);
 
-        if (distance <= alertRadius)
+        if (distance <= detectionRadius)
         {
             isAlerted = true;
             alertTimer = 0f; // Reiniciar el temporizador de alerta
@@ -245,12 +244,12 @@ public class EnemyController : MonoBehaviour
         return (Vector2)transform.position + randomOffset * idleMoveRadius;
     }
 
-    public void SetDefeated()
+    public void SetDefeated(bool defeated = true)
     {
-        isDefeated = true;
+        isDefeated = defeated;
         rb.linearVelocity = Vector2.zero;
-        hitbox.enabled = false;
-        anim.SetTrigger("hurt");
+        hitbox.enabled = !defeated;
+        if(defeated) anim.SetTrigger("hurt");
     }
     public void ActivateAttack()
     {

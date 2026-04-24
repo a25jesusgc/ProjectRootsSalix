@@ -12,6 +12,7 @@ public class AlphaWolfBattleEvent : MonoBehaviour
     [SerializeField] private GameObject healthBar;
     [SerializeField] private AudioLoop forestTheme;
     [SerializeField] private AudioLoop battleTheme;
+    [SerializeField] private GameObject barriers;
 
     private bool battleStarted;
 
@@ -32,6 +33,7 @@ public class AlphaWolfBattleEvent : MonoBehaviour
 
     private IEnumerator BattleCoroutine(Transform player)
     {
+        // Se pausa el juego, se silencia la música y se enfoca al boss
         GlobalUtils.pause = true;
         AudioManager.instance.MuteMusic(true);
 
@@ -39,10 +41,13 @@ public class AlphaWolfBattleEvent : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        // Diálogos del boss antes de pelear
         DialogueSystem.instance.ShowDialogue(preBattleDialogues, true);
         yield return new WaitUntil(() => !DialogueSystem.instance.IsDialogueOpen);
         GlobalUtils.pause = true;
 
+
+        // El boss salta hacia la arena
         bossAnim.SetTrigger("jump");
 
         yield return new WaitForSeconds(1f);
@@ -51,31 +56,40 @@ public class AlphaWolfBattleEvent : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        // El boss aulla amenazante, empezando la música de batalla
+
         bossAnim.SetBool("howling", true);
         AudioManager.instance.MuteMusic(false, 0f, true);
         AudioManager.instance.PlayMusic(battleTheme, true);
 
         yield return new WaitForSeconds(1f);
 
+        // Se devuelve el enfoque de la cámara al jugador y se activa la barra de vida
         CameraController.instance.ResetTrackingTarget();
+        healthBar.SetActive(true);
+        barriers.SetActive(true);
 
         yield return new WaitForSeconds(2f);
 
+        // Deja de aullar, se establece su objetivo como el jugador y empieza la batalla
         bossAnim.SetBool("howling", false);
-        healthBar.SetActive(true);
         boss.SetPlayer(player);
         GlobalUtils.pause = false;
 
+        // Se espera aque el boss sea derrotado
         yield return new WaitUntil(() => boss.isDefeated);
 
+        // Se detiene el juego, se desactiva la barra de vida y se silencia la música
         GlobalUtils.pause = true;
         healthBar.SetActive(false);
         AudioManager.instance.MuteMusic(true);
 
+        // Diálogos finales del boss
         DialogueSystem.instance.ShowDialogue(postBattleDialogues, true);
         yield return new WaitUntil(() => !DialogueSystem.instance.IsDialogueOpen);
         GlobalUtils.pause = true;
 
+        // Se devuelve el juego a la normalidad con la música del bosque
         AudioManager.instance.MuteMusic(false);
         AudioManager.instance.PlayMusic(forestTheme);
         GlobalUtils.pause = false;

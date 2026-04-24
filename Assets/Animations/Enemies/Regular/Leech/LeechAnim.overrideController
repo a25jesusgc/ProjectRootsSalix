@@ -7,14 +7,14 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LeechAnim
-  m_Controller: {fileID: 9100000, guid: 7f4996a277433794ba6d4acc1c4742c0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 193046eab4f444d46bef3576f567b67c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: a97d64e87113c8643b9cec19e88bd896, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: cee85d7424f5b0a458b4eae882a70f6f, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d88f3081036dffd4387365448c006539, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: cee85d7424f5b0a458b4eae882a70f6f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1bd0ba033cadcf649a5ddf1085c684e8, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 3a19f300e7106484c95ba4b13f2d48db, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 65617903ed3006b4d8236411ceaab7b6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 41ee2809cadc6354fb4e1f184053ad07, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6a9c7502dd5a4304fa27de093ab5b936, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 65617903ed3006b4d8236411ceaab7b6, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 962577e1f2e51ef4dadbe433c1fb3280, type: 2}

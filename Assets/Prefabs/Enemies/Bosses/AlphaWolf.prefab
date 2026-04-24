@@ -369,7 +369,7 @@ Transform:
   m_GameObject: {fileID: 5008262373835282618}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -560,15 +560,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlphaWolfBoss
   enemy: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
   enemyHealth: {fileID: 1616321969705308507}
-  dashIndicator: {fileID: 0}
-  leftDashPoint: {fileID: 0}
-  rightDashPoint: {fileID: 0}
   arenaCenter: {fileID: 0}
-  minArenaY: -2
-  maxArenaY: 18
-  clawAttack: {fileID: 8047568609252869637}
-  dashAttack: {fileID: 2486428909198393220}
-  bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
+  arenaMin: {fileID: 0}
+  arenaMax: {fileID: 0}
   sfx:
   - {fileID: 8300000, guid: 7e6b641d8f1ca4e44ab5e2a8622b8bd4, type: 3}
   - {fileID: 8300000, guid: a10af418e8f5ac440bb05d26a7cbf153, type: 3}
@@ -576,6 +570,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6e40f09ca4712c540aa4339a140bd3d8, type: 3}
   - {fileID: 8300000, guid: c5de9dc3e289c1549803566191fccbf4, type: 3}
   - {fileID: 8300000, guid: 9ac81723deacd3541a25135b087f5b7b, type: 3}
+  mov: {x: 0, y: 0}
+  attackDirection: {x: 0, y: 0}
+  chooseAttack: 0
+  chosenAttack: 0
+  lastAttackUsed: 0
+  isDefeated: 0
+  firstPhaseAttacksCount: 3
+  secondPhaseAttacksCount: 5
+  dashIndicator: {fileID: 0}
+  leftDashPoint: {fileID: 0}
+  rightDashPoint: {fileID: 0}
+  clawAttack: {fileID: 8047568609252869637}
+  dashAttack: {fileID: 2486428909198393220}
+  bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
 --- !u!82 &1654071982329790868
 AudioSource:
   m_ObjectHideFlags: 0
@@ -597,8 +605,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 15
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

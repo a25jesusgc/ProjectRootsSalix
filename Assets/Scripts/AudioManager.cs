@@ -39,14 +39,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(AudioLoop theme, bool instant = false)
     {
+        StopAllCoroutines();
         if (instant)
         {
             StartCoroutine(PlayMusicCoroutine(theme));
         }
         else
         {
-            StopCoroutine("PlayMusicFadeCoroutine");
-            StartCoroutine("PlayMusicFadeCoroutine", theme); 
+            StartCoroutine(PlayMusicFadeCoroutine(theme)); 
         }
     }
 

@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking;
     private bool isDashing;
     private float dashCooldown;
-    private bool isHookJumping;
+    public bool isHookJumping {get; private set;}
     private Transform hookTarget;
 
     public Vector2 GetAimDirection => aim;
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         fertilizerSelector = GetComponent<FertilizerSelector>();
         anim = GetComponent<Animator>();
 
-        Vector3 startPosition = PlayerData.GetInstance.GetCheckpoint != null ? PlayerData.GetInstance.GetCheckpoint.GetPosition : new Vector3(-58f, 27f, 0f);
+        Vector3 startPosition = PlayerData.GetInstance.GetCheckpointID != null ? ZoneLoader.instance.GetCheckpoint(PlayerData.GetInstance.GetCheckpointID).GetPosition : new Vector3(-58f, 27f, 0f);
         transform.position = startPosition;
 
         speed = movSpeed;

@@ -68,7 +68,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 6
+  m_Radius: 14
 --- !u!114 &2553426168552056036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
+  multiplier: 1
 --- !u!212 &4322715576844941623
 SpriteRenderer:
   serializedVersion: 2
@@ -5331,7 +5332,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5142932967821432468
 MonoBehaviour:
@@ -5349,8 +5350,8 @@ MonoBehaviour:
   idleMoveRadius: 2
   enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
   idleWaitTime: 2
-  detectionRadius: 5
-  alertRadius: 5
+  direction: {x: 0, y: 0}
+  detectionRadius: 14
   attack: {fileID: 1586434977117384139}
   attackRange: 2
   rb: {fileID: 0}
@@ -5411,11 +5412,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 15
+  MaxDistance: 25
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

@@ -4,7 +4,7 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Enemy enemyType;
 
-    private float multiplier = 1f;
+    [SerializeField] private float multiplier = 1f;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
