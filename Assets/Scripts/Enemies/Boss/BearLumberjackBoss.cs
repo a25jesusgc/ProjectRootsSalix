@@ -7,6 +7,7 @@ public class BearLumberjackBoss : BossController
     [SerializeField] private Animator biteAttack;
     [SerializeField] private Transform shadow;
     [SerializeField] private List<Transform> trees;
+    [SerializeField] private AudioSource whirlSFX;
     [SerializeField] private GameObject treeAttack;
     private const float BITE_ATTACK_RANGE = 3f;
     private const float BITE_ATTACK_OFFSET = 1.25f;
@@ -71,8 +72,8 @@ public class BearLumberjackBoss : BossController
 
         // Bite Attack
         anim.SetBool("walking", false);
+        PlaySfx(6);
         anim.SetTrigger("attack");
-        //PlaySfxAtPoint(0);
         rb.linearVelocity = Vector2.zero;
 
         attackDirection = mov;
@@ -128,6 +129,8 @@ public class BearLumberjackBoss : BossController
             yield return null;
         }
         anim.SetBool("on_ground", true);
+        PlaySfx(2);
+        CameraController.instance.ShakeCamera(1f, 0.25f);
         
         yield return new WaitForSeconds(0.25f);
         col.enabled = true;
@@ -145,6 +148,7 @@ public class BearLumberjackBoss : BossController
         yield return new WaitForSeconds(0.2f);
         
         isWhirling = true;
+        whirlSFX.Play();
         whirlDirection = mov;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.linearVelocity = Vector2.zero;
@@ -162,6 +166,7 @@ public class BearLumberjackBoss : BossController
         }
 
         isWhirling = false;
+        whirlSFX.Stop();
 
         // Se cansa
         anim.SetBool("is_tired", true);
@@ -207,7 +212,7 @@ public class BearLumberjackBoss : BossController
         }
         
         anim.SetTrigger("cut");
-        yield return new WaitForSeconds(0.35f); // Espera a terminar la animación de corte
+        yield return new WaitForSeconds(0.5f); // Espera a terminar la animación de corte
         anim.SetBool("on_ground", true);
 
         // El árbol cae hacia el jugador
@@ -248,7 +253,7 @@ public class BearLumberjackBoss : BossController
             transform.position = targetPos;
             
             anim.SetTrigger("cut");
-            yield return new WaitForSeconds(0.35f); // Espera a terminar la animación de corte
+            yield return new WaitForSeconds(0.5f); // Espera a terminar la animación de corte
             anim.SetBool("on_ground", true);
 
             // El árbol cae hacia el jugador
@@ -299,7 +304,7 @@ public class BearLumberjackBoss : BossController
     public void ActivateBiteAttack()
     {
         biteAttack.gameObject.SetActive(true);
-        //PlaySfx(1);
+        PlaySfx(0);
         biteAttack.SetTrigger("attack");
     }
 
@@ -323,8 +328,10 @@ public class BearLumberjackBoss : BossController
 
     private void Rebound(Collision2D collision)
     {
+        if(!isWhirling) return;
         Vector2 normal = collision.GetContact(0).normal;
         whirlDirection = Vector2.Reflect(lastVelocityDir, normal);
+        PlaySfx(5);
     }
 
     void FixedUpdate()

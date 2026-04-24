@@ -2015,7 +2015,7 @@ Camera:
   far clip plane: 5000
   field of view: 5
   orthographic: 1
-  orthographic size: 4.265625
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2116,6 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   cinemachineCamera: {fileID: 808323194}
   cinemachineConfiner: {fileID: 808323196}
+  cinemachinePositionCompposer: {fileID: 808323193}
   player: {fileID: 2051650939}
 --- !u!81 &519420036
 AudioListener:
