@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 4a2a294519c5a854b9f1eb5807d96ea8
+  m_Entries:
+  - m_Id: 216732680192
+    m_Key: new_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228162158592
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245090369536
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 256054280192
+    m_Key: exit_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 846146715648
+    m_Key: volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861665640448
+    m_Key: general
+    m_Metadata:
+      m_Items: []
+  - m_Id: 871664861184
+    m_Key: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 884944027648
+    m_Key: sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 892133064704
+    m_Key: close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1503184437248
+    m_Key: pause_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1646059208704
+    m_Key: resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2299770847232
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4680659124224
+    m_Key: buy
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5277108808234565844
+  references:
+    version: 2
+    RefIds:
+    - rid: 5277108808234565844
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1777019990208
