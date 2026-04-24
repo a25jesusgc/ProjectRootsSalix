@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6501756389219013551
+--- !u!1001 &2456180053202669300
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,35 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 196058138620722201, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: amount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 420570844651619123, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: m_Name
-      value: Currency5
+      value: Currency10 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 845948431155212994, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8546913655225462950, guid: 99a2f66bd766923429ceb7ffbfb27ebb, type: 3}
-    - target: {fileID: 845948431155212994, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 845948431155212994, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 845948431155212994, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -1301397440, guid: 99a2f66bd766923429ceb7ffbfb27ebb, type: 3}
     - target: {fileID: 6369793425692714242, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.38181
       objectReference: {fileID: 0}
     - target: {fileID: 6369793425692714242, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.96398
       objectReference: {fileID: 0}
     - target: {fileID: 6369793425692714242, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
       propertyPath: m_LocalPosition.z
