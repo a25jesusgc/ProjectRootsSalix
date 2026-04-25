@@ -55,5 +55,17 @@ TagManager:
   - name: FrontDecoration
     uniqueID: 3768368065
     locked: 0
+  - name: ExteriorHouse
+    uniqueID: 195586265
+    locked: 0
+  - name: Roof
+    uniqueID: 3507446835
+    locked: 0
+  - name: Door
+    uniqueID: 1054195921
+    locked: 0
+  - name: Windows
+    uniqueID: 1568673589
+    locked: 0
   m_RenderingLayers:
   - Default
