@@ -5,9 +5,16 @@ using UnityEngine.UI;
 public class TransitionController : MonoBehaviour
 {
     private Image image;
-    public bool transitionFinished {get; private set;}
+    public bool transitionFinished { get; private set; }
 
     private const float DURATION = 0.5f;
+
+    public static TransitionController instance; //Singleton
+    void Awake()
+    {
+        // Singleton pattern
+        instance = this;
+    }
 
     void Start()
     {
