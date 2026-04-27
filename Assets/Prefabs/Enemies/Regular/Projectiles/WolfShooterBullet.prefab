@@ -184,4 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
   damage: 0
-  hitEffect: {fileID: 7758902820952965791, guid: fd626dfe09aeda642a7d10e059d610f6, type: 3}
+  hitEffect: {fileID: 7758902820952965791, guid: 8e83d47b3c2a8bd4e90351af1a7b25dd, type: 3}

@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         {
             if (collision.TryGetComponent(out PlayerHealthController playerHealth))
             {
-                playerHealth.TakeDamage(Mathf.RoundToInt(enemyType.GetAttackDamage * multiplier));
+                playerHealth.TakeDamage(Mathf.RoundToInt(enemyType.GetAttackDamage * multiplier * GetDayCycleAttackMultiplier()));
             }
         }
     }
@@ -30,5 +30,21 @@ public class EnemyAttack : MonoBehaviour
     public void SetMultiplier(float value)
     {
         multiplier = value;
+    }
+
+    private float GetDayCycleAttackMultiplier()
+    {
+        float multiplier = 1f;
+
+        if (DayCycleManager.instance.IsDay)
+        {
+            return enemyType.GetDayAttackMultipler;
+        }
+        else if (DayCycleManager.instance.IsNight)
+        {
+            return enemyType.GetNightAttackMultipler;
+        }
+
+        return multiplier;
     }
 }

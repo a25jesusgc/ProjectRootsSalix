@@ -130,7 +130,7 @@ public class AlphaWolfBoss : BossController
             //Le da velocidad
             bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * BULLET_SPEED;
             // Le pasa el daño que debe hacer a bullet
-            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
+            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f * GetDayCycleAttackMultiplier());
             PlaySfx(5);
 
             yield return new WaitForSeconds(BULLET_FIRE_RATE); // Cadencia de disparo
@@ -182,7 +182,7 @@ public class AlphaWolfBoss : BossController
             //Le da velocidad
             bullet.GetComponent<Rigidbody2D>().linearVelocity = aim * BULLET_SPEED;
             // Le pasa el daño que debe hacer a bullet
-            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f);
+            bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f * GetDayCycleAttackMultiplier());
 
             aim = Quaternion.Euler(0f, 0f, 16f) * aim;
             PlaySfx(5);

@@ -27,7 +27,8 @@ public class EnemyHealth : MonoBehaviour
     public void ReceiveDamage(int damage, DamageType damageType)
     {
         // Calcula el daño recibido teniendo en cuenta las resistencias
-        int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int)damageType]);
+        int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int)damageType] / GetDayCycleDefenseMultiplier());
+        Debug.Log("Enemy "+ gameObject.name + " received " + receivedDamage + " damage.");
         if (receivedDamage <= 0) receivedDamage = 1;
         currentHP -= receivedDamage;
         ShowDamagedFeedback();
@@ -36,6 +37,22 @@ public class EnemyHealth : MonoBehaviour
             currentHP = 0;
             Defeat();
         }
+    }
+
+    private float GetDayCycleDefenseMultiplier()
+    {
+        float multiplier = 1f;
+
+        if (DayCycleManager.instance.IsDay)
+        {
+            return enemyType.GetDayDefenseMultipler;
+        }
+        else if (DayCycleManager.instance.IsNight)
+        {
+            return enemyType.GetNightDefenseMultipler;
+        }
+
+        return multiplier;
     }
 
     // Función de gestión de cuando la vida del enemigo llega a 0 y cae derrotado
