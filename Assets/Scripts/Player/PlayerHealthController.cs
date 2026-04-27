@@ -53,6 +53,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         if(invulnerable) return;
         currentHP -= damage;
+        Debug.Log("Player received " + damage + " damage.");
         if (!selfInflicted)
         {
             anim.SetTrigger("hurt");

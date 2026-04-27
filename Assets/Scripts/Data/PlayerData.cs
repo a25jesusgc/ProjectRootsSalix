@@ -19,6 +19,7 @@ public class PlayerData
     [SerializeField] private List<string> checkpointsDiscovered;
     [SerializeField] private int lifeUpgrades;
     [SerializeField] private List<PlayerFertilizer> playerFertilizers;
+    [SerializeField] private float dayTime;
 
     public string GetCheckpointID => checkpointID;
     public void SetCheckpoint(string value) => checkpointID = value;
@@ -40,6 +41,9 @@ public class PlayerData
     public void GotLifeUpgrade() => lifeUpgrades++;
 
     public List<PlayerFertilizer> GetPlayerFertilizers => playerFertilizers;
+    
+    public float GetDayTime => dayTime;
+    public void SetDayTime(float value) => dayTime = value;
 
     public void AddFertilizer(PlayerFertilizer fertilizer)
     {
@@ -80,6 +84,8 @@ public class PlayerData
         lifeUpgrades = 0;
 
         playerFertilizers = new List<PlayerFertilizer>();
+
+        dayTime = 600f;
     }
 
     // Función para guardar los datos en un archivo de guardado

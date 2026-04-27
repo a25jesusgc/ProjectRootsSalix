@@ -322,7 +322,7 @@ public class BearLumberjackBoss : BossController
         if (collision.collider.CompareTag("Player"))
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
-            player.TakeDamage(enemy.GetBodyDamage);
+            player.TakeDamage(isWhirling ? Mathf.RoundToInt(enemy.GetBodyDamage * GetDayCycleAttackMultiplier()) : enemy.GetBodyDamage);
         }
     }
 
