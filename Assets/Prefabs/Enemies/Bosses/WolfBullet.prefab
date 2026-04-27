@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3928783004344841604}
   - component: {fileID: 4970350164314586299}
   m_Layer: 9
-  m_Name: WolfShooterBullet
+  m_Name: WolfBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
