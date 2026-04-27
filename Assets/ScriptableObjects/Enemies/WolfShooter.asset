@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cf4022befc8ef43832d40389779e5d, type: 3}
   m_Name: WolfShooter
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 1200
+  health: 1000
   bodyDamage: 280
   attackDamage: 400
   movSpeed: 5
@@ -20,3 +20,7 @@ MonoBehaviour:
   - 0.9
   - 1
   - 1
+  dayAttackMultipler: 1
+  nightAttackMultipler: 1.2
+  dayDefenseMultipler: 1
+  nightDefenseMultipler: 1

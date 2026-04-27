@@ -20,3 +20,7 @@ MonoBehaviour:
   - 0.8
   - 0.7
   - 1.4
+  dayAttackMultipler: 1
+  nightAttackMultipler: 1.2
+  dayDefenseMultipler: 1
+  nightDefenseMultipler: 1.5

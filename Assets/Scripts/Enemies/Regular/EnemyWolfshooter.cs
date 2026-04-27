@@ -57,7 +57,7 @@ public class EnemyWolfShooter : EnemyController
         bullet.GetComponent<Rigidbody2D>().linearVelocity = playerDirection*bulletSpeed;
 
         // Le pasa el daño que debe hacer a bullet
-        bullet.GetComponent<EnemyProjectile>().damage = enemyType.GetAttackDamage;
+        bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemyType.GetAttackDamage * GetDayCycleAttackMultiplier());
 
         shootSound.Play();
 
@@ -66,5 +66,21 @@ public class EnemyWolfShooter : EnemyController
         // Vuelve a estado perseguir (lo cual volverá a ataque en caso de seguir en el rango), y puede volver a atacar
         currentState = EnemyState.Chasing;
         isAttacking = false;
+    }
+
+    private float GetDayCycleAttackMultiplier()
+    {
+        float multiplier = 1f;
+
+        if (DayCycleManager.instance.IsDay)
+        {
+            return enemyType.GetDayAttackMultipler;
+        }
+        else if (DayCycleManager.instance.IsNight)
+        {
+            return enemyType.GetNightAttackMultipler;
+        }
+
+        return multiplier;
     }
 }

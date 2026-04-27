@@ -94,4 +94,20 @@ public abstract class BossController : MonoBehaviour
         audioSource.clip = sfx[index];
         audioSource.Play();
     }
+
+    public float GetDayCycleAttackMultiplier()
+    {
+        float multiplier = 1f;
+
+        if (DayCycleManager.instance.IsDay)
+        {
+            return enemy.GetDayAttackMultipler;
+        }
+        else if (DayCycleManager.instance.IsNight)
+        {
+            return enemy.GetNightAttackMultipler;
+        }
+
+        return multiplier;
+    }
 }

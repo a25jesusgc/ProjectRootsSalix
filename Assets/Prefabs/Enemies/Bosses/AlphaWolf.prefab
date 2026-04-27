@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   enemyType: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
+  multiplier: 1
 --- !u!1 &1226517914806507507
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   enemyType: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
+  multiplier: 1
 --- !u!1 &2037877468513190587
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
-  destroyOnDefeat: 0
+  deactivateOnDefeat: 1
 --- !u!114 &8634860623484656336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +585,7 @@ MonoBehaviour:
   rightDashPoint: {fileID: 0}
   clawAttack: {fileID: 8047568609252869637}
   dashAttack: {fileID: 2486428909198393220}
-  bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
+  bulletPrefab: {fileID: 4800503804344322514, guid: fa5a0a25e9b98d4429784b9287caf1c6, type: 3}
 --- !u!82 &1654071982329790868
 AudioSource:
   m_ObjectHideFlags: 0
