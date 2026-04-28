@@ -24,24 +24,25 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 73614639104
     m_Localized: "Cando ocorreu o cataclismo, os animais co\xF1ecidos coma gatos
-      transformaronse nestas criaturas viscosas e semil\xEDquidas. Curiosos por natureza,
-      ainda mante\xF1en o costume de fregarse cos demais en sinal de afecto. Non
-      obstante, debido a s\xFAa nova fisiolox\xEDa \xE1cida o contacto con eles causa
-      graves danos, polo que conv\xE9n evitalos.\r\n"
+      transform\xE1ronse nestas criaturas viscosas e semil\xEDquidas. Curiosos por
+      natureza, a\xEDnda mante\xF1en o costume de fregarse en sinal de afecto. Non
+      obstante, por mor da s\xFAa nova fisiolox\xEDa \xE1cida, o contacto con eles
+      causa graves danos, polo que conv\xE9n evitalos.\r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 83978764288
-    m_Localized: "Parece que a substancia viscosa do seu corpo \xE9 moi sensible
-      a altas temperaturas."
+    m_Localized: "Parece que a substancia que compo\xF1e o seu novo corpo non soporta
+      ben a calor."
     m_Metadata:
       m_Items: []
   - m_Id: 1205179138048
-    m_Localized: Sambesuga
+    m_Localized: Samboosuga
     m_Metadata:
       m_Items: []
   - m_Id: 1207590862848
-    m_Localized: "Un an\xE9lido voador que se alimenta do sangue doutros seres vivos.
-      Cando ten fame, pode abalanz\xE1rse rapidamente a morder ao seu obxectivo."
+    m_Localized: "Estas criaturas voadoras abundan na zona, chuchando os nutrientes
+      de calquera ser vivo que atopen. Atacan abalanz\xE1ndose sobre o seu obxectivo,
+      polo que hai que ter bos reflexos para esquivalas. "
     m_Metadata:
       m_Items: []
   - m_Id: 1255779221504
@@ -49,18 +50,20 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1209830621184
-    m_Localized: "Pola s\xFAa anatom\xEDa, constrinxir o seu corpo co lazo de espi\xF1as
-      parece ferirlle bastante."
+    m_Localized: "Inda que pasan todo o tempo chuch\xE1ndolles a enerx\xEDa aos demais,
+      af\xE9ctalles moito probar un pouco da s\xFAa propia medicina"
     m_Metadata:
       m_Items: []
   - m_Id: 1257989619712
-    m_Localized: "Un membro dos bandidos do bosque. Todos eles foron afectados por
-      mutaci\xF3ns que os volveron homes lobo."
+    m_Localized: "Cando a cat\xE1strofe aconteceu, os que eran m\xE1is agresivos
+      adoptaron esta aparencia. Agora viven todos xuntos en manda e pasan o d\xEDa
+      loitando e atacando a calquera viaxeiro desprevido. Alg\xFAns atacan desgarrando
+      os brazos e facendo medrar as garras para asestar poderosas gadoupadas."
     m_Metadata:
       m_Items: []
   - m_Id: 1260002885632
-    m_Localized: "As s\xFAas habilidades de home lobo fanos m\xE1is resistentes baixo
-      a luz da l\xFAa."
+    m_Localized: "As s\xFAas habilidades de lic\xE1ntropo fanos m\xE1is resistentes
+      baixo a luz da l\xFAa."
     m_Metadata:
       m_Items: []
   - m_Id: 1317678759936
@@ -68,8 +71,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1319754940416
-    m_Localized: "Alg\xFAns dos bandidos do bosque non pos\xFAen garras tan poderosas,
-      pero comp\xE9nsano coa habilidade de disparar dentes abrindo o seu cranio."
+    m_Localized: "Cando a cat\xE1strofe aconteceu, os que eran m\xE1is agresivos
+      adoptaron esta aparencia. Agora viven todos xuntos en manda e pasan o d\xEDa
+      loitando e atacando a calquera viaxeiro desprevido. Alg\xFAns atacan partindo
+      a cabeza en dous e disparando cairos dende dentro."
     m_Metadata:
       m_Items: []
   - m_Id: 1321327804416
@@ -77,13 +82,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1385718759424
-    m_Localized: Shakira
+    m_Localized: Lobira
     m_Metadata:
       m_Items: []
   - m_Id: 1387228708864
-    m_Localized: "A l\xEDder dos bandidos do bosque. A s\xFAa personalidade feroz
-      e a s\xFAa gran forza permitiulle manterse como a xefa, enfront\xE1ndose contra
-      todos aqueles que intenten dobregala."
+    m_Localized: "Na sociedade dos bandidos lupinos impera a lei do m\xE1is forte,
+      e Lobira domina esta lei \xE1 perfecci\xF3n. A s\xFAa gran forza combinada
+      coa s\xFAa astucia permitironlle manter invicto o seu t\xEDtulo invicto de
+      alfa da manda, esmagando a calquera que se atreva a desafiala. Del\xE9itase
+      loitando e acumulando as pertenzas que ela e a s\xFAa banda rouban \xE1s s\xFAas
+      v\xEDtimas. Non hai maior pracer para ela que atopar un rival digno capaz de
+      obrigala a usar as s\xFAas habilidades ao m\xE1ximo."
     m_Metadata:
       m_Items: []
   - m_Id: 1388658966528
@@ -91,12 +100,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1437086400512
-    m_Localized: Yogui
+    m_Localized: "Le\xF1oso"
     m_Metadata:
       m_Items: []
   - m_Id: 1438520852480
-    m_Localized: "Un antigo le\xF1ador que habita o bosque desde hai moito tempo.
-      Alberga un gran rancor cara \xE1s ra\xEDces da gran \xE1rbore."
+    m_Localized: "Vivindo dende antes de que o mundo se volvese tolo, Le\xF1oso experimentou
+      moitas vivencias e garda un especial rancor cara \xE1s ra\xEDces da gran \xE1rbore,
+      \xE1 que culpa de todo o que aconteceu. Empregando o seu brazo machado, ten
+      coma obxectivo destru\xEDr todas as ra\xEDces e so\xF1a co d\xEDa en que poida
+      talar a gran \xE1rbore. Quizais vivir tanto tempo pasoulle factura \xE1 s\xFAa
+      mente, de a\xED este odio profundo e irracional."
     m_Metadata:
       m_Items: []
   - m_Id: 1439896584192
