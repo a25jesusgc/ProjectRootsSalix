@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Enemies_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 3f63dd2e5b3a9b64d93105ba50b014b3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 73614639104
+    m_Localized: A slow creature, so it doesn't pose much of a threat. However, its
+      acidic physiology can cause serious damage if it comes into contact with its
+      prey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83978764288
+    m_Localized: It seems that the viscous substance of its body is very sensitive
+      to high temperatures.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6346391552
+    m_Localized: Slimecat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1205179138048
+    m_Localized: Fleech
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1207590862848
+    m_Localized: A flying annelid that feeds on the blood of other living beings.
+      When hungry, it can quickly swoop down to bite its target.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1209830621184
+    m_Localized: Due to its anatomy, constricting its body with the thorny vine seems
+      to hurt it quite a bit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1255779221504
+    m_Localized: Lupin Bandit (Claws)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1257989619712
+    m_Localized: A member of the forest bandits. They were all affected by mutations
+      that turned them into werewolves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1260002885632
+    m_Localized: Their werewolf abilities make them more resilient under the moonlight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1317678759936
+    m_Localized: Lupin Bandit (Shooter)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319754940416
+    m_Localized: Some of the forest bandits do not possess such powerful claws, but
+      they compensate it with the ability to shoot teeth by opening their skull.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1321327804416
+    m_Localized: At night, their shots are more deadly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385718759424
+    m_Localized: Shakira
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1387228708864
+    m_Localized: The leader of the forest bandits. Her fierce personality and great
+      strength have allowed her to remain the boss, standing up against all those
+      who try to subdue her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1388658966528
+    m_Localized: '-'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1437086400512
+    m_Localized: Yogui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438520852480
+    m_Localized: An old lumberjack who has lived in the forest for a long time. He
+      harbors a great resentment towards the roots of the great tree.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1439896584192
+    m_Localized: '-'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

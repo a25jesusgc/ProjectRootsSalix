@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "Custom/Crear tipo de enemigo")]
 public class Enemy : ScriptableObject
 {
+    // Identificador del tipo de enemigo
+    [SerializeField] private string enemyType;
+
     // Cantidad de vida del enemigo, cuanto daño puede aguantar
     [SerializeField] private int health;
 
@@ -25,6 +29,12 @@ public class Enemy : ScriptableObject
     [SerializeField] private float dayDefenseMultipler = 1f;
     [SerializeField] private float nightDefenseMultipler = 1f;
 
+    // Cantidad de enemigos de este tipo a derrotar para obtener toda su información
+    [SerializeField] private int requiredDefeatedCount = 1;
+    // Sprite del enemigo
+    [SerializeField] private Sprite enemySprite;
+
+    public string GetEnemyType => enemyType;
     public int GetHealth => health;
     public int GetBodyDamage => bodyDamage;
     public int GetAttackDamage => attackDamage;
@@ -34,4 +44,31 @@ public class Enemy : ScriptableObject
     public float GetNightAttackMultipler => nightAttackMultipler;
     public float GetDayDefenseMultipler => dayDefenseMultipler;
     public float GetNightDefenseMultipler => nightDefenseMultipler;
+    public int GetRequiredDefeatedCount => requiredDefeatedCount;
+    public Sprite GetEnemySprite => enemySprite;
+
+    public string GetEnemyName => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_name");
+    public string GetEnemyBasicDesc => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_basic_desc");
+    public string GetEnemyAdvDesc => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_adv_desc");
+}
+
+[Serializable] 
+public class EnemyDefeated
+{
+    [SerializeField] private string enemyType;
+    [SerializeField] private int defeatCount;
+
+    public EnemyDefeated(string enemyType) {
+        this.enemyType = enemyType;
+        defeatCount = 1;
+    }
+
+    public string GetEnemyType => enemyType;
+    public int GetDefeatCount => defeatCount;
+
+    public void DefeatEnemy()
+    {
+        defeatCount++;
+    }
+
 }

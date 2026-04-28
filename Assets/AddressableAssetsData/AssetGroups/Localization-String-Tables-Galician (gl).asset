@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-gl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96878b477f9843d4bb690df06820baf7
+    m_Address: Enemies_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 5dd96b3b9ba60844891f982d08ef8116, type: 2}
   m_SchemaSet:

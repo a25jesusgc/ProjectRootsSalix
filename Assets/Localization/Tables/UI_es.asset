@@ -70,6 +70,18 @@ MonoBehaviour:
     m_Localized: Buy
     m_Metadata:
       m_Items: []
+  - m_Id: 1484280367038464
+    m_Localized: "Derrota a m\xE1s enemigos para descubrir m\xE1s informaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1484482272444416
+    m_Localized: 'Has derrotado:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486216935915520
+    m_Localized: Diario
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

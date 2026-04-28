@@ -20,6 +20,7 @@ public class PlayerData
     [SerializeField] private int lifeUpgrades;
     [SerializeField] private List<PlayerFertilizer> playerFertilizers;
     [SerializeField] private float dayTime;
+    [SerializeField] private List<EnemyDefeated> enemiesDefeated;
 
     public string GetCheckpointID => checkpointID;
     public void SetCheckpoint(string value) => checkpointID = value;
@@ -68,6 +69,24 @@ public class PlayerData
         return false;
     }
 
+    public void DefeatEnemy(string enemy)
+    {
+        if (enemiesDefeated.Count((e) => e.GetEnemyType == enemy) > 0)
+        {
+            enemiesDefeated.First((e) => e.GetEnemyType == enemy).DefeatEnemy();
+        }
+        else
+        {
+            enemiesDefeated.Add(new EnemyDefeated(enemy));
+        }
+    }
+
+    public int GetEnemyDefeatCount(string enemy)
+    {
+        if(enemiesDefeated.Count((e) => e.GetEnemyType == enemy) == 0) return 0;
+        return enemiesDefeated.First((e) => e.GetEnemyType == enemy).GetDefeatCount;
+    }
+
     public PlayerData()
     {
         checkpointID = null;
@@ -86,6 +105,8 @@ public class PlayerData
         playerFertilizers = new List<PlayerFertilizer>();
 
         dayTime = 600f;
+
+        enemiesDefeated = new List<EnemyDefeated>();
     }
 
     // Función para guardar los datos en un archivo de guardado

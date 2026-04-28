@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
+    [SerializeField] private GameObject journalWindow;
     [SerializeField] private GameObject settingsWindow;
     public bool isPaused = false;
 
@@ -62,6 +63,11 @@ public class PauseGame : MonoBehaviour
     {
         // Activa o desactiva la ventana de configuración
         settingsWindow.SetActive(value);
+    }
+    public void Journal(bool value)
+    {
+        // Activa o desactiva la ventana de diario
+        journalWindow.SetActive(value);
     }
 
     public void CloseSettings()

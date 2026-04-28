@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cf4022befc8ef43832d40389779e5d, type: 3}
   m_Name: BearLumberjack
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  enemyType: bear_lumberjack
   health: 6800
   bodyDamage: 420
   attackDamage: 680
@@ -24,3 +25,5 @@ MonoBehaviour:
   nightAttackMultipler: 1
   dayDefenseMultipler: 1.2
   nightDefenseMultipler: 1
+  requiredDefeatedCount: 1
+  enemySprite: {fileID: 7674796004811364209, guid: 8b6e08b7aa8606e44a15c4ee7c9b8790, type: 3}

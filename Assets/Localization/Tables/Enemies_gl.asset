@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Enemies_gl
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: gl
+  m_SharedData: {fileID: 11400000, guid: 3f63dd2e5b3a9b64d93105ba50b014b3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6346391552
+    m_Localized: Micolimo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73614639104
+    m_Localized: "Unha criatura lenta, polo que non alberga moito perigo. Sen embargo,
+      a s\xFAa fisionom\xEDa aceda pode producir danos graves se logra entrar en
+      contacto coa s\xFAa presa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83978764288
+    m_Localized: "Parece que a substancia viscosa do seu corpo \xE9 moi sensible
+      a altas temperaturas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1205179138048
+    m_Localized: Sambesuga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1207590862848
+    m_Localized: "Un an\xE9lido voador que se alimenta do sangue doutros seres vivos.
+      Cando ten fame, pode abalanz\xE1rse rapidamente a morder ao seu obxectivo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1255779221504
+    m_Localized: Bandido Lupino (Garras)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1209830621184
+    m_Localized: "Pola s\xFAa anatom\xEDa, constrinxir o seu corpo co lazo de espi\xF1as
+      parece ferirlle bastante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1257989619712
+    m_Localized: "Un membro dos bandidos do bosque. Todos eles foron afectados por
+      mutaci\xF3ns que os volveron homes lobo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1260002885632
+    m_Localized: "As s\xFAas habilidades de home lobo fanos m\xE1is resistentes baixo
+      a luz da l\xFAa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1317678759936
+    m_Localized: Bandido Lupino (Tirador)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319754940416
+    m_Localized: "Alg\xFAns dos bandidos do bosque non pos\xFAen garras tan poderosas,
+      pero comp\xE9nsano coa habilidade de disparar dentes abrindo o seu cranio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1321327804416
+    m_Localized: "Durante a noite, os seus disparos son m\xE1is mort\xEDferos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385718759424
+    m_Localized: Shakira
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1387228708864
+    m_Localized: "A l\xEDder dos bandidos do bosque. A s\xFAa personalidade feroz
+      e a s\xFAa gran forza permitiulle manterse como a xefa, enfront\xE1ndose contra
+      todos aqueles que intenten dobregala."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1388658966528
+    m_Localized: '-'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1437086400512
+    m_Localized: Yogui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438520852480
+    m_Localized: "Un antigo le\xF1ador que habita o bosque desde hai moito tempo.
+      Alberga un gran rancor cara \xE1s ra\xEDces da gran \xE1rbore."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1439896584192
+    m_Localized: '-'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
