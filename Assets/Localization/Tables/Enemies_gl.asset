@@ -23,9 +23,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73614639104
-    m_Localized: "Unha criatura lenta, polo que non alberga moito perigo. Sen embargo,
-      a s\xFAa fisionom\xEDa aceda pode producir danos graves se logra entrar en
-      contacto coa s\xFAa presa."
+    m_Localized: "Cando ocorreu o cataclismo, os animais co\xF1ecidos coma gatos
+      transformaronse nestas criaturas viscosas e semil\xEDquidas. Curiosos por natureza,
+      ainda mante\xF1en o costume de fregarse cos demais en sinal de afecto. Non
+      obstante, debido a s\xFAa nova fisiolox\xEDa \xE1cida o contacto con eles causa
+      graves danos, polo que conv\xE9n evitalos.\r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 83978764288
