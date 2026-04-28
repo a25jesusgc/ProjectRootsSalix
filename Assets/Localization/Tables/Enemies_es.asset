@@ -19,15 +19,15 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 83978764288
-    m_Localized: Parece que la sustancia viscosa de su cuerpo es muy sensible a altas
-      temperaturas.
+    m_Localized: Al parecer la sustancia que compone su nuevo cuerpo no soporta bien
+      el calor.
     m_Metadata:
       m_Items: []
   - m_Id: 73614639104
     m_Localized: "Cuando ocurri\xF3 el cataclismo, los animales conocidos como gatos
       se convirtieron en estas criaturas viscosas y semil\xEDquidas. De car\xE1cter
       curioso, todav\xEDa mantienen la costumbre de frotarse en se\xF1al de afecto.
-      Sin embargo, debido a su nueva fisiolog\xEDa \xE1cida el contacto con ellos
+      Sin embargo, debido a su nueva fisiolog\xEDa \xE1cida, el contacto con ellos
       ocasiona graves da\xF1os, por lo que conviene evitarlos."
     m_Metadata:
       m_Items: []
@@ -36,13 +36,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1260002885632
-    m_Localized: "Sus habilidades de hombre lobo los hacen m\xE1s resistentes bajo
+    m_Localized: "Sus habilidades de lic\xE1ntropo los hacen m\xE1s resistentes bajo
       la luz de la luna."
     m_Metadata:
       m_Items: []
   - m_Id: 1257989619712
-    m_Localized: Un miembro de los bandidos del bosque. Todos ellos fueron afectados
-      por mutaciones que los volvieron hombres lobo.
+    m_Localized: "Cuando la cat\xE1strofe lleg\xF3, aquellos que eran m\xE1s agresivos
+      adquirieron este aspecto. Ahora viven todos juntos en manada y se pasan el
+      d\xEDa peleando y asaltando a cualquier viajero desprevenido. Algunos atacan
+      desgarrando sus brazos y haciendo crecer sus garras para asestar poderosos
+      tajos."
     m_Metadata:
       m_Items: []
   - m_Id: 1255779221504
@@ -50,14 +53,14 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1209830621184
-    m_Localized: "Por su anatom\xEDa, constre\xF1ir su cuerpo con el lazo de espinas
-      parece herirle bastante."
+    m_Localized: "Pese a que pasan todo el tiempo succion\xE1ndole la energ\xEDa
+      a los dem\xE1s, les afecta mucho probar un poco de su propia medicina."
     m_Metadata:
       m_Items: []
   - m_Id: 1207590862848
-    m_Localized: "Un an\xE9lido volador que se alimenta de la sangre de otros seres
-      vivos. Cuando tiene hambre, puede abalanz\xE1rse r\xE1pidamente a morder a
-      su objetivo."
+    m_Localized: "Estas criaturas voladoras abundan por la zona, succionando los
+      nutrientes de cualquier ser vivo que encuentren a su paso. Atacan abalanz\xE1ndose
+      hacia su objetivo, por lo que hay que tener buenos reflejos para esquivarlas."
     m_Metadata:
       m_Items: []
   - m_Id: 1205179138048
@@ -69,8 +72,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1319754940416
-    m_Localized: "Algunos de los bandidos del bosque no poseen garras tan poderosas,
-      pero lo compensan con la habilidad de disparar dientes abriendo su cr\xE1neo."
+    m_Localized: "Cuando la cat\xE1strofe lleg\xF3, aquellos que eran m\xE1s agresivos
+      adquirieron este aspecto. Ahora viven todos juntos en manada y se pasan el
+      d\xEDa peleando y asaltando a cualquier viajero desprevenido. Algunos atacan
+      abriendo su cabeza en dos y disparando colmillos desde su interior."
     m_Metadata:
       m_Items: []
   - m_Id: 1321327804416
@@ -82,9 +87,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1387228708864
-    m_Localized: "La l\xEDder de los bandidos del bosque. Su personalidad feroz y
-      su gran fuerza le ha permitido mantenerse como la jefa, enfrent\xE1ndose contra
-      todos aquellos que intenten doblegarla."
+    m_Localized: "En la sociedad de los bandidos lupinos impera la ley del m\xE1s
+      fuerte y Lobira domina esta ley a la perfecci\xF3n. Su gran fuerza sumada a
+      su astucia le han permitido mantener invicto su t\xEDtulo de alfa de la manada,
+      destrozando a cualquiera que se atreva a desafiarla. Disfruta peleando y acumulando
+      las pertenencias que ella y su pandilla arrebatan a sus v\xEDctimas. No hay
+      mayor placer para ella que encontrar a un rival digno capaz de obligarla a
+      emplear sus habilidades a fondo."
     m_Metadata:
       m_Items: []
   - m_Id: 1388658966528
@@ -92,12 +101,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1437086400512
-    m_Localized: Yogui
+    m_Localized: "Le\xF1oso"
     m_Metadata:
       m_Items: []
   - m_Id: 1438520852480
-    m_Localized: "Un antiguo le\xF1ador que habita el bosque desde hace mucho tiempo.
-      Alberga un gran rencor hacia las ra\xEDces del gran \xE1rbol."
+    m_Localized: "Habiendo vivido desde antes de que el mundo se volviera loco, Lumbearjack
+      ha pasado por mucho y guarda un especial rencor hacia las ra\xEDces del gran
+      \xE1rbol, al que culpa de todo lo sucedido. Empleando su brazo hacha, tiene
+      como objetivo acabar con todas las raices y sue\xF1a con el d\xEDa en el que
+      pueda talar el gran \xE1rbol. Quiza el haber vivido tanto tiempo ha acabado
+      afectando a su mente, de ah\xED este odio profundo e irracional."
     m_Metadata:
       m_Items: []
   - m_Id: 1439896584192
