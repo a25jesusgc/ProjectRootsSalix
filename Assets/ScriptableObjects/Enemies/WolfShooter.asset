@@ -25,3 +25,5 @@ MonoBehaviour:
   nightAttackMultipler: 1.2
   dayDefenseMultipler: 1
   nightDefenseMultipler: 1
+  requiredDefeatedCount: 4
+  enemySprite: {fileID: -7613062647493681719, guid: 85445330442f93b43a7fe00137d179cb, type: 3}

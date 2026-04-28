@@ -67,6 +67,18 @@ MonoBehaviour:
     m_Key: buy
     m_Metadata:
       m_Items: []
+  - m_Id: 1484280367038464
+    m_Key: more_enemies_to_defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1484482272444416
+    m_Key: number_enemies_defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486216935915520
+    m_Key: journal
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

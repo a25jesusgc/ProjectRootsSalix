@@ -70,6 +70,18 @@ MonoBehaviour:
     m_Localized: Comprar
     m_Metadata:
       m_Items: []
+  - m_Id: 1484280367038464
+    m_Localized: Defeat more enemies to discover more data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1484482272444416
+    m_Localized: 'You have defeated:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486216935915520
+    m_Localized: Journal
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

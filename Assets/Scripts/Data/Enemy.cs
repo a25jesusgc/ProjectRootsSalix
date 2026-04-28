@@ -29,6 +29,11 @@ public class Enemy : ScriptableObject
     [SerializeField] private float dayDefenseMultipler = 1f;
     [SerializeField] private float nightDefenseMultipler = 1f;
 
+    // Cantidad de enemigos de este tipo a derrotar para obtener toda su información
+    [SerializeField] private int requiredDefeatedCount = 1;
+    // Sprite del enemigo
+    [SerializeField] private Sprite enemySprite;
+
     public string GetEnemyType => enemyType;
     public int GetHealth => health;
     public int GetBodyDamage => bodyDamage;
@@ -39,6 +44,12 @@ public class Enemy : ScriptableObject
     public float GetNightAttackMultipler => nightAttackMultipler;
     public float GetDayDefenseMultipler => dayDefenseMultipler;
     public float GetNightDefenseMultipler => nightDefenseMultipler;
+    public int GetRequiredDefeatedCount => requiredDefeatedCount;
+    public Sprite GetEnemySprite => enemySprite;
+
+    public string GetEnemyName => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_name");
+    public string GetEnemyBasicDesc => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_basic_desc");
+    public string GetEnemyAdvDesc => GlobalUtils.GetLocalizedString("Enemies", enemyType + "_adv_desc");
 }
 
 [Serializable] 
