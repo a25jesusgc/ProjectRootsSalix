@@ -24,9 +24,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73614639104
-    m_Localized: "Una criatura lenta, por lo que no alberga mucho peligro. Sin embargo,
-      su fisionom\xEDa \xE1cida puede producir da\xF1os graves si logra entrar en
-      contacto con su presa."
+    m_Localized: "Cuando ocurri\xF3 el cataclismo, los animales conocidos como gatos
+      se convirtieron en estas criaturas viscosas y semil\xEDquidas. De car\xE1cter
+      curioso, todav\xEDa mantienen la costumbre de frotarse en se\xF1al de afecto.
+      Sin embargo, debido a su nueva fisiolog\xEDa \xE1cida el contacto con ellos
+      ocasiona graves da\xF1os, por lo que conviene evitarlos."
     m_Metadata:
       m_Items: []
   - m_Id: 6346391552
@@ -76,7 +78,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1385718759424
-    m_Localized: Shakira
+    m_Localized: Lobira
     m_Metadata:
       m_Items: []
   - m_Id: 1387228708864

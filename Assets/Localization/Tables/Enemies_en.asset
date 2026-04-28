@@ -19,9 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 73614639104
-    m_Localized: A slow creature, so it doesn't pose much of a threat. However, its
-      acidic physiology can cause serious damage if it comes into contact with its
-      prey.
+    m_Localized: When the cataclysm happened, the animals known as cats were transformed
+      into these viscous, semi-liquid creatures. Curious by nature, they still maintain
+      the habit of rubbing against each other as a sign of affection. However, due
+      to their new acidic physiology, contact with them causes serious harm, so it's
+      best to avoid them.
     m_Metadata:
       m_Items: []
   - m_Id: 83978764288
