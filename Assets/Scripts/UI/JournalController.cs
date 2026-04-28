@@ -17,6 +17,11 @@ public class JournalController : MonoBehaviour
         enemyData.LoadEnemyData(enemies[index]);
     }
 
+    void OnEnable()
+    {
+        enemyData.LoadEnemyData(enemies[index]);
+    }
+
     public void ShowPreviousEnemy()
     {
         if(index > 0)

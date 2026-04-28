@@ -40,11 +40,11 @@ public class PauseGame : MonoBehaviour
     {
         // Desactivar el menú de pausa y reanudar el tiempo
         GlobalUtils.pause = false;
-
+        Settings(false);
+        Journal(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-
     }
 
     // Método para pausar el juego
