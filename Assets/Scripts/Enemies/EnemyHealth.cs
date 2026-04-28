@@ -58,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
     // Función de gestión de cuando la vida del enemigo llega a 0 y cae derrotado
     public void Defeat()
     {
+        PlayerData.GetInstance.DefeatEnemy(enemyType.GetEnemyType);
         if(enemyController != null) enemyController.SetDefeated();
         if(deactivateOnDefeat) Invoke("Deactivate", 1f);
     }
