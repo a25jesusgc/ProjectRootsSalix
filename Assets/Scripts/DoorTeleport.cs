@@ -7,9 +7,6 @@ public class DoorTeleport : MonoBehaviour
     public Transform destino;
 
 
-
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
