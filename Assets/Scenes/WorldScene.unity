@@ -2805,7 +2805,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: c1fa370b7f21e763000000008dbcb1bbc1bb9ce0
+  m_ApplyToSortingLayers: c1fa370b7f21e763000000008dbcb1bbc1bb9ce00b6f82d5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -7920,6 +7920,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505206518982161523, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5217826841906282858, guid: 7c50891fdad2ac44186287c21de9f40d, type: 3}
       propertyPath: fertilizerSelection
       value: 
