@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         fertilizerSelector = GetComponent<FertilizerSelector>();
         anim = GetComponent<Animator>();
 
-        Vector3 startPosition = PlayerData.GetInstance.GetCheckpointID != null ? ZoneLoader.instance.GetCheckpoint(PlayerData.GetInstance.GetCheckpointID).GetPosition : new Vector3(-58f, 27f, 0f);
+        Vector3 startPosition = PlayerData.GetInstance.GetCheckpointID != null ? ZoneLoader.instance.GetCheckpoint(PlayerData.GetInstance.GetCheckpointID).GetPosition : new Vector3(-3.5f, -0.5f, 0f);
         transform.position = startPosition;
 
         speed = movSpeed;
