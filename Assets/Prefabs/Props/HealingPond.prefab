@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4383756353132535320}
   - component: {fileID: 2486428353087280159}
   m_Layer: 0
-  m_Name: Health Pond Prop
+  m_Name: HealingPond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1676091775
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1134365625569165105, guid: f07d38e09b5ec774380d9aa2cd6fdfbc, type: 3}

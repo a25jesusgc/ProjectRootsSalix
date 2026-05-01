@@ -40,13 +40,13 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1207590862848
     m_Localized: These flying creatures are abundant in the area, sucking nutrients
-      from any living thing they encounter. They attack by swooping down on their
+      from any living being they encounter. They attack by swooping down on their
       target, so you need good reflexes to dodge them.
     m_Metadata:
       m_Items: []
   - m_Id: 1209830621184
     m_Localized: Despite spending their time sucking energy from others, they are
-      greatly affected when they receive a taste of their own medicine.
+      greatly hurt when they receive a taste of their own medicine.
     m_Metadata:
       m_Items: []
   - m_Id: 1255779221504
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Localized: In the society of the lupin bandits, the law of the strongest prevails,
       and Wolfkira masters this law perfectly. Her great strength combined with her
       cunning has allowed her to maintain her undefeated title as alpha of the pack,
-      crushing anyone who dares to challenge her. She revels in fighting and accumulating
+      crushing anyone who dares to challenge her. She rejoices in fighting and accumulating
       the belongings that she and her gang steal from their victims. There is no
       greater pleasure for her than finding a worthy rival capable of forcing her
       to use her skills to the fullest.
