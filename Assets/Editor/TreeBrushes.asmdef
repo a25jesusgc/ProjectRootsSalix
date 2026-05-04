@@ -1,0 +1,6 @@
+{
+    "name": "TreeBrushes",
+    "references": [
+        "Unity.2D.Tilemap.Editor"
+    ]
+}

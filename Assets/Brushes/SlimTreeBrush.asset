@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a097a0becf6f24fb5b09a1621d82a0, type: 3}
+  m_Name: SlimTreeBrush
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::TreeBrush
+  baseLeft: {fileID: 11400000, guid: bafe7308feecad74ea76882adef8ac82, type: 2}
+  baseRight: {fileID: 11400000, guid: 41e39366870bc6c4e8d80a8cb1e979ec, type: 2}
+  trunkLeft: {fileID: 11400000, guid: 90ae15d5784a36d45b9c7cd9422d9fb1, type: 2}
+  trunkRight: {fileID: 11400000, guid: dd26b07671bd0fb4a959955f00ede997, type: 2}
+  topLeft: {fileID: 11400000, guid: caaabf9946ba294409593eb43c1d5f61, type: 2}
+  topRight: {fileID: 11400000, guid: 19b7c079814a9684fb0c6be4a6bf8dbc, type: 2}
