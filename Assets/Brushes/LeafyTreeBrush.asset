@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a097a0becf6f24fb5b09a1621d82a0, type: 3}
+  m_Name: LeafyTreeBrush
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::TreeBrush
+  baseLeft: {fileID: 11400000, guid: 64df5013216cf1846be3c4e79b0e92d8, type: 2}
+  baseRight: {fileID: 11400000, guid: 6d04c4ac034fac848b102e0f1a9c13e0, type: 2}
+  trunkLeft: {fileID: 11400000, guid: 5746d8bd1de6a0b459d9ed95408e0fbe, type: 2}
+  trunkRight: {fileID: 11400000, guid: b540236ec42e24748863e37f833d3fe1, type: 2}
+  topLeft: {fileID: 11400000, guid: 60b9bcb5669a6ca43888ba05a8dcff91, type: 2}
+  topRight: {fileID: 11400000, guid: d02d7b9a0f29811408b050f139b03fec, type: 2}

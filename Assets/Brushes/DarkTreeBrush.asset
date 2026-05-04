@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a097a0becf6f24fb5b09a1621d82a0, type: 3}
+  m_Name: DarkTreeBrush
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::TreeBrush
+  baseLeft: {fileID: 11400000, guid: 552a8951c2f91ab4ab9c552b99d953f0, type: 2}
+  baseRight: {fileID: 11400000, guid: 7e67ffd2e68c87a428300d85e83686e9, type: 2}
+  trunkLeft: {fileID: 11400000, guid: 3406255ead31f84429526584a0e0f82b, type: 2}
+  trunkRight: {fileID: 11400000, guid: 0229a55e56710d54d9f9eae379335154, type: 2}
+  topLeft: {fileID: 11400000, guid: f96197a8a8fbef34e9d288499d47355a, type: 2}
+  topRight: {fileID: 11400000, guid: b648ae901a4a7a84595358486637afb5, type: 2}
