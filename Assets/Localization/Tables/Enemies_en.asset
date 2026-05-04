@@ -19,14 +19,15 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 73614639104
-    m_Localized: A slow creature, so it doesn't pose much of a threat. However, its
-      acidic physiology can cause serious damage if it comes into contact with its
-      prey.
+    m_Localized: When the cataclysm happened, the animals known as cats were transformed
+      into these viscous, semi-liquid creatures. Curious by nature, they still maintain
+      the habit of rubbing as a sign of affection. However, due to their new acidic
+      physiology, contact with them causes serious harm, so it's best to avoid them.
     m_Metadata:
       m_Items: []
   - m_Id: 83978764288
-    m_Localized: It seems that the viscous substance of its body is very sensitive
-      to high temperatures.
+    m_Localized: It seems that the viscous substance that makes up their new body
+      does not withstand heat well.
     m_Metadata:
       m_Items: []
   - m_Id: 6346391552
@@ -38,13 +39,14 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1207590862848
-    m_Localized: A flying annelid that feeds on the blood of other living beings.
-      When hungry, it can quickly swoop down to bite its target.
+    m_Localized: These flying creatures are abundant in the area, sucking nutrients
+      from any living being they encounter. They attack by swooping down on their
+      target, so you need good reflexes to dodge them.
     m_Metadata:
       m_Items: []
   - m_Id: 1209830621184
-    m_Localized: Due to its anatomy, constricting its body with the thorny vine seems
-      to hurt it quite a bit.
+    m_Localized: Despite spending their time sucking energy from others, they are
+      greatly hurt when they receive a taste of their own medicine.
     m_Metadata:
       m_Items: []
   - m_Id: 1255779221504
@@ -52,12 +54,14 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1257989619712
-    m_Localized: A member of the forest bandits. They were all affected by mutations
-      that turned them into werewolves.
+    m_Localized: When the catastrophe struck, those who were most aggressive took
+      on this appearance. Now they all live together in a pack and spend their days
+      fighting and attacking any unsuspecting traveler. Some attack by tearing off
+      their arms and growing claws to deliver powerful slashes.
     m_Metadata:
       m_Items: []
   - m_Id: 1260002885632
-    m_Localized: Their werewolf abilities make them more resilient under the moonlight.
+    m_Localized: Their lycanthrope abilities make them more resilient under the moonlight.
     m_Metadata:
       m_Items: []
   - m_Id: 1317678759936
@@ -65,8 +69,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1319754940416
-    m_Localized: Some of the forest bandits do not possess such powerful claws, but
-      they compensate it with the ability to shoot teeth by opening their skull.
+    m_Localized: When the catastrophe struck, those who were most aggressive took
+      on this appearance. Now they all live together in a pack and spend their days
+      fighting and attacking any unsuspecting traveler. Some attack by splitting
+      their heads in two and shooting fangs from inside.
     m_Metadata:
       m_Items: []
   - m_Id: 1321327804416
@@ -74,13 +80,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1385718759424
-    m_Localized: Shakira
+    m_Localized: Wolfkira
     m_Metadata:
       m_Items: []
   - m_Id: 1387228708864
-    m_Localized: The leader of the forest bandits. Her fierce personality and great
-      strength have allowed her to remain the boss, standing up against all those
-      who try to subdue her.
+    m_Localized: In the society of the lupin bandits, the law of the strongest prevails,
+      and Wolfkira masters this law perfectly. Her great strength combined with her
+      cunning has allowed her to maintain her undefeated title as alpha of the pack,
+      crushing anyone who dares to challenge her. She rejoices in fighting and accumulating
+      the belongings that she and her gang steal from their victims. There is no
+      greater pleasure for her than finding a worthy rival capable of forcing her
+      to use her skills to the fullest.
     m_Metadata:
       m_Items: []
   - m_Id: 1388658966528
@@ -88,12 +98,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1437086400512
-    m_Localized: Yogui
+    m_Localized: Lumbearjack
     m_Metadata:
       m_Items: []
   - m_Id: 1438520852480
-    m_Localized: An old lumberjack who has lived in the forest for a long time. He
-      harbors a great resentment towards the roots of the great tree.
+    m_Localized: Having lived since before the world went mad, Lumbearjack has endured
+      much and harbors a deep-seated grudge against the roots of the great tree,
+      which he blames for everything that has happened. Wielding his axe-like arm,
+      he aims to destroy all the roots and dreams of the day he can fell the great
+      tree. Perhaps living so long has taken its toll on his mind, hence this deep
+      and irrational hatred.
     m_Metadata:
       m_Items: []
   - m_Id: 1439896584192
