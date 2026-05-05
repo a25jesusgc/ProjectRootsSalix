@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,12 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject dialogueContinueIcon;
+
+    // Componente imagen de la pantalla oscura para oscurecer el juego cuando se quiera mostrar solo el dialogo, como en las raices.
+    [SerializeField] private Image blackScreenImage;
+    //Referencias a las corrutinas
+    private Coroutine WriteTextReference;
+    private Coroutine CloseDialogueReference;
 
     // Bandera de si el texto esta siendo escrito
     private bool isWrittingText;
@@ -54,7 +61,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueContinueIcon.SetActive(!isWrittingText);
     }
 
-    public void ShowDialogue(List<Dialogue> dialogues, bool startAlready = false)
+    public void ShowDialogue(List<Dialogue> dialogues, bool startAlready = false, bool darkBackground = false)
     {
         if(dialogues == null || dialogues.Count < 1) return;
         GlobalUtils.pause = true;
@@ -63,6 +70,11 @@ public class DialogueSystem : MonoBehaviour
         currentDialogues = dialogues;
         dialogueText.text = "";
         dialogueBox.SetActive(true);
+
+        //Activa el oscurecimiento si se indica
+        if (darkBackground)
+            StartCoroutine(BlackScreenCoroutine(true));
+
         if(startAlready) ProgressDialogue();
     }
 
@@ -89,7 +101,7 @@ public class DialogueSystem : MonoBehaviour
     {
         string text = currentDialogues[dialogueIndex].GetText;
         writtingText = text;
-        StartCoroutine(WriteTextCoroutine(text));
+        WriteTextReference= StartCoroutine(WriteTextCoroutine(text));
     }
 
     private IEnumerator WriteTextCoroutine(string text)
@@ -126,7 +138,18 @@ public class DialogueSystem : MonoBehaviour
 
     public void CompleteDialogueText()
     {
-        StopAllCoroutines();
+        //StopAllCoroutines();
+
+        //Paramos la corrutina que escribe el texto y la de cierre del dialogo, pero la de oscurecer no
+        if(WriteTextReference!=null){
+            StopCoroutine(WriteTextReference);
+            WriteTextReference=null;
+        }
+
+        if(CloseDialogueReference!=null){
+            StopCoroutine(CloseDialogueReference);
+            CloseDialogueReference=null;
+        }
         
         dialogueText.text = writtingText;
         isWrittingText = false;
@@ -146,10 +169,29 @@ public class DialogueSystem : MonoBehaviour
 
         dialogueOpen = false;
         GlobalUtils.pause = false;
+
+        //Elimina la pantalla oscura
+        StartCoroutine(BlackScreenCoroutine(false));
     }
 
     public void SetDialogueScale(Vector3 scale)
     {
         dialogueBox.transform.localScale = scale;
+    }
+
+    private IEnumerator BlackScreenCoroutine(bool show)
+    {
+        float time = 0f;
+        
+        while (time < 1f)
+        {
+            time += Time.deltaTime*3;
+
+            float origin = show ? 0f : 1f;
+            float target = show ? 1f : 0f;
+            blackScreenImage.color = new Color(0f, 0f, 0f, Mathf.Lerp(origin, target, time / 1f));
+
+            yield return null;
+        }
     }
 }

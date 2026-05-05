@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Cambia de arma con Q y E. Recupera vida absorbiendo agua.
     m_Metadata:
       m_Items: []
+  - m_Id: 89361855201280
+    m_Localized: Esta es la cueva
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
