@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class EnemyWolfShooter : EnemyController
 {
@@ -9,6 +10,18 @@ public class EnemyWolfShooter : EnemyController
     [SerializeField] private float bulletSpeed=10.0f;
     [SerializeField] private AudioSource shootSound;
     [SerializeField] private float attackDuration;
+
+    private List<GameObject> bullets = new List<GameObject>();
+
+
+    void OnDisable()
+    {
+        isAttacking = false;
+        foreach (GameObject bullet in bullets)
+        {
+            Destroy(bullet);
+        }
+    }
 
     protected override void Attack()
     {
@@ -58,6 +71,8 @@ public class EnemyWolfShooter : EnemyController
 
         // Le pasa el daño que debe hacer a bullet
         bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemyType.GetAttackDamage * GetDayCycleAttackMultiplier());
+
+        bullets.Add(bullet);
 
         shootSound.Play();
 

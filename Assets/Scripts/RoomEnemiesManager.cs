@@ -11,7 +11,10 @@ public class RoomEnemiesManager : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
             {
-                if(!enemy.isDefeated) enemy.gameObject.SetActive(true);
+                if(!enemy.isDefeated){
+                    enemy.gameObject.SetActive(true);
+                    enemy.currentState = EnemyController.EnemyState.Idle;
+                }
             }
         }
     }

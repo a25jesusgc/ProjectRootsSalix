@@ -8,6 +8,11 @@ public class Leech : EnemyController
 
     private float LEECH_DASH_SPEED = 16f;
 
+    void OnDisable()
+    {
+        isAttacking = false;
+    }
+
     protected override void Attack()
     {
         if (player == null) return; //Si no hay jugador, no continua

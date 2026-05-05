@@ -5,6 +5,12 @@ public class EnemyWolfClaw : EnemyController
     // Bool para ejecutar de nuevo el ataque
     private bool isAttacking = false;
 
+    void OnDisable()
+    {
+        isAttacking = false;
+        attack.SetActive(false);
+    }
+    
     protected override void Attack()
     {
         if (player == null) return; //Si no hay jugador, no continua
