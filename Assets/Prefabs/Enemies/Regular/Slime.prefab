@@ -4912,6 +4912,7 @@ GameObject:
   - component: {fileID: 1769639208210811768}
   - component: {fileID: 5305792722226733143}
   - component: {fileID: 5646576072022269723}
+  - component: {fileID: 5594595506429948180}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
@@ -5092,6 +5093,7 @@ MonoBehaviour:
   attackRange: 1
   rb: {fileID: 0}
   currentState: 0
+  isDefeated: 0
 --- !u!114 &6413388556315471812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5105,7 +5107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 3fd375ca7c7eca244a4470a018bb1db0, type: 2}
-  destroyOnDefeat: 1
+  dropSpawner: {fileID: 5594595506429948180}
+  deactivateOnDefeat: 1
 --- !u!95 &7409007896478951930
 Animator:
   serializedVersion: 7
@@ -5255,6 +5258,25 @@ MonoBehaviour:
   particles:
   - {fileID: 7030088693493455377}
   - {fileID: 6855947480635107496}
+--- !u!114 &5594595506429948180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831086944621234411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 420570844651619123, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
+  dropTypeChances:
+  - 100
+  minDropAmount: 2
+  maxDropAmount: 4
 --- !u!1 &5865867682624900766
 GameObject:
   m_ObjectHideFlags: 0

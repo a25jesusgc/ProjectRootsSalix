@@ -229,7 +229,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -526599231
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7861632266607067040, guid: a254f4d347b28b04db2529b776373061, type: 3}
@@ -5176,6 +5176,7 @@ GameObject:
   - component: {fileID: -6287937738559168745}
   - component: {fileID: 174856132200728342}
   - component: {fileID: -122120408878430356}
+  - component: {fileID: 8798799858526792124}
   m_Layer: 7
   m_Name: WolfClaw
   m_TagString: Enemy
@@ -5356,6 +5357,7 @@ MonoBehaviour:
   attackRange: 2
   rb: {fileID: 0}
   currentState: 0
+  isDefeated: 0
 --- !u!114 &-1036344777182736137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5369,7 +5371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: cf4daf369e00f8240a3c627e70705a5a, type: 2}
-  destroyOnDefeat: 1
+  deactivateOnDefeat: 1
 --- !u!95 &4649988647023499211
 Animator:
   serializedVersion: 7
@@ -5516,6 +5518,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayEnemyParticles
   particles:
   - {fileID: 7263826396418854973}
+--- !u!114 &8798799858526792124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571558818745231509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 420570844651619123, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
+  dropTypeChances:
+  - 100
+  minDropAmount: 8
+  maxDropAmount: 16
 --- !u!1 &7971232208507199186
 GameObject:
   m_ObjectHideFlags: 0

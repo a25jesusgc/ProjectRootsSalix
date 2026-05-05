@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -526599231
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6746220330977797362, guid: cf0a1743b1e20334aa76afc75eb5bfd2, type: 3}
@@ -5385,6 +5385,7 @@ GameObject:
   - component: {fileID: 450498442603365665}
   - component: {fileID: 4598195301698451154}
   - component: {fileID: 4677136706191810960}
+  - component: {fileID: 127679037422119066}
   m_Layer: 7
   m_Name: BearLumberjack
   m_TagString: Enemy
@@ -5720,6 +5721,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayAnimParticles
   particles:
   - {fileID: 955331296481290325}
+--- !u!114 &127679037422119066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057052533745732948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 6912121666195558556, guid: 6eab1ebfe27be8a4d87a8225c8c1245e, type: 3}
+  dropTypeChances:
+  - 100
+  minDropAmount: 12
+  maxDropAmount: 14
 --- !u!1 &9213127605840817731
 GameObject:
   m_ObjectHideFlags: 0

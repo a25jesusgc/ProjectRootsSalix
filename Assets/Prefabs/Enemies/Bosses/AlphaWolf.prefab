@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 1616321969705308507}
   - component: {fileID: 8634860623484656336}
   - component: {fileID: 1654071982329790868}
+  - component: {fileID: 1211069213444901460}
   m_Layer: 7
   m_Name: AlphaWolf
   m_TagString: Enemy
@@ -683,6 +684,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1211069213444901460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008262373835282618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 6912121666195558556, guid: 6eab1ebfe27be8a4d87a8225c8c1245e, type: 3}
+  dropTypeChances:
+  - 100
+  minDropAmount: 8
+  maxDropAmount: 10
 --- !u!1 &5923900283099306157
 GameObject:
   m_ObjectHideFlags: 0

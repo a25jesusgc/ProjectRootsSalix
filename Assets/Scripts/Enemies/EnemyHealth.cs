@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public bool deactivateOnDefeat = true;
     private EnemyController enemyController;
     private SpriteRenderer spriteRenderer;
+    private DropSpawner dropSpawner;
 
     // Vida actual
     private int currentHP;
@@ -18,6 +19,10 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (TryGetComponent(out DropSpawner dropSpawner))
+        {
+            this.dropSpawner = dropSpawner;
+        }
     }
 
     void Start()
@@ -64,6 +69,7 @@ public class EnemyHealth : MonoBehaviour
     {
         PlayerData.GetInstance.DefeatEnemy(enemyType.GetEnemyType);
         if(enemyController != null) enemyController.SetDefeated();
+        if(dropSpawner != null) dropSpawner.SpawnDrops();
         if(deactivateOnDefeat) Invoke("Deactivate", 1f);
     }
 
