@@ -38,6 +38,7 @@ public class EnemyController : MonoBehaviour
     private float idleWaitTimer = 0f; // Temporizador para controlar cuánto tiempo el enemigo espera antes de generar una nueva posición objetivo en estado Idle
     private bool isWaiting = false; // Variable para controlar si el enemigo está esperando antes de generar una nueva posición objetivo en estado Idle
     [HideInInspector] public bool isDefeated = false; // Variable para controlar si el enemigo está derrotado
+    [HideInInspector] public Vector3 originPos; // Variable para controlar su posición de origen
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,6 +50,7 @@ public class EnemyController : MonoBehaviour
             attackAnim = atkAnim;
         }
         currentState = EnemyState.Idle;
+        originPos = transform.position;
     }
 
     // Update is called once per frame

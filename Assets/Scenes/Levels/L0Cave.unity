@@ -1558,6 +1558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 4831086944621234411, guid: 152d191ea914c0f49bce33d9b64426a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1568,6 +1572,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1278144934995334865, guid: 152d191ea914c0f49bce33d9b64426a8, type: 3}
   m_PrefabInstance: {fileID: 319219465}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &319219467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2097904120778146487, guid: 152d191ea914c0f49bce33d9b64426a8, type: 3}
+  m_PrefabInstance: {fileID: 319219465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ec946197f598747a1c2f5f381e5862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
 --- !u!1 &328563583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,13 +2188,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leech
       objectReference: {fileID: 0}
-    - target: {fileID: 5862788636144240857, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 7601141411783080, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5862788636144240857, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862788636144240857, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5862788636144240857, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2223,6 +2242,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5862788636144240857, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
   m_PrefabInstance: {fileID: 536365636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &536365638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3921598047895536302, guid: d03cf773a5940a24b92d044abee1d3d4, type: 3}
+  m_PrefabInstance: {fileID: 536365636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc26ce388377c694d86158b841f90c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Leech
 --- !u!1 &562106226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,6 +2264,7 @@ GameObject:
   - component: {fileID: 562106227}
   - component: {fileID: 562106229}
   - component: {fileID: 562106228}
+  - component: {fileID: 562106230}
   m_Layer: 0
   m_Name: R2 - Slime
   m_TagString: Untagged
@@ -2314,8 +2345,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 28, y: 26}
+  m_Size: {x: 30, y: 26}
   m_EdgeRadius: 0
+--- !u!114 &562106230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562106226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2a8f720d5c42a4abc4e722bae3ebdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomEnemiesManager
+  enemies:
+  - {fileID: 319219467}
 --- !u!1001 &573815802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2398,6 +2443,7 @@ GameObject:
   - component: {fileID: 673802062}
   - component: {fileID: 673802064}
   - component: {fileID: 673802063}
+  - component: {fileID: 673802065}
   m_Layer: 0
   m_Name: R4 - Fleech
   m_TagString: Untagged
@@ -2480,6 +2526,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f643c0bdafda194d97db455cb10136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomAudioManager
+--- !u!114 &673802065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673802061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2a8f720d5c42a4abc4e722bae3ebdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomEnemiesManager
+  enemies:
+  - {fileID: 536365638}
 --- !u!1 &686167682
 GameObject:
   m_ObjectHideFlags: 0
