@@ -4994,6 +4994,7 @@ GameObject:
   - component: {fileID: 6425329431257040553}
   - component: {fileID: -1362685165160848782}
   - component: {fileID: 5388584903367393178}
+  - component: {fileID: 9116091008506160731}
   m_Layer: 7
   m_Name: WolfShooter
   m_TagString: Enemy
@@ -5174,6 +5175,7 @@ MonoBehaviour:
   attackRange: 6
   rb: {fileID: 0}
   currentState: 0
+  isDefeated: 0
   firePoint: {fileID: 2709098595665501562}
   bulletPrefab: {fileID: 4800503804344322514, guid: 56069b86fa8f14446a4bbec5fdd9b4c2, type: 3}
   bulletSpeed: 10
@@ -5192,7 +5194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 8b06f62b3bd128845850330755437048, type: 2}
-  destroyOnDefeat: 1
+  deactivateOnDefeat: 1
 --- !u!95 &6117194648507710539
 Animator:
   serializedVersion: 7
@@ -5339,6 +5341,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayEnemyParticles
   particles:
   - {fileID: 8009629047705997373}
+--- !u!114 &9116091008506160731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679417531625705626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7ef6d2ce78a244bd586e594ad8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropSpawner
+  dropChance: 100
+  drops:
+  - {fileID: 420570844651619123, guid: 6ad190c83ad067644a37eab6fb2c7d24, type: 3}
+  dropTypeChances:
+  - 100
+  minDropAmount: 8
+  maxDropAmount: 12
 --- !u!1 &5930056183485461878
 GameObject:
   m_ObjectHideFlags: 0

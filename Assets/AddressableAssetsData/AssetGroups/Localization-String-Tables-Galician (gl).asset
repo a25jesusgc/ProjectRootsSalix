@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Galician (gl)
   m_GUID: b89bf094f8741494fb5514866d663bd2
   m_SerializeEntries:
+  - m_GUID: 1f439a1216fc7174783ce7932daf5905
+    m_Address: Dialogues_gl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-gl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4893d92600363784bbd8006b773d43c3
     m_Address: UI_gl
     m_ReadOnly: 1

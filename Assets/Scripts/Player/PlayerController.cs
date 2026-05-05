@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInteractor interactBox;
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
+    [SerializeField] private AudioSource dashSFX;
 
     private PlayerInput playerInput;
     private Rigidbody2D rb;
@@ -173,6 +174,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DashCoroutine()
     {
         isDashing = true;
+        dashSFX.Play();
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
     }

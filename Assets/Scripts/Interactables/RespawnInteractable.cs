@@ -6,6 +6,7 @@ public class RespawnInteractable : Interactable
     [SerializeField] private Checkpoint checkpoint;
     [SerializeField] private GameObject travelMenu;
     [SerializeField] private List<GameObject> travelButtonsList;
+    [SerializeField] private GameObject healEffect;
 
     private int availableTPs;
 
@@ -19,6 +20,7 @@ public class RespawnInteractable : Interactable
     {
         // Curación del jugador
         player.GetComponent<PlayerHealthController>().FullRecovery();
+        Instantiate(healEffect, player.transform.position, Quaternion.identity);
 
         // Si es un checkpoint nuevo, se guarda su descubrimiento
         if(!PlayerData.GetInstance.WasCheckpointDiscovered(checkpoint)) PlayerData.GetInstance.DiscoverCheckpoint(checkpoint);

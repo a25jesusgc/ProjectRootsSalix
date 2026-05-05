@@ -21,6 +21,10 @@ public class PlayerCurrency : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtCurrentAmount;
     [SerializeField] private TextMeshProUGUI txtAmountToAdd;
 
+    [SerializeField] private AudioSource getCoinSFX;
+    private float soundEffectPitch = 1f;
+    private float soundEffectTimer;
+
 
     // Variables que almacenan el dinero actual mostrado y el valor a añadir/restar
     private int currentAmount;
@@ -52,12 +56,30 @@ public class PlayerCurrency : MonoBehaviour
     void Update()
     {
         layout.position = Vector3.MoveTowards(layout.position, forceShow || show ? showPos.position : hidePos.position, Time.deltaTime * speed);
+        if(soundEffectTimer > 0f)
+        {
+            soundEffectTimer -= Time.deltaTime;
+        }
     }
 
 
     // Función que muestra un cambio de dinero
     public void ChangeCurrency(int amountToAdd)
     {
+        if (amountToAdd > 0)
+        {
+            if(soundEffectTimer > 0)
+            {
+                soundEffectPitch = soundEffectPitch + 0.05f;
+            }
+            else
+            {
+                soundEffectPitch = 1f;
+            }
+            getCoinSFX.pitch = soundEffectPitch;
+            soundEffectTimer = 2f;
+            getCoinSFX.Play();
+        }
         // Actualiza el valor a modificar, detiene la corrutina si ya estaba activa y la inicia de nuevo
         this.amountToAdd += amountToAdd;
         StopCoroutine("ChangeCurrencyCoroutine");
@@ -76,6 +98,7 @@ public class PlayerCurrency : MonoBehaviour
         // Tiempo de espera (para ver la acumulación de dinero añadido en caso de seguir cogiendo monedas)
         yield return new WaitForSeconds(2f);
 
+        float totalAmountToAdd = amountToAdd;
 
         // Mientras queda dinero que añadir / sustraer
         while(amountToAdd != 0)
@@ -100,7 +123,7 @@ public class PlayerCurrency : MonoBehaviour
 
 
             // Tiempo de espera entre unidad y unidad
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(Mathf.Clamp(4f / totalAmountToAdd, 0f, 0.02f));
         }
 
         yield return new WaitForSeconds(1f);
