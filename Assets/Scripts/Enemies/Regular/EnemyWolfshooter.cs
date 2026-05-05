@@ -21,6 +21,7 @@ public class EnemyWolfShooter : EnemyController
         {
             Destroy(bullet);
         }
+        bullets.Clear();
     }
 
     protected override void Attack()
