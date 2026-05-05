@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Switch weapon with Q and E. Recover health absorbing water.
     m_Metadata:
       m_Items: []
+  - m_Id: 89361855201280
+    m_Localized: This is the cave
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

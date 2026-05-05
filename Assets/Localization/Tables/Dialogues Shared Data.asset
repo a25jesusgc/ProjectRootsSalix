@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: sign_tutorial_1
     m_Metadata:
       m_Items: []
+  - m_Id: 89361855201280
+    m_Key: root_cave_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
