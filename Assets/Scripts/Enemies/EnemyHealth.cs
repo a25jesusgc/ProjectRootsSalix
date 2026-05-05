@@ -14,10 +14,14 @@ public class EnemyHealth : MonoBehaviour
 
     private Vector3 startPos;
 
-    void Start()
+    void Awake()
     {
         enemyController = GetComponent<EnemyController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
         // Inicializa su vida
         currentHP = enemyType.GetHealth;
         startPos = transform.position;
@@ -90,9 +94,15 @@ public class EnemyHealth : MonoBehaviour
 
     public void Revive()
     {
+        ResetEnemy();
+        if(enemyController != null) enemyController.SetDefeated(false);
+    }
+
+    public void ResetEnemy()
+    {
         transform.position = startPos;
         currentHP = enemyType.GetHealth;
-        if(enemyController != null) enemyController.SetDefeated(false);
+        spriteRenderer.color = Color.white;
     }
 
     public float GetHealthPercentage => (float)currentHP / enemyType.GetHealth;

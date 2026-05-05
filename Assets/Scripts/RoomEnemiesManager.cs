@@ -25,7 +25,7 @@ public class RoomEnemiesManager : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
             {
-                enemy.transform.position = enemy.originPos;
+                if(!enemy.isDefeated && enemy.TryGetComponent(out EnemyHealth enemyHealth)) enemyHealth.ResetEnemy(); 
                 enemy.gameObject.SetActive(false);
             }
         }

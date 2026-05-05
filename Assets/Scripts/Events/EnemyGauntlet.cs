@@ -9,6 +9,9 @@ public class EnemyGauntlet : MonoBehaviour
     [SerializeField] private string eventID;
     [SerializeField] private List<GauntletWave> enemyWaves;
     [SerializeField] private List<GameObject> pathBlocking;
+    [SerializeField] private AudioLoop battleTheme;
+    [SerializeField] private AudioLoop areaTheme;
+
 
     private bool started;
 
@@ -41,6 +44,8 @@ public class EnemyGauntlet : MonoBehaviour
             pathBlock.SetActive(true);
         }
 
+        AudioManager.instance.PlayMusic(battleTheme, true);
+
         yield return new WaitForSeconds(0.5f);
 
         GlobalUtils.pause = false;
@@ -63,6 +68,8 @@ public class EnemyGauntlet : MonoBehaviour
         }
         PlayerData.GetInstance.CompleteEvent(eventID);
         started = false;
+
+        AudioManager.instance.PlayMusic(areaTheme);
     }
 }
 

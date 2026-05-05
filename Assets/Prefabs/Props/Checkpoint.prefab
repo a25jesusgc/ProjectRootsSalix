@@ -158,12 +158,10 @@ MonoBehaviour:
   icon: {fileID: 1691636266044258331}
   checkpoint: {fileID: 11400000, guid: f42887a16c9ac774385755dfba4ab0da, type: 2}
   travelMenu: {fileID: 3393045683282036060}
-  checkpointList:
-  - {fileID: 11400000, guid: f42887a16c9ac774385755dfba4ab0da, type: 2}
-  - {fileID: 11400000, guid: 6fb1bcc6c7c779f4186d996fa7ebb05d, type: 2}
   travelButtonsList:
   - {fileID: 6618496214115017370}
   - {fileID: 339447805821022695}
+  healEffect: {fileID: 7758902820952965791, guid: d9fc29cef1abecd4fb040ad3558ecff8, type: 3}
 --- !u!95 &5420630347809677800
 Animator:
   serializedVersion: 7
@@ -264,7 +262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -526599231
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 40
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 525d793a22811bc44bcd29f619e0d6ce, type: 3}
