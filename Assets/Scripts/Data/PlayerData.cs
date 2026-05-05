@@ -15,6 +15,7 @@ public class PlayerData
     [SerializeField] private string checkpointID;
     [SerializeField] private List<int> availableWeapons;
     [SerializeField] private List<string> itemsPicked;
+    [SerializeField] private List<string> events;
     [SerializeField] private int currency;
     [SerializeField] private List<string> checkpointsDiscovered;
     [SerializeField] private int lifeUpgrades;
@@ -31,6 +32,9 @@ public class PlayerData
     
     public bool WasItemPicked(string id) => itemsPicked.Contains(id);
     public void PickItem(string id) => itemsPicked.Add(id);
+    public bool WasEventCompleted(string id) => events.Contains(id);
+    public void CompleteEvent(string id) => events.Add(id);
+
 
     public int GetCurrency => currency;
     public void ChangeCurrency(int amount) => currency += amount;
@@ -95,6 +99,8 @@ public class PlayerData
         availableWeapons = new List<int>() {0, 1, 2};
 
         itemsPicked = new List<string>();
+
+        events = new List<string>();
 
         currency = 0;
 
