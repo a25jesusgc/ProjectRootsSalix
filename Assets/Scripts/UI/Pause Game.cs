@@ -45,6 +45,7 @@ public class PauseGame : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        CursorManager.instance.SetCursorCrosshair();
     }
 
     // Método para pausar el juego
@@ -55,7 +56,7 @@ public class PauseGame : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-
+        CursorManager.instance.SetCursorArrow();
     }
 
 
