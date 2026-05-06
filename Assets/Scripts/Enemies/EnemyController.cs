@@ -39,6 +39,12 @@ public class EnemyController : MonoBehaviour
     private bool isWaiting = false; // Variable para controlar si el enemigo está esperando antes de generar una nueva posición objetivo en estado Idle
     [HideInInspector] public bool isDefeated = false; // Variable para controlar si el enemigo está derrotado
 
+    private float wakeUpTimer; // Temporizador para que el enemigo empiece a actuar tras un poco de tiempo tras ser activado
+
+    void OnEnable()
+    {
+        wakeUpTimer = 1f;
+    }
 
     void Awake()
     {
@@ -80,6 +86,11 @@ public class EnemyController : MonoBehaviour
     {
         // Verificar la distancia al jugador
         if (isDefeated) return;
+
+        if(wakeUpTimer > 0) { 
+            wakeUpTimer -= Time.deltaTime; 
+            return;
+        }
 
         if (player != null && currentState != EnemyState.Attack)
         {

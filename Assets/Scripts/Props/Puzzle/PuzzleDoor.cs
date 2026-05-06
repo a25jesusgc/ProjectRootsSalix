@@ -17,7 +17,7 @@ public class PuzzleDoor : MonoBehaviour
     private bool disableNotActivation;
 
     // Comprueba si todos los props están activados
-    public void CheckAllActivated()
+    public bool CheckAllActivated()
     {
         bool allActivated = true;
         // Comprobamos todos los props, y si alguno no está activado, se cambia allActivated a false
@@ -48,6 +48,7 @@ public class PuzzleDoor : MonoBehaviour
         {
             if (!disableNotActivation && onNotActivated != null) onNotActivated.Invoke();
         }
+        return allActivated;
     }
     
     // Función para gestionar externamente la desactivación de onNotActivated

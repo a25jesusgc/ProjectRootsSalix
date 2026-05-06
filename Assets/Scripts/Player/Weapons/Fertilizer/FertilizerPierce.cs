@@ -23,7 +23,7 @@ public class FertilizerPierce : BulletHit
         }
 
         // Si choca contra pared o algo que no es enemigo, muere
-        if (collision.CompareTag("Default"))
+        if (collision.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
 

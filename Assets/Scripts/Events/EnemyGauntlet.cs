@@ -8,9 +8,11 @@ public class EnemyGauntlet : MonoBehaviour
 {
     [SerializeField] private string eventID;
     [SerializeField] private List<GauntletWave> enemyWaves;
-    [SerializeField] private List<GameObject> pathBlocking;
+    [SerializeField] private GameObject pathBlocking;
     [SerializeField] private AudioLoop battleTheme;
     [SerializeField] private AudioLoop areaTheme;
+
+    private AudioSource audioSource;
 
 
     private bool started;
@@ -18,6 +20,7 @@ public class EnemyGauntlet : MonoBehaviour
     void Start()
     {
         if(PlayerData.GetInstance.WasEventCompleted(eventID)) Destroy(gameObject);
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -39,10 +42,8 @@ public class EnemyGauntlet : MonoBehaviour
     {
         started = true;
         GlobalUtils.pause = true;
-        foreach (GameObject pathBlock in pathBlocking)
-        {
-            pathBlock.SetActive(true);
-        }
+        pathBlocking.SetActive(true);
+        audioSource.Play();
 
         AudioManager.instance.PlayMusic(battleTheme, true);
 
@@ -62,10 +63,8 @@ public class EnemyGauntlet : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        foreach (GameObject pathBlock in pathBlocking)
-        {
-            pathBlock.SetActive(false);
-        }
+        pathBlocking.SetActive(false);
+        audioSource.Play();
         PlayerData.GetInstance.CompleteEvent(eventID);
         started = false;
 

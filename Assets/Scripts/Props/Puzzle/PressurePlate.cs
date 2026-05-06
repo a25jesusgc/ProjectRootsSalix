@@ -5,6 +5,8 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
     [SerializeField] private PuzzleDoor puzzleDoor;
     private Animator anim;
 
+    private bool puzzleCompleted;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,27 +23,33 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
     // Cuando algo se pone encima, si es el jugador, un enemigo o un grabbable, se suma a la cantidad de elementos encima de la placa de presión
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if(puzzleCompleted) return;
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))
         {
             pressingAmount++;
+            puzzleCompleted = puzzleDoor.CheckAllActivated();
             ManageAnim();
-            puzzleDoor.CheckAllActivated();
         }
     }
 
     // Cuando algo se pone sale, si es el jugador, un enemigo o un grabbable, se resta de la cantidad de elementos encima de la placa de presión
     void OnTriggerExit2D(Collider2D collision)
     {
+        if(puzzleCompleted) return;
+        if(puzzleDoor.CheckAllActivated()) {
+            puzzleCompleted = true;
+            return;
+        }
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("Grabbable"))
         {
             pressingAmount--;
+            puzzleCompleted = puzzleDoor.CheckAllActivated();
             ManageAnim();
-            puzzleDoor.CheckAllActivated();
         } 
     }
 
     private void ManageAnim()
     {
-        anim.SetBool("pressed", Activated());
+        anim.SetBool("pressed", Activated() || puzzleCompleted);
     }
 }

@@ -16,6 +16,10 @@ public class BearBossEvent : MonoBehaviour
 
     private bool battleStarted;
 
+    void Start()
+    {
+        if(PlayerData.GetInstance.GetEnemyDefeatCount(boss.enemy.GetEnemyType) > 0) Destroy(gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

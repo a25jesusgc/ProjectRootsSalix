@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Vine
   - Grabbable
+  - Obstacle
   layers:
   - Default
   - TransparentFX
