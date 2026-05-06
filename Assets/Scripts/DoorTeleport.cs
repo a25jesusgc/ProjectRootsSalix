@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class DoorTeleport : MonoBehaviour
 {
-    public Transform destino;
+    public Transform target;
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,9 +27,10 @@ public class DoorTeleport : MonoBehaviour
     IEnumerator TeleportPlayer(Transform player)
     {
         GlobalUtils.pause = true;
+        audioSource.Play();
         TransitionController.instance.PlayTransition(false);
         yield return new WaitUntil(() => TransitionController.instance.transitionFinished);
-        player.position = destino.position;
+        player.position = target.position;
         TransitionController.instance.PlayTransition(true);
         yield return new WaitUntil(() => TransitionController.instance.transitionFinished);
         GlobalUtils.pause = false;
