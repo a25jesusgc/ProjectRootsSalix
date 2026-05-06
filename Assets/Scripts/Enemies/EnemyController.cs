@@ -265,7 +265,11 @@ public class EnemyController : MonoBehaviour
         isDefeated = defeated;
         rb.linearVelocity = Vector2.zero;
         hitbox.enabled = !defeated;
-        if(defeated) anim.SetTrigger("hurt");
+        if (defeated)
+        {
+            StopAttack();
+            anim.SetTrigger("hurt");
+        }
     }
     public void ActivateAttack()
     {
