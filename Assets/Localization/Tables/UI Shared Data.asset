@@ -79,6 +79,18 @@ MonoBehaviour:
     m_Key: journal
     m_Metadata:
       m_Items: []
+  - m_Id: 4471253839003648
+    m_Key: confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471256049401856
+    m_Key: cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471421518888960
+    m_Key: new_game_warning
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

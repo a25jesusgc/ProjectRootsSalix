@@ -82,6 +82,19 @@ MonoBehaviour:
     m_Localized: Journal
     m_Metadata:
       m_Items: []
+  - m_Id: 4471253839003648
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471256049401856
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471421518888960
+    m_Localized: There is a saved game already. If you start a new one, the saved
+      one will be deleted. Do you wish to start a new game?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

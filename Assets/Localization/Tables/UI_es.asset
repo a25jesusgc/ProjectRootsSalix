@@ -82,6 +82,19 @@ MonoBehaviour:
     m_Localized: Diario
     m_Metadata:
       m_Items: []
+  - m_Id: 4471253839003648
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471256049401856
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4471421518888960
+    m_Localized: "Ya hay una partida guardada. Si inicias una nueva, la partida guardada
+      se eliminar\xE1. \xBFDeseas iniciar una nueva partida?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

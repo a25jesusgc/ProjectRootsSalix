@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
   zoneID: town
   zoneName: Pueblo Pueblito
-  position: {x: 20, y: -3, z: 0}
+  position: {x: 20, y: 0, z: 0}
   scene: L0Town
