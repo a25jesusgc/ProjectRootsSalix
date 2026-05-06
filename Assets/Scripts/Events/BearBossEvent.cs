@@ -12,6 +12,7 @@ public class BearBossEvent : MonoBehaviour
     [SerializeField] private AudioLoop forestTheme;
     [SerializeField] private AudioLoop battleTheme;
     [SerializeField] private GameObject barriers;
+    [SerializeField] private GameObject root;
 
     private bool battleStarted;
 
@@ -42,6 +43,9 @@ public class BearBossEvent : MonoBehaviour
         CameraController.instance.SetTrackingTarget(boss.transform);
 
         yield return new WaitForSeconds(1f);
+
+        // Corta la raíz
+        root.SetActive(false);
         
         // Se da cuenta del jugador y se gira hacia él
         bossAnim.SetBool("cutting_tree", false);

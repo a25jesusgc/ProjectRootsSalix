@@ -13,6 +13,7 @@ public abstract class BossController : MonoBehaviour
 
     public Enemy enemy;
     public EnemyHealth enemyHealth;
+    public float secondPhaseHealth = 0.5f;
     public Transform arenaCenter;
     public Transform arenaMin;
     public Transform arenaMax;
@@ -54,7 +55,7 @@ public abstract class BossController : MonoBehaviour
         if (chooseAttack)
         {
             do{
-                chosenAttack = Random.Range(0, enemyHealth.GetHealthPercentage <= 0.5f ? secondPhaseAttacksCount : firstPhaseAttacksCount);
+                chosenAttack = Random.Range(0, enemyHealth.GetHealthPercentage <= secondPhaseHealth ? secondPhaseAttacksCount : firstPhaseAttacksCount);
             }while(chosenAttack == lastAttackUsed);
             
             chooseAttack = false;

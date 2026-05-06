@@ -5586,6 +5586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BearLumberjackBoss
   enemy: {fileID: 11400000, guid: 36173468d863ce74f91ab0567f3fb18b, type: 2}
   enemyHealth: {fileID: -4774871719865766298}
+  secondPhaseHealth: 0.75
   arenaCenter: {fileID: 0}
   arenaMin: {fileID: 0}
   arenaMax: {fileID: 0}
@@ -5607,7 +5608,19 @@ MonoBehaviour:
   secondPhaseAttacksCount: 5
   biteAttack: {fileID: 2679081495301404357}
   shadow: {fileID: 4957270925069789539}
-  trees: []
+  trees:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   whirlSFX: {fileID: 1690027743249597835}
   treeAttack: {fileID: 277894912885647107, guid: f92bf10178c1a1f4d97c3754ce2a62ce, type: 3}
 --- !u!82 &4598195301698451154

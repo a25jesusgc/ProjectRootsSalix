@@ -39,6 +39,9 @@ public class DialogueSystem : MonoBehaviour
     // Lista de diálogos
     private List<Dialogue> currentDialogues;
 
+    // Bool para oscurecer pantalla
+    private bool darkBackground;
+
 
     void Awake()
     {
@@ -70,6 +73,8 @@ public class DialogueSystem : MonoBehaviour
         currentDialogues = dialogues;
         dialogueText.text = "";
         dialogueBox.SetActive(true);
+
+        this.darkBackground = darkBackground;
 
         //Activa el oscurecimiento si se indica
         if (darkBackground)
@@ -170,8 +175,11 @@ public class DialogueSystem : MonoBehaviour
         dialogueOpen = false;
         GlobalUtils.pause = false;
 
-        //Elimina la pantalla oscura
-        StartCoroutine(BlackScreenCoroutine(false));
+        //Elimina la pantalla oscura si se indica
+        if (darkBackground)
+        {
+            StartCoroutine(BlackScreenCoroutine(false));
+        }
     }
 
     public void SetDialogueScale(Vector3 scale)
