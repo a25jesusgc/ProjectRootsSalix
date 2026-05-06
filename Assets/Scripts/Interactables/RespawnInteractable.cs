@@ -44,6 +44,14 @@ public class RespawnInteractable : Interactable
         // Muestra el panel y pausa el juego
         travelMenu.SetActive(show);
         GlobalUtils.pause = show;
+        if(show)
+        {
+            CursorManager.instance.SetCursorArrow();
+        }
+        else
+        {
+            CursorManager.instance.SetCursorCrosshair();
+        }
     }
 
 

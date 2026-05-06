@@ -95,6 +95,10 @@ MonoBehaviour:
       vai ser borrada. Desexas iniciar unha partida nova?
     m_Metadata:
       m_Items: []
+  - m_Id: 4478459154153472
+    m_Localized: Viaxar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

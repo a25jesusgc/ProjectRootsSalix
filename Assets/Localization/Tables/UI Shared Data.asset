@@ -91,6 +91,10 @@ MonoBehaviour:
     m_Key: new_game_warning
     m_Metadata:
       m_Items: []
+  - m_Id: 4478459154153472
+    m_Key: travel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

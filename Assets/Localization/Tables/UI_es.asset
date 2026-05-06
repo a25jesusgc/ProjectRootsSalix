@@ -95,6 +95,10 @@ MonoBehaviour:
       se eliminar\xE1. \xBFDeseas iniciar una nueva partida?"
     m_Metadata:
       m_Items: []
+  - m_Id: 4478459154153472
+    m_Localized: Viajar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
