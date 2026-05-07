@@ -113051,11 +113051,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
       propertyPath: dialogues.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
       propertyPath: dialogues.Array.data[0].text
       value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[1].text
+      value: Text2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[2].text
+      value: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
+        de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
+        por mucho que lo intentas tu cuerpo se mueve solo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[3].text
+      value: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
+        de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
+        por mucho que lo intentas tu cuerpo se mueve solo.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -113100,6 +113116,9 @@ MonoBehaviour:
         m_TrackedProperties:
           items:
           - rid: 8287077542648348753
+          - rid: 8287077585243865088
+          - rid: 8287077585243865167
+          - rid: 8287077585243865168
         m_UpdateType: 1
         m_Changed:
           m_PersistentCalls:
@@ -113117,6 +113136,45 @@ MonoBehaviour:
           m_WaitForCompletion: 0
           m_LocalVariables: []
         m_PropertyPath: dialogues.Array.data[0].text
+    - rid: 8287077585243865088
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:916d0fa205b19e94e8c2acf7f2fb3530
+          m_TableEntryReference:
+            m_KeyId: 744053375418368
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[1].text
+    - rid: 8287077585243865167
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:916d0fa205b19e94e8c2acf7f2fb3530
+          m_TableEntryReference:
+            m_KeyId: 746143048974336
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[2].text
+    - rid: 8287077585243865168
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:916d0fa205b19e94e8c2acf7f2fb3530
+          m_TableEntryReference:
+            m_KeyId: 746145766883328
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[3].text
 --- !u!1001 &6581466273869218819
 PrefabInstance:
   m_ObjectHideFlags: 0

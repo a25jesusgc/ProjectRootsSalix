@@ -24,7 +24,63 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
-    m_Key: root_cave_1
+    m_Key: root_cave_0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744053375418368
+    m_Key: root_cave_0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746143048974336
+    m_Key: root_cave_0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746145766883328
+    m_Key: root_cave_0_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752876832079872
+    m_Key: root_forest_0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752912127148032
+    m_Key: root_forest_0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752951922704384
+    m_Key: root_forest_0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758328928157696
+    m_Key: root_forest_1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758331276967936
+    m_Key: root_forest_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758332619145216
+    m_Key: root_forest_1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758333424451584
+    m_Key: root_forest_2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765493042659328
+    m_Key: root_forest_2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765536218824704
+    m_Key: root_forest_2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765538466971648
+    m_Key: root_forest_2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765545882501120
+    m_Key: root_forest_2_4
     m_Metadata:
       m_Items: []
   m_Metadata:

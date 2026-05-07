@@ -27,7 +27,79 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
-    m_Localized: Feijoo fillo de puta
+    m_Localized: "Ao tocar a ra\xEDz, a t\xFAa mente nubrase."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744053375418368
+    m_Localized: "Pouco a pouco, unha r\xFAa recta e pavimentada aparece ante ti,
+      rodeada de edificios que desaparecen nas nubes. Comezas a cami\xF1ar, a\xEDnda
+      que non queres; non importa canto o intentes, o teu corpo m\xF3vese por si
+      s\xF3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746143048974336
+    m_Localized: "Non sabes por que, pero dalg\xFAn xeito sabes que quen cami\xF1a
+      es ti. Non parece un so\xF1o, sen\xF3n algo m\xE1is real."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746145766883328
+    m_Localized: "De s\xFApeto, un resplandor cobre o ceo e non podes evitar pechar
+      os ollos. Mentres os apertas con forza, un zunido enxordecedor \xE9ncheche
+      os o\xEDdos e escoitas berros amortecidos antes de que todo remate."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752951922704384
+    m_Localized: "Con dificultade, de\xEDtaste sobre unha manta e pechas os ollos.
+      O murmurio das conversas esv\xE1ese gradualmente mentres o sono te envolve.
+      Ent\xF3n volves \xE1 realidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758328928157696
+    m_Localized: "Ao tocar a ra\xEDz, a t\xFAa mente nubrase."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758331276967936
+    m_Localized: Transportaste a unha feroz loita. Diante de ti, unha criatura grotesca
+      lanza golpes sen descanso. Respondes esquivando e devolvendo cada ataque.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758332619145216
+    m_Localized: "A pelexa contin\xFAa ata que aproveitas un momento de desatenci\xF3n
+      do teu opo\xF1ente para derrubalo. Deitado no chan, d\xE1slle golpe tras golpe
+      na face ata que deixa de moverse. Vendo o que acabas de facer, espertas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758333424451584
+    m_Localized: "Ao tocar a ra\xEDz, a t\xFAa mente nubrase."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765545882501120
+    m_Localized: "Levantas algo co brazo e o deixas caer sobre a criatura indefensa.
+      Un estralo xordo \xE9 todo o que escoitas antes de volver \xE1 realidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765538466971648
+    m_Localized: "Temos que facelo; non hai outra opci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765536218824704
+    m_Localized: "Quedas inm\xF3bil, sen saber que facer, ata que unha voz ao teu
+      car\xF3n che fala."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765493042659328
+    m_Localized: "At\xF3paste nunha habitaci\xF3n escura. Diante de ti hai unha pequena
+      figura tremendo, tenche medo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752876832079872
+    m_Localized: "Ao tocar a ra\xEDz, a t\xFAa mente nubrase."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752912127148032
+    m_Localized: "At\xF3paste no medio dunha multitude, sentado no chan diante dunha
+      fogueira. Est\xE1s magoado, sentes como se mil feridas che cubrisen a pel,
+      ardendo de dor."
     m_Metadata:
       m_Items: []
   references:
