@@ -27,7 +27,79 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
-    m_Localized: Esta es la cueva
+    m_Localized: "Al tocar la ra\xEDz, toda tu mente se nubla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744053375418368
+    m_Localized: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
+      de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
+      por mucho que lo intentas tu cuerpo se mueve solo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746143048974336
+    m_Localized: "No sabes por qu\xE9, pero de alg\xFAn modo sabes que ese que camina
+      eres t\xFA. No se siente como un sue\xF1o, sino como algo m\xE1s real."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746145766883328
+    m_Localized: "De repente, un resplandor cubre el cielo y no puedes evitar cerrar
+      los ojos. Mientras los aprietas con fuerza un zumbido constante inunda tus
+      o\xEDdos y llegas a escuchar unos gritos amortiguados antes de que todo acabe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752951922704384
+    m_Localized: "Con dificultad, te acuestas sobre una manta y cierras los ojos.
+      El murmullo de las conversaciones desaparece gradualmente a medida que el sue\xF1o
+      te invade. Entonces vuelves a la realidad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758328928157696
+    m_Localized: "Al tocar la ra\xEDz, toda tu mente se nubla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758331276967936
+    m_Localized: 'Te ves transportado a un encarnizado combate. Ante ti, una criatura
+      de aspecto grotesco te lanza golpes sin cesar. Respondes esquivando y devolviendo
+      cada ataque. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758332619145216
+    m_Localized: "La pelea contin\xFAa hasta que aprovechas un descuido de tu rival
+      para derribarlo. Tendido en el suelo, le propinas un golpe tras otro en la
+      cara hasta que deja de moverse. Al ver lo que acabas de hacer, despiertas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758333424451584
+    m_Localized: "Al tocar la ra\xEDz, toda tu mente se nubla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765545882501120
+    m_Localized: Levantas algo con tu brazo y lo dejas caer sobre la indefensa criatura.
+      Un crujido sordo es todo lo que oyes antes de regresar al mundo real.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765538466971648
+    m_Localized: "Tenemos que hacerlo; no queda m\xE1s remedio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765493042659328
+    m_Localized: "Te ves a ti mismo en una habitaci\xF3n oscura. Delante de ti hay
+      una peque\xF1a figura temblando, te tiene miedo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765536218824704
+    m_Localized: "Te quedas inm\xF3vil, sin saber qu\xE9 hacer, hasta que una voz
+      a tu lado te habla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752876832079872
+    m_Localized: "Al tocar la ra\xEDz, toda tu mente se nubla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752912127148032
+    m_Localized: "Te encuentras en medio de una multitud, sentado en el suelo delante
+      de una hoguera. Est\xE1s magullado, sientes c\xF3mo si un millar de heridas
+      cubrieran tu piel, ardiendo de dolor."
     m_Metadata:
       m_Items: []
   references:
