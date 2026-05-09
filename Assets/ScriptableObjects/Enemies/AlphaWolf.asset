@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyType: alpha_wolf
   health: 4200
   bodyDamage: 320
-  attackDamage: 820
+  attackDamage: 800
   movSpeed: 12
   resistances:
   - 0.8
