@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: NPC_gl
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: gl
+  m_SharedData: {fileID: 11400000, guid: 080801b9cb67e9b4e924af692480b885, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 78221852672
+    m_Localized: Te-tenda. Mercar. Fertilizantes. Letreiro en fonte. Flores. FLORES.
+      GASTAR FLORES.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241858428928
+    m_Localized: "Ola Salix, como est\xE1s? Se algo che preocupa, non dubides en
+      contarmo, son todo ouvidos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13265231069184
+    m_Localized: "Que dis, fillo? Que tes so\xF1os estra\xF1os sobre a gran \xE1rbore?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13268859142144
+    m_Localized: "Nunca che dixemos isto, pero non es o noso fillo biol\xF3xico.
+      Atopeite dentro da cova ao oeste da aldea. Quizais ese lugar te\xF1a algo que
+      ver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 244135936000
+    m_Localized: "Se saes f\xF3ra s\xE9 cauteloso e non fagas ningunha parvada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246086287360
+    m_Localized: Lembra beber moita auga e ter coidado co lume.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13273254772736
+    m_Localized: "EI, ESCOITACHES OS \xDALTIMOS RUMORES?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13304389091328
+    m_Localized: "AO PARECER, ASALTARON FAI POUCO A ALG\xDANS COMERCIANTES NO BOSQUE
+      DO LESTE. ARRE DEMO! CADA D\xCDA \xC9 M\xC1IS PERIGOSO IR POR AL\xCD."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248007278592
+    m_Localized: O Q e o E para as armas cambiar, o 2 e o 3 para os disparos fertilizar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 250674855936
+    m_Localized: "\xC9 un himno de guerra antigo, penso. O meu choio \xE9 o serradoiro,
+      non a historia."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

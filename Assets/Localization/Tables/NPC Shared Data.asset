@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: NPC Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: NPC
+  m_TableCollectionNameGuidString: 080801b9cb67e9b4e924af692480b885
+  m_Entries:
+  - m_Id: 78221852672
+    m_Key: NPC_Accordion_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241858428928
+    m_Key: NPC_Ear_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 244135936000
+    m_Key: NPC_Insectmom_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246086287360
+    m_Key: NPC_Insectmom_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248007278592
+    m_Key: NPC_Saw_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 250674855936
+    m_Key: NPC_Saw_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13265231069184
+    m_Key: NPC_Liondad_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13268859142144
+    m_Key: NPC_Liondad_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13273254772736
+    m_Key: NPC_Speaker_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13304389091328
+    m_Key: NPC_Speaker_1
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8287077615422144512
+  references:
+    version: 2
+    RefIds:
+    - rid: 8287077615422144512
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1778280661807

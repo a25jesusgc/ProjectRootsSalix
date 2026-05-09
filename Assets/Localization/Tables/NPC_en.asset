@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: NPC_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 080801b9cb67e9b4e924af692480b885, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 78221852672
+    m_Localized: Sto-store. Buy. Fertilizers. Sign in fountain. Flowers. FLOWERS.
+      SPEND FLOWERS.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241858428928
+    m_Localized: Hi Salix, how are you? If anything is bothering you, feel free to
+      tell me about it, I'm all ears.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13268859142144
+    m_Localized: We've never told you this, but you're not our biological son. I
+      found you inside the cave west of the village. Perhaps that place has something
+      to do with it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13265231069184
+    m_Localized: What are you saying, son? That you've been having strange dreams
+      about the great tree?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 244135936000
+    m_Localized: If you go out there, be careful and don't do anything foolish.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246086287360
+    m_Localized: Remember to drink plenty of water and be careful with fire.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13273254772736
+    m_Localized: HEY, HAVE YOU HEARD THE LATEST GOSSIP?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13304389091328
+    m_Localized: APPARENTLY, SOME SHOPKEEPERS WERE ROBBED RECENTLY IN THE EASTERN
+      WOODS. GOOD GRIEF, IT'S GETTING MORE DANGEROUS THERE EVERY DAY.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248007278592
+    m_Localized: Q and E to change and swap, 2 and 3 to feed your shots.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 250674855936
+    m_Localized: It's an old war anthem, I think. My thing is the sawmill, not history
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
