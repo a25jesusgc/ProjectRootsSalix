@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: NPC_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 080801b9cb67e9b4e924af692480b885, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 246086287360
+    m_Localized: "Acu\xE9rdate de beber mucha agua y ten cuidado con el fuego. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78221852672
+    m_Localized: Ti-tienda. Comprar. Fertilizantes. Cartel en fuente. Flores. FLORES.
+      GASTAR FLORES.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241858428928
+    m_Localized: "Hola Salix, \xBFqu\xE9 tal est\xE1s?. Si algo te preocupa puedes
+      cont\xE1rmelo, soy todo o\xEDdos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13265231069184
+    m_Localized: "\xBFQu\xE9 dices, hijo? \xBFQue has estado teniendo sue\xF1os extra\xF1os
+      relacionados con el gran \xE1rbol?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13268859142144
+    m_Localized: "Nunca te lo hemos contado, pero no eres nuestro hijo biol\xF3gico.
+      Te encontr\xE9 en el interior de la cueva que est\xE1 al oeste de la aldea.
+      Quiz\xE1 ese lugar tenga algo que ver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 244135936000
+    m_Localized: "Si sales por ah\xED s\xE9 precavido y no hagas ninguna tonter\xEDa. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13273254772736
+    m_Localized: "OYE, \xBFTE HAS ENTERADO DEL \xDALTIMO CHISMORREO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13304389091328
+    m_Localized: "POR LO VISTO UNOS COMERCIANTES FUERON ASALTADOS HACE POCO EN EL
+      BOSQUE DEL ESTE. HAY QUE VER, CADA D\xCDA ES M\xC1S PELIGROSO IR POR ALL\xCD."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248007278592
+    m_Localized: La Q y la E para tus armas cambiar, el 2 y el 3 para tus disparos
+      fertilizar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 250674855936
+    m_Localized: "Es un viejo himno de guerra, creo. Lo m\xEDo es la serrer\xEDa,
+      no la historia."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

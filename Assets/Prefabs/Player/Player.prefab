@@ -774,7 +774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   interactBox: {fileID: 9185247032068100718}
   crosshair: {fileID: 7742318735923331377}
-  movSpeed: 5
+  movSpeed: 7
   dashSFX: {fileID: 4241211831123993534}
 --- !u!114 &239301367792917374
 MonoBehaviour:
