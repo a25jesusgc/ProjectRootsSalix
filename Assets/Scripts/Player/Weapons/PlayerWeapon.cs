@@ -25,7 +25,8 @@ public abstract class PlayerWeapon : MonoBehaviour
 
 public static class PlayerWeaponConstants
 {
-    public const int CANNON_DAMAGE = 50;
+    //public const int CANNON_DAMAGE = 50;
+    public const int CANNON_DAMAGE = 5000;
     public const float CANNON_CD = 0.25f;
     public const int FLAMETHROWER_DAMAGE = 20;
     public const float FLAMETHROWER_CD = 0.05f;

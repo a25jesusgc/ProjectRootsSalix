@@ -76,6 +76,7 @@ public abstract class BossController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(isDefeated) return;
         if (collision.collider.CompareTag("Player"))
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();

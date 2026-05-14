@@ -315,6 +315,7 @@ public class BearLumberjackBoss : BossController
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(isDefeated) return;
         if (!collision.collider.CompareTag("Bullet"))
         {
             Rebound(collision);

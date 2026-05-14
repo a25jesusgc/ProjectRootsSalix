@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
-  deactivateOnDefeat: 1
+  deactivateOnDefeat: 0
 --- !u!114 &8634860623484656336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlphaWolfBoss
   enemy: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
   enemyHealth: {fileID: 1616321969705308507}
+  secondPhaseHealth: 0.5
   arenaCenter: {fileID: 0}
   arenaMin: {fileID: 0}
   arenaMax: {fileID: 0}

@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 36173468d863ce74f91ab0567f3fb18b, type: 2}
-  deactivateOnDefeat: 1
+  deactivateOnDefeat: 0
 --- !u!114 &450498442603365665
 MonoBehaviour:
   m_ObjectHideFlags: 0
