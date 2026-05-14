@@ -34,7 +34,8 @@ public class CameraController : MonoBehaviour
 
     public void ShakeCamera(float intensity, float duration)
     {
-        StartCoroutine(CameraShake(intensity / 100f, duration));
+        if(PlayerPrefs.GetInt(SettingConstants.CameraShake, 1) == 1)
+            StartCoroutine(CameraShake(intensity / 100f, duration));
     }
 
     private IEnumerator CameraShake(float intensity, float duration)
