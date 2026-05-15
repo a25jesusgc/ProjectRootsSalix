@@ -389,9 +389,7 @@ Library/ScriptAssemblies/
  Unity.Collections.dll
  Unity.Mathematics.dll
 Temp/bin/Debug/
- UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]
