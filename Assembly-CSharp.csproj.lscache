@@ -145,6 +145,7 @@ Assets/Scripts/
  UI/
   BossHealthBar.cs
   CursorManager.cs
+  DialogAudioManager.cs
   DialogueSystem.cs
   EnemyDataPanel.cs
   FertilizerShopItem.cs
