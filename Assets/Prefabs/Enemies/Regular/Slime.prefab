@@ -5089,7 +5089,7 @@ MonoBehaviour:
   idleWaitTime: 2
   direction: {x: 0, y: 0}
   detectionRadius: 10
-  attack: {fileID: 4831086944621234411}
+  attack: {fileID: 0}
   attackRange: 1
   rb: {fileID: 0}
   currentState: 0
@@ -5107,7 +5107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 3fd375ca7c7eca244a4470a018bb1db0, type: 2}
-  dropSpawner: {fileID: 5594595506429948180}
   deactivateOnDefeat: 1
 --- !u!95 &7409007896478951930
 Animator:

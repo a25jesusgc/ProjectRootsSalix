@@ -195,7 +195,7 @@ MonoBehaviour:
   idleWaitTime: 2
   direction: {x: 0, y: 0}
   detectionRadius: 16
-  attack: {fileID: 7601141411783080}
+  attack: {fileID: 0}
   attackRange: 4
   rb: {fileID: 0}
   currentState: 0
