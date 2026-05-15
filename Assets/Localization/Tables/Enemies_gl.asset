@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1388658966528
-    m_Localized: '-'
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 1437086400512
@@ -113,7 +113,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1439896584192
-    m_Localized: '-'
+    m_Localized: 
     m_Metadata:
       m_Items: []
   references:
