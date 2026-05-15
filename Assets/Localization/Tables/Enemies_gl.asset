@@ -116,6 +116,14 @@ MonoBehaviour:
     m_Localized: 
     m_Metadata:
       m_Items: []
+  - m_Id: 6282592911769600
+    m_Localized: "Lobira, L\xEDder Sanguinaria dos Bandidos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282594820177920
+    m_Localized: "Le\xF1oso, Vello Ermit\xE1n do Bosque"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

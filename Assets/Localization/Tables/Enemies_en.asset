@@ -114,6 +114,14 @@ MonoBehaviour:
     m_Localized: 
     m_Metadata:
       m_Items: []
+  - m_Id: 6282592911769600
+    m_Localized: Wolfkira, Ruthless Leader of the Bandits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282594820177920
+    m_Localized: Lumbearjack, Old Forest Hermit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
