@@ -4,7 +4,7 @@ public class Hazard : MonoBehaviour
 {
 
     // Se abre el panel de viaje rápido
-    [SerializeField] private int damage;
+    [SerializeField] private int damage=80;
 
     // Punto de recuperación del jugador donde aparecerá después de chocar contra el obstáculo
     [SerializeField] private Transform safePos;
