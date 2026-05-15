@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
@@ -8,10 +9,11 @@ public class PauseGame : MonoBehaviour
     [SerializeField] private GameObject settingsWindow;
     public bool isPaused = false;
 
+    [SerializeField] private PlayerInput playerInput;
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class PauseGame : MonoBehaviour
     {
 
         // Detectar si se presiona la tecla de pausa (Escape)
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (playerInput.actions["Pause"].triggered)
         {
             // Si el juego ya está pausado, reanudarlo
             if (isPaused)

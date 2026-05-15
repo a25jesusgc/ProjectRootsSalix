@@ -112859,13 +112859,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162900579}
     m_Modifications:
+    - target: {fileID: 1622649582810391076, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2312311296849241491, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_Name
       value: FlammableProp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.8926108
       objectReference: {fileID: 0}
     - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112906,6 +112906,14 @@ PrefabInstance:
     - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675783646740884769, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675783646740884769, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -97,7 +97,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1388658966528
-    m_Localized: '-'
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 1437086400512
@@ -114,7 +114,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1439896584192
-    m_Localized: '-'
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282592911769600
+    m_Localized: "Lobira, L\xEDder Sanguinaria de los Bandidos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282594820177920
+    m_Localized: "Le\xF1oso, Viejo Ermita\xF1o del Bosque"
     m_Metadata:
       m_Items: []
   references:
