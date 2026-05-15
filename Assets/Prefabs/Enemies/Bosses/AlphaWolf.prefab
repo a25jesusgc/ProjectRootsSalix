@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 6377519187800481002}
   - component: {fileID: 3113990639776984552}
   - component: {fileID: 3342017887766593573}
-  - component: {fileID: 8835912997137475992}
+  - component: {fileID: 4062786722211286249}
   - component: {fileID: 5188679172175800040}
   - component: {fileID: 1616321969705308507}
   - component: {fileID: 8634860623484656336}
@@ -462,8 +462,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &8835912997137475992
-BoxCollider2D:
+--- !u!70 &4062786722211286249
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -497,17 +497,8 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   m_Size: {x: 1.35, y: 3}
-  m_EdgeRadius: 0
+  m_Direction: 0
 --- !u!50 &5188679172175800040
 Rigidbody2D:
   serializedVersion: 5
@@ -548,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
-  deactivateOnDefeat: 1
+  deactivateOnDefeat: 0
 --- !u!114 &8634860623484656336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlphaWolfBoss
   enemy: {fileID: 11400000, guid: 100c63b647e392e4cabbfb26f8dd8eda, type: 2}
   enemyHealth: {fileID: 1616321969705308507}
+  secondPhaseHealth: 0.5
   arenaCenter: {fileID: 0}
   arenaMin: {fileID: 0}
   arenaMax: {fileID: 0}
@@ -573,11 +565,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6e40f09ca4712c540aa4339a140bd3d8, type: 3}
   - {fileID: 8300000, guid: c5de9dc3e289c1549803566191fccbf4, type: 3}
   - {fileID: 8300000, guid: 9ac81723deacd3541a25135b087f5b7b, type: 3}
+  bossDefeatSFX: {fileID: 8300000, guid: f861d443713abe34e824484a5896a97a, type: 3}
   mov: {x: 0, y: 0}
   attackDirection: {x: 0, y: 0}
   chooseAttack: 0
   chosenAttack: 0
   lastAttackUsed: 0
+  bossProjectiles: []
   isDefeated: 0
   firstPhaseAttacksCount: 3
   secondPhaseAttacksCount: 5

@@ -25,6 +25,7 @@ public class DialogueSystem : MonoBehaviour
 
     // Bandera de si el texto esta siendo escrito
     private bool isWrittingText;
+    public bool IsWrittingText => isWrittingText;
 
     // Variable auxiliar para establecer el texto al componente de UI
     private string writtingText;
@@ -135,7 +136,7 @@ public class DialogueSystem : MonoBehaviour
                 continue;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         isWrittingText = false;
         dialogueIndex++;

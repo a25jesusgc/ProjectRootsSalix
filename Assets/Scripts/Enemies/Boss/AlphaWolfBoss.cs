@@ -13,7 +13,7 @@ public class AlphaWolfBoss : BossController
     [SerializeField] private GameObject bulletPrefab;
 
     private const float CLAW_ATTACK_RANGE = 3f;
-    private const float DASH_INDICATOR_TIME = 0.25f;
+    private const float DASH_INDICATOR_TIME = 0.35f;
     private const float DASH_SPEED = 80f;
     private const float MULTIDASH_INDICATOR_TIME = 0.15f;
     private const float MULTIDASH_SPEED = 160f;
@@ -133,6 +133,8 @@ public class AlphaWolfBoss : BossController
             bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemy.GetAttackDamage * 0.35f * GetDayCycleAttackMultiplier());
             PlaySfx(5);
 
+            bossProjectiles.Add(bullet);
+
             yield return new WaitForSeconds(BULLET_FIRE_RATE); // Cadencia de disparo
         }
         anim.SetBool("shooting", false);
@@ -186,6 +188,8 @@ public class AlphaWolfBoss : BossController
 
             aim = Quaternion.Euler(0f, 0f, 16f) * aim;
             PlaySfx(5);
+
+            bossProjectiles.Add(bullet);
 
             yield return new WaitForSeconds(BARRAGE_FIRE_RATE); // Cadencia de disparo
         }

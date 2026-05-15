@@ -82,13 +82,23 @@ public class BearBossEvent : MonoBehaviour
 
         // Se detiene el juego, se desactiva la barra de vida y se silencia la música
         GlobalUtils.pause = true;
+
         healthBar.SetActive(false);
+        barriers.SetActive(false);
+
+        bossAnim.SetFloat("x", 0);
+        bossAnim.SetFloat("y", -1);
+        bossAnim.SetBool("is_tired", true);
+        bossAnim.Play("Tired");
+
         AudioManager.instance.MuteMusic(true);
 
         // Diálogos finales del boss
         DialogueSystem.instance.ShowDialogue(postBattleDialogues, true);
         yield return new WaitUntil(() => !DialogueSystem.instance.IsDialogueOpen);
         GlobalUtils.pause = true;
+
+        bossAnim.SetBool("is_defeated", true);
 
         // Se devuelve el juego a la normalidad con la música del bosque
         AudioManager.instance.MuteMusic(false);

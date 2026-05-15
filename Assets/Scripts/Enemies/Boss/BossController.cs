@@ -18,12 +18,14 @@ public abstract class BossController : MonoBehaviour
     public Transform arenaMin;
     public Transform arenaMax;
     public AudioClip[] sfx;
+    public AudioClip bossDefeatSFX;
 
     [HideInInspector] public Vector2 mov;
     [HideInInspector] public Vector2 attackDirection;
     [HideInInspector] public bool chooseAttack;
     [HideInInspector] public int chosenAttack;
     [HideInInspector] public int lastAttackUsed;
+    [HideInInspector] public List<GameObject> bossProjectiles;
     [HideInInspector] public bool isDefeated;
 
     public int firstPhaseAttacksCount;
@@ -36,6 +38,8 @@ public abstract class BossController : MonoBehaviour
         col = GetComponent<Collider2D>();
         audioSource = GetComponent<AudioSource>();
 
+        bossProjectiles = new List<GameObject>();
+
         lastAttackUsed = -1;
     }
     public virtual void Update()
@@ -47,6 +51,8 @@ public abstract class BossController : MonoBehaviour
             isDefeated = true;
             StopAllCoroutines();
             rb.linearVelocity = Vector2.zero;
+            DestroyBossProjectiles();
+            StartCoroutine(DefeatBossCoroutine());
             return;
         }
 
@@ -76,6 +82,7 @@ public abstract class BossController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(isDefeated) return;
         if (collision.collider.CompareTag("Player"))
         {
             PlayerHealthController player = collision.gameObject.GetComponent<PlayerHealthController>();
@@ -110,5 +117,29 @@ public abstract class BossController : MonoBehaviour
         }
 
         return multiplier;
+    }
+
+    private void DestroyBossProjectiles()
+    {
+        foreach(GameObject projectile in bossProjectiles)
+        {
+            if (projectile != null)
+            {
+                Destroy(projectile);
+            }
+        }
+    }
+
+    private IEnumerator DefeatBossCoroutine()
+    {
+        audioSource.spatialBlend = 0;
+        audioSource.clip = bossDefeatSFX;
+        audioSource.Play();
+
+        Time.timeScale = 0.5f;
+
+        yield return new WaitForSeconds(2f);
+
+        Time.timeScale = 1f;
     }
 }

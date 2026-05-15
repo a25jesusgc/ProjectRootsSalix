@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 2775085883493868109}
   - component: {fileID: 2353981387373851169}
   - component: {fileID: 3197232294552604185}
-  - component: {fileID: 8487110375595191497}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -456,22 +455,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8487110375595191497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744642794283935243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064581b2c8cce7245960e19fa534d01b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TitleScreenManager
-  newGameWindow: {fileID: 0}
-  settingsWindow: {fileID: 0}
-  continueButton: {fileID: 0}
-  music: {fileID: 11400000, guid: fd66a23dc3e4cd645810e0e2fe05266b, type: 2}
 --- !u!1 &2262422350222964594
 GameObject:
   m_ObjectHideFlags: 0

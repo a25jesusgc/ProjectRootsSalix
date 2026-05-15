@@ -27,7 +27,79 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
-    m_Localized: This is the cave
+    m_Localized: Upon touching the root, your entire mind goes blank.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 744053375418368
+    m_Localized: Little by little, a straight, paved street appears before you, surrounded
+      by buildings that seem to disappear into the clouds. You begin to walk, though
+      you don't want to; no matter how hard you try, your body moves on its own.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746143048974336
+    m_Localized: You don't know why, but somehow you know that the one walking is
+      you. It doesn't feel like a dream, but something far more real.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746145766883328
+    m_Localized: Suddenly, a glow covers the sky, and you can't help but close your
+      eyes. As you squeeze them shut, a constant buzzing fills your ears, and you
+      catch muffled screams before it all ends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758333424451584
+    m_Localized: Upon touching the root, your entire mind goes blank.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758332619145216
+    m_Localized: The fight continues until you take advantage of a moment of inattention
+      from your opponent to knock him down. Lying on the ground, you deliver blow
+      after blow to his face until he stops moving. Seeing what you have just done,
+      you awaken.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758331276967936
+    m_Localized: You find yourself transported to a fierce battle. Before you, a
+      grotesque creature hurls blows relentlessly. You respond by dodging and returning
+      each attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758328928157696
+    m_Localized: Upon touching the root, your entire mind goes blank.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752951922704384
+    m_Localized: With difficulty, you lie down on a blanket and close your eyes.
+      The murmur of conversations gradually fades as sleep envelops you. Then you
+      return to reality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752876832079872
+    m_Localized: Upon touching the root, your entire mind goes blank.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765545882501120
+    m_Localized: You lift something with your arm and bring it down upon the defenseless
+      creature. A dull crunch is all you hear before returning to reality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765538466971648
+    m_Localized: We have to do it; there's no other choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765536218824704
+    m_Localized: You freeze, unsure what to do, until a voice beside you speaks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765493042659328
+    m_Localized: You find yourself in a dark room. Before you stands a small, trembling
+      figure, afraid of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752912127148032
+    m_Localized: You find yourself in the middle of a crowd, sitting on the ground
+      before a bonfire. You are bruised, feeling as if a thousand wounds cover your
+      skin, burning in pain.
     m_Metadata:
       m_Items: []
   references:

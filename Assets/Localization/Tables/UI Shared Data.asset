@@ -95,6 +95,10 @@ MonoBehaviour:
     m_Key: travel
     m_Metadata:
       m_Items: []
+  - m_Id: 7317272217927680
+    m_Key: cam_shake
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

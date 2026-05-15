@@ -99,6 +99,10 @@ MonoBehaviour:
     m_Localized: Travel
     m_Metadata:
       m_Items: []
+  - m_Id: 7317272217927680
+    m_Localized: Camera shaking
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

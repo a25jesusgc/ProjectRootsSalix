@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 6800
   bodyDamage: 420
   attackDamage: 680
-  movSpeed: 6
+  movSpeed: 7
   resistances:
   - 0.6
   - 2

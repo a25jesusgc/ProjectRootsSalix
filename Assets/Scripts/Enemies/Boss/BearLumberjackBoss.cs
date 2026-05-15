@@ -220,6 +220,8 @@ public class BearLumberjackBoss : BossController
         Vector3 treeDirection = (player.transform.position - thrownTree.transform.position).normalized;
         thrownTree.transform.rotation = Quaternion.LookRotation(Vector3.forward, treeDirection);
         thrownTree.GetComponent<Rigidbody2D>().linearVelocity = treeDirection * THROWN_TREE_SPEED;
+        
+        bossProjectiles.Add(thrownTree);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -261,6 +263,8 @@ public class BearLumberjackBoss : BossController
             Vector3 treeDirection = chosenTree.up.normalized;
             thrownTree.transform.rotation = Quaternion.LookRotation(Vector3.forward, treeDirection);
             thrownTree.GetComponent<Rigidbody2D>().linearVelocity = treeDirection * THROWN_TREE_SPEED;
+
+            bossProjectiles.Add(thrownTree);
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -315,6 +319,7 @@ public class BearLumberjackBoss : BossController
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(isDefeated) return;
         if (!collision.collider.CompareTag("Bullet"))
         {
             Rebound(collision);

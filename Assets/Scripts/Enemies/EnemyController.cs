@@ -50,9 +50,12 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        if (attack.TryGetComponent(out Animator atkAnim))
+        if (attack != null)
         {
-            attackAnim = atkAnim;
+            if (attack.TryGetComponent(out Animator atkAnim))
+            {
+                attackAnim = atkAnim;
+            }
         }
     }
 
@@ -273,12 +276,14 @@ public class EnemyController : MonoBehaviour
     }
     public void ActivateAttack()
     {
+        if(attack == null) return;
         attack.SetActive(true);
         if(attackAnim != null) attackAnim.SetTrigger("attack");
     }
 
     public void StopAttack()
     {
+        if(attack == null) return;
         attack.SetActive(false);
     }
 }
