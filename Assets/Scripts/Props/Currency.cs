@@ -10,7 +10,7 @@ public class Currency : MonoBehaviour
     // Valores para gestionar su desplazamiento al ser instanciado
     private Vector2 startSpeed;
     private float startRotation;
-    private float duration = 0.5f;
+    private float duration = 1f;
     private float timer;
 
 
