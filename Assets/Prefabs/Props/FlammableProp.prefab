@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6675783646740884769}
   - component: {fileID: 1622649582810391076}
   - component: {fileID: 4586649353541127353}
+  - component: {fileID: -7893502835476495737}
   m_Layer: 0
   m_Name: FlammableProp
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5, y: -1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -153,4 +154,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlammableProp
   anim: {fileID: 0}
   burnSFX: {fileID: 0}
+  burnEffect: {fileID: 7838968251883690645, guid: 779240395c6da034490bb42bacdfeac1, type: 3}
   col: {fileID: 1622649582810391076}
+  sr: {fileID: 0}
+--- !u!95 &-7893502835476495737
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312311296849241491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51723fc02c49c0d438e5dbfa9dd85c1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

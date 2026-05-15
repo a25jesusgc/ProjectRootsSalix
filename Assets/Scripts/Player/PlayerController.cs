@@ -182,8 +182,8 @@ public class PlayerController : MonoBehaviour
     private void ManageAnims()
     {
         anim.speed = GlobalUtils.pause ? 0 : 1;
-        anim.SetFloat("mov_x", movement.magnitude > 0 ? movement.x : aim.x);
-        anim.SetFloat("mov_y", movement.magnitude > 0 ? movement.y : aim.y);
+        anim.SetFloat("mov_x", (movement.magnitude > 0 ? movement.x : aim.x) * 10f);
+        anim.SetFloat("mov_y", (movement.magnitude > 0 ? movement.y : aim.y) * 10f);
         anim.SetFloat("aim_x", aim.x);
         anim.SetFloat("aim_y", aim.y);
         anim.SetFloat("is_moving", movement.magnitude);

@@ -66,6 +66,8 @@ public class ZoneLoader : MonoBehaviour
     private IEnumerator InitialLoad()
     {
         GlobalUtils.pause = true;
+
+        PlayerData.ReloadInstance();
         
         // Obtiene el checkpoint del jugador para cargar su escena y colocar ahí al jugador
         // En caso de que sea null, se empieza en la cueva

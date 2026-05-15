@@ -53,7 +53,7 @@ public class TitleScreenManager : MonoBehaviour
     // Inicia una nueva partida
     public void NewGame()
     {
-        PlayerData.ResetInstance();
+        PlayerData.ResetSave();
         SceneManager.LoadScene("WorldScene");
     }
 

@@ -79,6 +79,7 @@ public class RespawnInteractable : Interactable
             if(!enemy.deactivateOnDefeat) return;
             enemy.gameObject.SetActive(true);
             enemy.Revive();
+            enemy.gameObject.SetActive(false);
         }
     }
 }

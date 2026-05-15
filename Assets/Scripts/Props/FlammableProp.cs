@@ -5,7 +5,9 @@ public class FlammableProp : MonoBehaviour
 {
     [SerializeField] private  Animator anim;
     [SerializeField] private AudioSource burnSFX;
+    [SerializeField] private GameObject burnEffect;
     [SerializeField] private Collider2D col;
+    [SerializeField] private SpriteRenderer sr;
 
     private bool isBurned;
 
@@ -34,8 +36,9 @@ public class FlammableProp : MonoBehaviour
         isBurned = true;
         if(anim != null) anim.SetTrigger("burn");
         if(burnSFX != null) burnSFX.Play();
+        if(burnEffect != null) Instantiate(burnEffect, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         col.enabled = false;
         Destroy(gameObject);

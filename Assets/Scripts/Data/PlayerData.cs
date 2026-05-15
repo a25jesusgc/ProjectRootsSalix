@@ -10,7 +10,7 @@ public class PlayerData
     [SerializeField] private static PlayerData instance;
     
     public static PlayerData GetInstance => instance != null ? instance : Load();
-    public static void ResetInstance() => instance = new PlayerData();
+    public static PlayerData ReloadInstance() => instance = Load();
 
     [SerializeField] private string checkpointID;
     [SerializeField] private List<int> availableWeapons;
@@ -148,6 +148,15 @@ public class PlayerData
         {
             instance = new PlayerData();
             return instance;
+        }
+    }
+    public static void ResetSave()
+    {
+        instance = new PlayerData();
+        string filePath = GlobalUtils.SAVE_PATH;
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
         }
     }
 
