@@ -38,5 +38,6 @@ public class FlammableProp : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         col.enabled = false;
+        Destroy(gameObject);
     }
 }
