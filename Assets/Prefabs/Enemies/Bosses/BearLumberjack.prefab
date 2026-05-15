@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyType: {fileID: 11400000, guid: 36173468d863ce74f91ab0567f3fb18b, type: 2}
-  deactivateOnDefeat: 1
+  deactivateOnDefeat: 0
 --- !u!114 &450498442603365665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,11 +5598,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 764dbed72a09ed0459c9dbaf417c61af, type: 3}
   - {fileID: 8300000, guid: d88e696d8eecfb94eae8ec8e359d4a74, type: 3}
   - {fileID: 8300000, guid: b53f6a08c414881469f7784a11dc8d6c, type: 3}
+  bossDefeatSFX: {fileID: 8300000, guid: d906988f86d03e949a4973d3cb440704, type: 3}
   mov: {x: 0, y: 0}
   attackDirection: {x: 0, y: 0}
   chooseAttack: 0
   chosenAttack: 0
   lastAttackUsed: 0
+  bossProjectiles: []
   isDefeated: 0
   firstPhaseAttacksCount: 3
   secondPhaseAttacksCount: 5

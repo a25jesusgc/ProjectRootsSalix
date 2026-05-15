@@ -112678,10 +112678,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmbienceSounds
       objectReference: {fileID: 0}
-    - target: {fileID: 9101592025194075516, guid: 60720e6c8d4d57647b97adf75c8b50cc, type: 3}
-      propertyPath: maxWait
-      value: 16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

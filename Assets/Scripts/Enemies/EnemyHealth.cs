@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
     // Función de recibir daño
     public void ReceiveDamage(int damage, DamageType damageType)
     {
+        if(currentHP <= 0) return;
         // Calcula el daño recibido teniendo en cuenta las resistencias
         int receivedDamage = Mathf.RoundToInt(damage * enemyType.GetResistances[(int)damageType] / GetDayCycleDefenseMultiplier());
         Debug.Log("Enemy "+ gameObject.name + " received " + receivedDamage + " damage.");

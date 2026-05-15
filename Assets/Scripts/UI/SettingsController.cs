@@ -13,6 +13,8 @@ public class SettingsController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI audioMusicValue;
     [SerializeField] private TextMeshProUGUI audioSFXValue;
 
+    [SerializeField] private Toggle cameraShakeToggle;
+
     void Start()
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[PlayerPrefs.GetInt("lang", LocalizationSettings.SelectedLocale.SortOrder)];
@@ -24,6 +26,8 @@ public class SettingsController : MonoBehaviour
         audioGeneralValue.text = audioGeneralSlider.value.ToString("F0");
         audioMusicValue.text = audioMusicSlider.value.ToString("F0");
         audioSFXValue.text = audioSFXSlider.value.ToString("F0");
+
+        cameraShakeToggle.isOn = PlayerPrefs.GetInt(SettingConstants.CameraShake, 1) == 1;
     }
 
     void OnDisable()
@@ -66,5 +70,9 @@ public class SettingsController : MonoBehaviour
                 PlayerPrefs.SetInt("lang", 2);
                 break;
         }
+    }
+    public void ToggleCamShake(bool value)
+    {
+        PlayerPrefs.SetInt(SettingConstants.CameraShake, value ? 1 : 0);
     }
 }
