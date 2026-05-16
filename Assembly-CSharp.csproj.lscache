@@ -87,6 +87,7 @@ Assets/Scripts/
  Events/
   AlphaWolfBattleEvent.cs
   BearBossEvent.cs
+  EndDemo.cs
   EnemyGauntlet.cs
  GlobalUtils.cs
  Interactables/
@@ -503,20 +504,13 @@ Library/ScriptAssemblies/
  Unity.Searcher.Editor.dll
  Unity.Settings.Editor.dll
  Unity.ShaderGraph.Editor.dll
-<<<<<<< HEAD
- Unity.ShaderGraph.Utilities.dll
-=======
  Unity.Splines.dll
  Unity.Splines.Editor.dll
->>>>>>> 8f26005b842b7e15b6354d0920ce46f4eea6defa
  Unity.TextMeshPro.dll
  Unity.TextMeshPro.Editor.dll
  Unity.Timeline.dll
  Unity.Timeline.Editor.dll
  Unity.UnifiedRayTracing.Runtime.dll
-<<<<<<< HEAD
- UnityEditor.TestRunner.dll
-=======
  Unity.VisualScripting.Core.dll
  Unity.VisualScripting.Core.Editor.dll
  Unity.VisualScripting.Flow.dll
@@ -526,10 +520,8 @@ Library/ScriptAssemblies/
  Unity.VisualScripting.State.dll
  Unity.VisualScripting.State.Editor.dll
  Unity.VisualStudio.Editor.dll
->>>>>>> 8f26005b842b7e15b6354d0920ce46f4eea6defa
  UnityEditor.UI.Analytics.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 Temp/bin/Debug/TreeBrushes.dll
 
