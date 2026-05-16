@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Localized: HAS MUERTO
     m_Metadata:
       m_Items: []
+  - m_Id: 8136795254833152
+    m_Localized: Gracias por jugar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

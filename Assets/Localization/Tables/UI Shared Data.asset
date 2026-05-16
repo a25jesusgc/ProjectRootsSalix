@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Key: you_died
     m_Metadata:
       m_Items: []
+  - m_Id: 8136795254833152
+    m_Key: end_demo
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
