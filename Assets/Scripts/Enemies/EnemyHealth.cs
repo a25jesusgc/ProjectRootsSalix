@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
 
     private Vector3 startPos;
 
+    [HideInInspector] public bool IsDefeated => enemyController != null ? false : enemyController.isDefeated;
+
     void Awake()
     {
         enemyController = GetComponent<EnemyController>();
@@ -102,7 +104,10 @@ public class EnemyHealth : MonoBehaviour
     public void Revive()
     {
         ResetEnemy();
-        if(enemyController != null) enemyController.SetDefeated(false);
+        if(enemyController != null)
+        {
+            enemyController.SetDefeated(false);
+        }
     }
 
     public void ResetEnemy()

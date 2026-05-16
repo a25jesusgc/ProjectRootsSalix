@@ -156,7 +156,7 @@ MonoBehaviour:
   burnSFX: {fileID: 0}
   burnEffect: {fileID: 7838968251883690645, guid: 779240395c6da034490bb42bacdfeac1, type: 3}
   col: {fileID: 1622649582810391076}
-  sr: {fileID: 0}
+  sr: {fileID: 6675783646740884769}
 --- !u!95 &-7893502835476495737
 Animator:
   serializedVersion: 7

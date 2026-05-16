@@ -11,22 +11,25 @@ public class EnemyWolfShooter : EnemyController
     [SerializeField] private AudioSource shootSound;
     [SerializeField] private float attackDuration;
 
-    private List<GameObject> bullets = new List<GameObject>();
 
 
     void OnDisable()
     {
         isAttacking = false;
-        foreach (GameObject bullet in bullets)
-        {
-            Destroy(bullet);
-        }
-        bullets.Clear();
+        DestroyEnemyProjectiles();
     }
 
     protected override void Attack()
     {
         if (player == null) return; //Si no hay jugador, no continua
+
+        if (isDefeated) //Si es derrotado, detiene el ataque y no continua
+        {
+            rb.linearVelocity = Vector2.zero;
+            StopAllCoroutines();
+            return;
+        }
+
         if (isAttacking)
         {
             // Si ya está atacando, se queda quieto mientras ataca y no continua
@@ -73,7 +76,7 @@ public class EnemyWolfShooter : EnemyController
         // Le pasa el daño que debe hacer a bullet
         bullet.GetComponent<EnemyProjectile>().damage = Mathf.RoundToInt(enemyType.GetAttackDamage * GetDayCycleAttackMultiplier());
 
-        bullets.Add(bullet);
+        enemyProjectiles.Add(bullet);
 
         shootSound.Play();
 

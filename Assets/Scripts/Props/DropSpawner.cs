@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 
 // Componente que permite la instanciación de drops al llamar al método público SpawnDrops
@@ -19,9 +18,6 @@ public class DropSpawner : MonoBehaviour
 
     public void SpawnDrops()
     {
-        // Drops y DropTypeChances han de ser de la misma longitud
-        Assert.AreEqual(drops.Length, dropTypeChances.Length, "La cantidad de drops y la cantidad de probabilidades para los drops han de ser arrays de la misma longitud.");
-        
         // Vemos si suelta drops
         int roll = Random.Range(0, 100);
         if (roll <= dropChance)
