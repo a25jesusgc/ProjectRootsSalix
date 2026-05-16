@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform crosshair;
     [SerializeField] private float movSpeed;
     [SerializeField] private AudioSource dashSFX;
+    [SerializeField] private TrailRenderer trailRenderer;
 
     private PlayerInput playerInput;
     private Rigidbody2D rb;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private FertilizerSelector fertilizerSelector;
 
     private Vector2 movement;
+    private Vector2 dashMov;
     private float speed;
     private Vector2 aim;
     private Animator anim;
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
         transform.position = startPosition;
 
         speed = movSpeed;
+        aim = Vector3.down;
     }
 
     // Update is called once per frame
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = movement * (isDashing ? DASH_SPEED : speed);
+            rb.linearVelocity = isDashing ? dashMov * DASH_SPEED : movement * speed;
         }
     }
 
@@ -108,6 +111,7 @@ public class PlayerController : MonoBehaviour
             // MOVIMIENTO
             // Vector de movimiento del jugador
             movement = playerInput.actions["Move"].ReadValue<Vector2>();
+            if(movement.magnitude > 0) dashMov = movement;
 
             // DISPARO
             // Check de si se pulsa el botón para la acción de disparar
@@ -174,8 +178,10 @@ public class PlayerController : MonoBehaviour
     {
         isDashing = true;
         dashSFX.Play();
+        trailRenderer.emitting = true;
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
+        trailRenderer.emitting = false;
     }
 
     private void ManageAnims()
