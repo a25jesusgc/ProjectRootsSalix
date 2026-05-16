@@ -110064,6 +110064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_first_puzzle
   activatedProps:
   - {fileID: 103816774}
   onAllActivated:
@@ -112438,6 +112439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_root_door
   activatedProps:
   - {fileID: 573815804}
   - {fileID: 530021850}
@@ -112757,6 +112759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_shortcut
   activatedProps:
   - {fileID: 4222258388637826024}
   onAllActivated:
@@ -112866,6 +112869,10 @@ PrefabInstance:
     - target: {fileID: 2312311296849241491, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_Name
       value: FlammableProp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586649353541127353, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: propID
+      value: cave_fence
       objectReference: {fileID: 0}
     - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -113053,13 +113060,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 1.0625}
-    newSize: {x: 3, y: 1}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 6, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 6, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &2762484866814720562
 Transform:
@@ -113069,13 +113076,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4222258388637826024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -7.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 7, y: -8.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003125434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &2833547136957183462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113460,15 +113467,15 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7179847366824000988, guid: ea34bd55773e4b3409b24b0dd65c4506, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d66ba1933ec2604d988e1b17c7171fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 6, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -19,11 +19,16 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 24763580416
-    m_Localized: Aim with the mouse and shoot with left click.
+    m_Localized: 'Aim with the mouse and shoot with left click.
+
+      Dash with
+      the space key.'
     m_Metadata:
       m_Items: []
   - m_Id: 955857125376
-    m_Localized: Switch weapon with Q and E. Recover health absorbing water.
+    m_Localized: 'Switch weapon with Q and E.
+
+      Recover health absorbing water.'
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
