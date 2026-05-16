@@ -19,11 +19,14 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 24763580416
-    m_Localized: "Apunta con el rat\xF3n y dispara con clic izquierdo."
+    m_Localized: "Apunta con el rat\xF3n y dispara con clic izquierdo.\nDesl\xEDzate
+      velozmente con la tecla espacio."
     m_Metadata:
       m_Items: []
   - m_Id: 955857125376
-    m_Localized: Cambia de arma con Q y E. Recupera vida absorbiendo agua.
+    m_Localized: 'Cambia de arma con Q y E.
+
+      Recupera vida absorbiendo agua.'
     m_Metadata:
       m_Items: []
   - m_Id: 89361855201280
@@ -79,7 +82,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 765538466971648
-    m_Localized: "Tenemos que hacerlo; no queda m\xE1s remedio"
+    m_Localized: "Tenemos que hacerlo; no queda m\xE1s remedio."
     m_Metadata:
       m_Items: []
   - m_Id: 765493042659328
@@ -89,7 +92,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 765536218824704
     m_Localized: "Te quedas inm\xF3vil, sin saber qu\xE9 hacer, hasta que una voz
-      a tu lado te habla"
+      a tu lado te habla."
     m_Metadata:
       m_Items: []
   - m_Id: 752876832079872

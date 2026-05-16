@@ -15,8 +15,6 @@ public class EnemyHealth : MonoBehaviour
 
     private Vector3 startPos;
 
-    [HideInInspector] public bool IsDefeated => enemyController != null ? false : enemyController.isDefeated;
-
     void Awake()
     {
         enemyController = GetComponent<EnemyController>();
