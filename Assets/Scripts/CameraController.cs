@@ -30,11 +30,12 @@ public class CameraController : MonoBehaviour
     public void SetConfiner(Collider2D bounding)
     {
         cinemachineConfiner.BoundingShape2D = bounding;
+
     }
 
     public void ShakeCamera(float intensity, float duration)
     {
-        if(PlayerPrefs.GetInt(SettingConstants.CameraShake, 1) == 1)
+        if (PlayerPrefs.GetInt(SettingConstants.CameraShake, 1) == 1)
             StartCoroutine(CameraShake(intensity / 100f, duration));
     }
 
