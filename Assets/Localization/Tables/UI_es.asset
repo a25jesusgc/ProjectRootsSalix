@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Localized: "Vibraci\xF3n de c\xE1mara"
     m_Metadata:
       m_Items: []
+  - m_Id: 8086021510414336
+    m_Localized: HAS MUERTO
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

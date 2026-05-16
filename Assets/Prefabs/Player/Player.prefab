@@ -788,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93437692de82c564cbbc0b1e0108470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthController
+  deathScreen: {fileID: 3777985909182382232, guid: c2bc64497376ae648aa437e094a40834, type: 3}
 --- !u!114 &5231724347392526303
 MonoBehaviour:
   m_ObjectHideFlags: 0

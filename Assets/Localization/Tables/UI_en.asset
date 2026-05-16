@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Localized: Camera shaking
     m_Metadata:
       m_Items: []
+  - m_Id: 8086021510414336
+    m_Localized: YOU DIED
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

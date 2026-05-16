@@ -99,6 +99,10 @@ MonoBehaviour:
     m_Key: cam_shake
     m_Metadata:
       m_Items: []
+  - m_Id: 8086021510414336
+    m_Key: you_died
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
