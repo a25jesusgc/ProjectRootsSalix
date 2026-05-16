@@ -415,8 +415,14 @@ Library/ScriptAssemblies/
 Temp/bin/Debug/
  Unity.RenderPipeline.Universal.ShaderLibrary.dll
  Unity.RenderPipelines.Core.Runtime.dll
+ Unity.RenderPipelines.Core.Runtime.Shared.dll
+ Unity.RenderPipelines.GPUDriven.Runtime.dll
+ Unity.RenderPipelines.Universal.Config.Runtime.dll
  Unity.RenderPipelines.Universal.Runtime.dll
+ Unity.UnifiedRayTracing.Runtime.dll
+ UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
+ UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]

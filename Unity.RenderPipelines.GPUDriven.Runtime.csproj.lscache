@@ -397,7 +397,9 @@ Library/ScriptAssemblies/
  Unity.Mathematics.dll
 Temp/bin/Debug/
  Unity.RenderPipelines.Core.Runtime.dll
+ UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
+ UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]

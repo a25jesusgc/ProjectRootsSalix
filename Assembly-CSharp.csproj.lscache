@@ -136,6 +136,7 @@ Assets/Scripts/
    IActivatedProp.cs
    PressurePlate.cs
    PuzzleDoor.cs
+  ShortcutActivator.cs
   VineGrab.cs
   VineHook.cs
  RoomAudioManager.cs
@@ -517,11 +518,14 @@ Temp/bin/Debug/
  Unity.RenderPipelines.Universal.Runtime.dll
  Unity.RenderPipelines.Universal.Shaders.dll
  Unity.ShaderGraph.Editor.dll
+ Unity.ShaderGraph.Utilities.dll
  Unity.TextMeshPro.dll
  Unity.TextMeshPro.Editor.dll
  Unity.UnifiedRayTracing.Runtime.dll
+ UnityEditor.TestRunner.dll
  UnityEditor.UI.Analytics.dll
  UnityEditor.UI.dll
+ UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]
