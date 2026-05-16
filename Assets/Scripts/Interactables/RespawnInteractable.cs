@@ -24,7 +24,11 @@ public class RespawnInteractable : Interactable
         Instantiate(healEffect, player.transform.position, Quaternion.identity);
 
         // Si es un checkpoint nuevo, se guarda su descubrimiento
-        if(!PlayerData.GetInstance.WasCheckpointDiscovered(checkpoint)) PlayerData.GetInstance.DiscoverCheckpoint(checkpoint);
+        if (!PlayerData.GetInstance.WasCheckpointDiscovered(checkpoint))
+        {
+            PlayerData.GetInstance.DiscoverCheckpoint(checkpoint);
+            UpdateAvailableTravelPoints();
+        }
         
         // Se establece como el último checkpoint visitado y se guarda la partida
         PlayerData.GetInstance.SetCheckpoint(checkpoint);
@@ -77,7 +81,7 @@ public class RespawnInteractable : Interactable
     {
         foreach (EnemyHealth enemy in areaEnemies)
         {
-            if(!enemy.deactivateOnDefeat || !enemy.IsDefeated) return;
+            if(!enemy.deactivateOnDefeat) return;
             enemy.gameObject.SetActive(true);
             enemy.Revive();
             enemy.gameObject.SetActive(false);
