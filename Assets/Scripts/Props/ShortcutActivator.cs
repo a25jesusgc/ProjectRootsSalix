@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class ShortcutActivator : Interactable
