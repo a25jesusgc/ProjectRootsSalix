@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4680659124224
-    m_Localized: Buy
+    m_Localized: Comprar
     m_Metadata:
       m_Items: []
   - m_Id: 1484280367038464
@@ -101,6 +101,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7317272217927680
     m_Localized: "Vibraci\xF3n de c\xE1mara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8086021510414336
+    m_Localized: HAS MUERTO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8136795254833152
+    m_Localized: Gracias por jugar
     m_Metadata:
       m_Items: []
   references:

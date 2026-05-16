@@ -55,7 +55,8 @@ public class PlayerCurrency : MonoBehaviour
 
     void Update()
     {
-        layout.position = Vector3.MoveTowards(layout.position, forceShow || show ? showPos.position : hidePos.position, Time.deltaTime * speed);
+        //layout.position = Vector3.MoveTowards(layout.position, forceShow || show ? showPos.position : hidePos.position, Time.deltaTime * speed);
+        layout.position = Vector3.MoveTowards(layout.position, true || show ? showPos.position : hidePos.position, Time.deltaTime * speed);
         if(soundEffectTimer > 0f)
         {
             soundEffectTimer -= Time.deltaTime;

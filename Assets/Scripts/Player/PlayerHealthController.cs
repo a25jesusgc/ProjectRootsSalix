@@ -20,6 +20,8 @@ public class PlayerHealthController : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    [SerializeField] private GameObject deathScreen;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +53,7 @@ public class PlayerHealthController : MonoBehaviour
     // Función para recibir daño
     public void TakeDamage(int damage, bool selfInflicted = false)
     {
-        if(invulnerable) return;
+        if(invulnerable || GlobalUtils.pause) return;
         currentHP -= damage;
         Debug.Log("Player received " + damage + " damage.");
         if (!selfInflicted)
@@ -82,8 +84,11 @@ public class PlayerHealthController : MonoBehaviour
     private IEnumerator DefeatedCoroutine()
     {
         GlobalUtils.pause = true;
+        AudioManager.instance.MuteMusic(true, 0, true);
 
-        yield return new WaitForSeconds(0.15f);
+        Instantiate(deathScreen);
+
+        yield return new WaitForSeconds(2f);
 
         GlobalUtils.pause = false;
         

@@ -87,6 +87,14 @@ MonoBehaviour:
     m_Key: bear_lumberjack_adv_desc
     m_Metadata:
       m_Items: []
+  - m_Id: 6282592911769600
+    m_Key: alpha_wolf_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282594820177920
+    m_Key: bear_lumberjack_title
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -9,6 +9,20 @@ public class BreakableRegenerable : BreakableProp
     private float timer;
     public bool canRegen = true;
 
+    void Start()
+    {
+        if(puzzleDoor != null)
+        {
+            if (PlayerData.GetInstance.WasEventCompleted(puzzleDoor.GetPuzzleID))
+            {
+                DisableRegeneration();
+                if(anim != null) anim.SetTrigger("break");
+                isBroken = true;
+                col.enabled = false;
+            }
+        }
+    }
+
     public override void OnBreak()
     {
         timer = 0f;

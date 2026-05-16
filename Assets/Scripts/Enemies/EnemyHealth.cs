@@ -23,13 +23,13 @@ public class EnemyHealth : MonoBehaviour
         {
             this.dropSpawner = dropSpawner;
         }
+        startPos = transform.position;
     }
 
     void Start()
     {
         // Inicializa su vida
         currentHP = enemyType.GetHealth;
-        startPos = transform.position;
     }
 
     // Función de recibir daño
@@ -102,7 +102,10 @@ public class EnemyHealth : MonoBehaviour
     public void Revive()
     {
         ResetEnemy();
-        if(enemyController != null) enemyController.SetDefeated(false);
+        if(enemyController != null)
+        {
+            enemyController.SetDefeated(false);
+        }
     }
 
     public void ResetEnemy()

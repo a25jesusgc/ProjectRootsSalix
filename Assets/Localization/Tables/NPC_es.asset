@@ -57,13 +57,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 248007278592
-    m_Localized: La Q y la E para tus armas cambiar, el 2 y el 3 para tus disparos
+    m_Localized: La Q y la E para tus armas cambiar, el X y el C para tus disparos
       fertilizar.
     m_Metadata:
       m_Items: []
   - m_Id: 250674855936
     m_Localized: "Es un viejo himno de guerra, creo. Lo m\xEDo es la serrer\xEDa,
       no la historia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2472067030048768
+    m_Localized: HOLA, ME ENCANTA LA TARTA DE MENTA, ME ENCANTARIA COMER UNA AHORA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2472742174580736
+    m_Localized: "HOLA, CARI\xD1O, ME HACES GIRAR,GIRAR SIN PARAR, COMO UN DISCO,
+      CARI\xD1O, DAR VUELTAS Y VUELTAS Y VUELTAS"
     m_Metadata:
       m_Items: []
   references:

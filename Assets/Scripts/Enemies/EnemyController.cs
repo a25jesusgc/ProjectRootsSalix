@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -23,6 +24,9 @@ public class EnemyController : MonoBehaviour
     public GameObject attack;
     private Animator attackAnim;
     public float attackRange = 1f;
+
+    // Proyectiles del enemigo para destruirlos cuando muere
+    [HideInInspector] public List<GameObject> enemyProjectiles;
 
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public EnemyState currentState;
@@ -50,9 +54,12 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        if (attack.TryGetComponent(out Animator atkAnim))
+        if (attack != null)
         {
-            attackAnim = atkAnim;
+            if (attack.TryGetComponent(out Animator atkAnim))
+            {
+                attackAnim = atkAnim;
+            }
         }
     }
 
@@ -60,6 +67,8 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         currentState = EnemyState.Idle;
+
+        enemyProjectiles = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -273,12 +282,26 @@ public class EnemyController : MonoBehaviour
     }
     public void ActivateAttack()
     {
+        if(attack == null) return;
         attack.SetActive(true);
         if(attackAnim != null) attackAnim.SetTrigger("attack");
     }
 
     public void StopAttack()
     {
+        if(attack == null) return;
         attack.SetActive(false);
+    }
+
+    public void DestroyEnemyProjectiles()
+    {
+        foreach(GameObject projectile in enemyProjectiles)
+        {
+            if (projectile != null)
+            {
+                Destroy(projectile);
+            }
+        }
+        enemyProjectiles.Clear();
     }
 }

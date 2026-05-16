@@ -55,6 +55,14 @@ MonoBehaviour:
     m_Key: NPC_Speaker_1
     m_Metadata:
       m_Items: []
+  - m_Id: 2472067030048768
+    m_Key: NPC_Paquito_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2472742174580736
+    m_Key: NPC_HappySeal_0
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

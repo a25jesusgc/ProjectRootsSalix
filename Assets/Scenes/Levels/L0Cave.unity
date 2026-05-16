@@ -419,11 +419,61 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -2, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 50
+      m_TileSpriteIndex: 50
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 50
+      m_TileSpriteIndex: 50
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 50
+      m_TileSpriteIndex: 50
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 50
+      m_TileSpriteIndex: 50
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -58, y: 1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 56
       m_TileSpriteIndex: 56
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 50
+      m_TileSpriteIndex: 50
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1222,8 +1272,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 5
+    m_Data: {fileID: 11400000, guid: dbc9177de6becde45aabdb333ddc08c7, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 0baebda4130fb8844affa86c94bfb64c, type: 2}
   - m_RefCount: 1
@@ -1353,8 +1403,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 5
+    m_Data: {fileID: -1784015893, guid: 5b9a42d7590f91343b8e42c4b07a6ac5, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1673462254, guid: 9ec241285d1a0d5469893091597d5ff2, type: 3}
   - m_RefCount: 1
@@ -1384,7 +1434,7 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 594109498, guid: 9ec241285d1a0d5469893091597d5ff2, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 38
+  - m_RefCount: 43
     m_Data:
       e00: 1
       e01: 0
@@ -1421,7 +1471,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 49
+  - m_RefCount: 54
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1906,9 +1956,12 @@ GameObject:
   - component: {fileID: 531976042}
   - component: {fileID: 531976041}
   - component: {fileID: 531976043}
+  - component: {fileID: 531976046}
+  - component: {fileID: 531976045}
+  - component: {fileID: 531976044}
   m_Layer: 0
   m_Name: HappySeal
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2106,6 +2159,108 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &531976044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531976039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
+  m_TrackedObjects:
+  - rid: 8910968154068877392
+  references:
+    version: 2
+    RefIds:
+    - rid: 8910968154068877392
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 531976045}
+        m_TrackedProperties:
+          items:
+          - rid: 8910968154068877393
+        m_UpdateType: 1
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 8910968154068877393
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:080801b9cb67e9b4e924af692480b885
+          m_TableEntryReference:
+            m_KeyId: 2472742174580736
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[0].text
+--- !u!114 &531976045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531976039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa7e4d89ea67c4283b727e58a008d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextInteractable
+  icon: {fileID: 0}
+  dialogues:
+  - text: 
+--- !u!61 &531976046
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531976039}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &536365636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109959,6 +110114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_first_puzzle
   activatedProps:
   - {fileID: 103816774}
   onAllActivated:
@@ -112333,6 +112489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_root_door
   activatedProps:
   - {fileID: 573815804}
   - {fileID: 530021850}
@@ -112400,9 +112557,11 @@ GameObject:
   - component: {fileID: 1787620558}
   - component: {fileID: 1787620557}
   - component: {fileID: 1787620560}
+  - component: {fileID: 1787620562}
+  - component: {fileID: 1787620561}
   m_Layer: 0
   m_Name: Paquito
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112549,6 +112708,62 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9531326, y: 1.8960571}
   m_EdgeRadius: 0
+--- !u!114 &1787620561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787620556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
+  m_TrackedObjects:
+  - rid: 8910968154068877390
+  references:
+    version: 2
+    RefIds:
+    - rid: 8910968154068877390
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1787620562}
+        m_TrackedProperties:
+          items:
+          - rid: 8910968154068877391
+        m_UpdateType: 1
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 8910968154068877391
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:080801b9cb67e9b4e924af692480b885
+          m_TableEntryReference:
+            m_KeyId: 2472067030048768
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[0].text
+--- !u!114 &1787620562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787620556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa7e4d89ea67c4283b727e58a008d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextInteractable
+  icon: {fileID: 0}
+  dialogues:
+  - text: 
 --- !u!1 &2003125433
 GameObject:
   m_ObjectHideFlags: 0
@@ -112594,6 +112809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38683a91f02c0a04db74f145eeda9ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleDoor
+  puzzleID: cave_shortcut
   activatedProps:
   - {fileID: 4222258388637826024}
   onAllActivated:
@@ -112696,13 +112912,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1162900579}
     m_Modifications:
+    - target: {fileID: 1622649582810391076, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2312311296849241491, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_Name
       value: FlammableProp
       objectReference: {fileID: 0}
-    - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.8926108
+    - target: {fileID: 4586649353541127353, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: propID
+      value: cave_fence
       objectReference: {fileID: 0}
     - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112743,6 +112963,14 @@ PrefabInstance:
     - target: {fileID: 5869136737543057000, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675783646740884769, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675783646740884769, guid: 2ec21dda8509f7e46a21531d5193b99c, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -112882,13 +113110,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 1.0625}
-    newSize: {x: 3, y: 1}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 6, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 6, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &2762484866814720562
 Transform:
@@ -112898,13 +113126,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4222258388637826024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -7.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 7, y: -8.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003125434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &2833547136957183462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113289,15 +113517,15 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7179847366824000988, guid: ea34bd55773e4b3409b24b0dd65c4506, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d66ba1933ec2604d988e1b17c7171fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 6, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

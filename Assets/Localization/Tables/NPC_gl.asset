@@ -56,12 +56,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 248007278592
-    m_Localized: O Q e o E para as armas cambiar, o 2 e o 3 para os disparos fertilizar.
+    m_Localized: O Q e o E para as armas cambiar, o X e o C para os disparos fertilizar.
     m_Metadata:
       m_Items: []
   - m_Id: 250674855936
     m_Localized: "\xC9 un himno de guerra antigo, penso. O meu choio \xE9 o serradoiro,
       non a historia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2472067030048768
+    m_Localized: HOLA, ENCANTAME A TARTA DE MENTA, COMERIA UNHA AGORA MESMO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2472742174580736
+    m_Localized: HOLA, NENA, FASME XIRAR, XIRAR SEN PARAR COMA UN DISCO, NENA, XIRAR,
+      XIRAR, XIRAR
     m_Metadata:
       m_Items: []
   references:

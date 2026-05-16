@@ -11,7 +11,7 @@
                     "type": "Value",
                     "id": "db75dc00-49fe-457f-8d44-5e005fae82a1",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -82,6 +82,15 @@
                     "name": "NextFertilizer",
                     "type": "Button",
                     "id": "b1d02e61-ca36-47f4-9198-b0f7a28bdd3c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "8818f835-ef60-46ba-aa2b-82f9e434098b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -171,7 +180,7 @@
                     "id": "1ed20a1b-fc06-45ef-8e5d-1372d84b1483",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": ";Gamepad",
                     "action": "Aim",
                     "isComposite": false,
@@ -203,6 +212,17 @@
                     "name": "",
                     "id": "ad146b71-10aa-4624-9f14-38f88fbe9e37",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c23d833d-066d-43a5-8f24-8c9b848692aa",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
@@ -304,7 +324,18 @@
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
+                    "action": "PreviousFertilizer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16e4b6a1-6909-4088-a96d-833dd34a56fb",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
                     "action": "PreviousFertilizer",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -312,10 +343,10 @@
                 {
                     "name": "",
                     "id": "80fd1a61-365d-4396-9ea3-35847b734200",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PreviousFertilizer",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -326,7 +357,18 @@
                     "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
+                    "action": "NextFertilizer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0742b925-60b1-4250-b63b-d13787afe8c9",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
                     "action": "NextFertilizer",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -334,11 +376,33 @@
                 {
                     "name": "",
                     "id": "4ea3448e-26ea-40ee-a391-e2603b0b0145",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "NextFertilizer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c2d0e82-e933-4dda-b57c-6dc8ea5adb5c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a8e9622-edc3-41e7-89ce-2bff0557d9c7",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

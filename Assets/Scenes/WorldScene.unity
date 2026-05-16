@@ -2094,7 +2094,7 @@ Camera:
   far clip plane: 5000
   field of view: 5
   orthographic: 1
-  orthographic size: 3.4453125
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4094,6 +4094,7 @@ MonoBehaviour:
   journalWindow: {fileID: 922437207}
   settingsWindow: {fileID: 1443409433}
   isPaused: 0
+  playerInput: {fileID: 1595381537}
 --- !u!1001 &1004115997
 PrefabInstance:
   m_ObjectHideFlags: 0
