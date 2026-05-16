@@ -7,6 +7,7 @@ public class RespawnInteractable : Interactable
     [SerializeField] private GameObject travelMenu;
     [SerializeField] private List<GameObject> travelButtonsList;
     [SerializeField] private GameObject healEffect;
+    [SerializeField] private List<EnemyHealth> areaEnemies;
 
     private int availableTPs;
 
@@ -74,9 +75,9 @@ public class RespawnInteractable : Interactable
 
     private void ReviveEnemies()
     {
-        foreach (EnemyHealth enemy in FindObjectsByType<EnemyHealth>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (EnemyHealth enemy in areaEnemies)
         {
-            if(!enemy.deactivateOnDefeat) return;
+            if(!enemy.deactivateOnDefeat || !enemy.IsDefeated) return;
             enemy.gameObject.SetActive(true);
             enemy.Revive();
             enemy.gameObject.SetActive(false);
