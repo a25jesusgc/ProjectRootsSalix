@@ -10,6 +10,14 @@ public class PressurePlate : MonoBehaviour, IActivatedProp
     void Start()
     {
         anim = GetComponent<Animator>();
+        if(puzzleDoor != null)
+        {
+            if (PlayerData.GetInstance.WasEventCompleted(puzzleDoor.GetPuzzleID))
+            {
+                puzzleCompleted = true;
+                anim.SetBool("pressed", true);
+            }
+        }
     }
 
     // Está activo cuando tiene por lo menos un objeto encima suya

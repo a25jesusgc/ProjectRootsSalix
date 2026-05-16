@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class FlammableProp : MonoBehaviour
 {
-    [SerializeField] private  Animator anim;
+    [SerializeField] private string propID;
+    [SerializeField] private Animator anim;
     [SerializeField] private AudioSource burnSFX;
     [SerializeField] private GameObject burnEffect;
     [SerializeField] private Collider2D col;
     [SerializeField] private SpriteRenderer sr;
 
     private bool isBurned;
+
+    void Start()
+    {
+        if(PlayerData.GetInstance.WasEventCompleted(propID)) Destroy(gameObject);
+    }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,6 +44,8 @@ public class FlammableProp : MonoBehaviour
         if(anim != null) anim.SetTrigger("burn");
         if(burnSFX != null) burnSFX.Play();
         if(burnEffect != null) Instantiate(burnEffect, transform.position, Quaternion.identity);
+
+        PlayerData.GetInstance.CompleteEvent(propID);
 
         yield return new WaitForSeconds(1f);
 
