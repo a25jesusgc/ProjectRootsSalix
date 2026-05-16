@@ -18,9 +18,9 @@ MonoBehaviour:
   attackDamage: 400
   movSpeed: 8
   resistances:
-  - 0.9
+  - 1.8
   - 1
-  - 1
+  - 1.25
   dayAttackMultipler: 1
   nightAttackMultipler: 1.2
   dayDefenseMultipler: 1
