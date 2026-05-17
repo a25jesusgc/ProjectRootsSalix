@@ -73,6 +73,10 @@ MonoBehaviour:
       ROUND ROUND ROUND '
     m_Metadata:
       m_Items: []
+  - m_Id: 3140778531479552
+    m_Localized: HI, I LOVE EAT FISH AND SLEEP
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

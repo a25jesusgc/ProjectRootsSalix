@@ -63,6 +63,10 @@ MonoBehaviour:
     m_Key: NPC_HappySeal_0
     m_Metadata:
       m_Items: []
+  - m_Id: 3140778531479552
+    m_Key: NPC_Federico_0
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
