@@ -69,8 +69,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2472742174580736
-    m_Localized: HOLA, NENA, FASME XIRAR, XIRAR SEN PARAR COMA UN DISCO, NENA, XIRAR,
-      XIRAR, XIRAR
+    m_Localized: "T\xF3mao con calma."
     m_Metadata:
       m_Items: []
   - m_Id: 3140778531479552
