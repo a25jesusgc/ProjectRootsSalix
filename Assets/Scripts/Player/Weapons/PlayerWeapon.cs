@@ -34,9 +34,9 @@ public static class PlayerWeaponConstants
     public const int VINE_DAMAGE = 30;
     public const float VINE_CD = 0.25f;
     public const float VINE_DAMAGE_CD = 0.25f;
-    public const int VINE_DRAIN_BASE_HEALING = 24;
+    public const int VINE_DRAIN_BASE_HEALING = 25;
     public const int VINE_DRAIN_MIN_HEALING = 5;
-    public const int VINE_DRAIN_MAX_HEALING = 40;
+    public const int VINE_DRAIN_MAX_HEALING = 50;
     public const int SOLAR_RAY_DAMAGE = 120;
     public const float SOLAR_RAY_CD = 0.4f;
     public const int NIGHT_ROOT_DAMAGE = 100;

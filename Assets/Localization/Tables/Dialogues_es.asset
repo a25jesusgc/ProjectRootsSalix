@@ -34,26 +34,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 744053375418368
-    m_Localized: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
-      de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
-      por mucho que lo intentas tu cuerpo se mueve solo.
+    m_Localized: "Tus ojos no pueden ver y tus o\xEDdos no pueden escuchar, lo \xFAnico
+      que sientes es c\xF3mo tu cuerpo se quiebra y se estira en infinitas formas,
+      como si un millar de manos quisieran arrancar un pedacito de ti."
     m_Metadata:
       m_Items: []
   - m_Id: 746143048974336
-    m_Localized: "No sabes por qu\xE9, pero de alg\xFAn modo sabes que ese que camina
-      eres t\xFA. No se siente como un sue\xF1o, sino como algo m\xE1s real."
+    m_Localized: "Cada c\xE9lula de tu ser se ramifica en cientos de ap\xE9ndices,
+      y estos a su vez se ramifican en otros cientos sucesivamente. "
     m_Metadata:
       m_Items: []
   - m_Id: 746145766883328
-    m_Localized: "De repente, un resplandor cubre el cielo y no puedes evitar cerrar
-      los ojos. Mientras los aprietas con fuerza un zumbido constante inunda tus
-      o\xEDdos y llegas a escuchar unos gritos amortiguados antes de que todo acabe."
+    m_Localized: "Todo tu cuerpo cubre el planeta suavemente, abraz\xE1ndolo como
+      si fuera un osito de peluche. Y entonces lo sientes; eres capaz de percibir
+      cada suceso existente en este astro."
     m_Metadata:
       m_Items: []
   - m_Id: 752951922704384
-    m_Localized: "Con dificultad, te acuestas sobre una manta y cierras los ojos.
-      El murmullo de las conversaciones desaparece gradualmente a medida que el sue\xF1o
-      te invade. Entonces vuelves a la realidad."
+    m_Localized: "No sabes por qu\xE9, pero de alg\xFAn modo sabes que ese que camina
+      eres t\xFA. No se siente como un sue\xF1o, sino como algo m\xE1s real."
     m_Metadata:
       m_Items: []
   - m_Id: 758328928157696
@@ -100,9 +99,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 752912127148032
-    m_Localized: "Te encuentras en medio de una multitud, sentado en el suelo delante
-      de una hoguera. Est\xE1s magullado, sientes c\xF3mo si un millar de heridas
-      cubrieran tu piel, ardiendo de dolor."
+    m_Localized: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
+      de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
+      por mucho que lo intentas tu cuerpo se mueve solo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174054573654016
+    m_Localized: "De repente, un resplandor cubre el cielo y no puedes evitar cerrar
+      los ojos. Mientras los aprietas con fuerza un zumbido constante inunda tus
+      o\xEDdos y llegas a escuchar unos gritos amortiguados antes de que todo acabe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174427115929600
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174439296188416
+    m_Localized: "T\xFA eres el gran \xE1rbol."
     m_Metadata:
       m_Items: []
   references:

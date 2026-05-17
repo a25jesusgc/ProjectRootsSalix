@@ -2213,6 +2213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextInteractable
   icon: {fileID: 0}
+  showIcon: 1
   dialogues:
   - text: 
 --- !u!61 &531976046
@@ -112762,6 +112763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextInteractable
   icon: {fileID: 0}
+  showIcon: 1
   dialogues:
   - text: 
 --- !u!1 &2003125433
@@ -113275,7 +113277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
       propertyPath: dialogues.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
       propertyPath: dialogues.Array.data[0].text
@@ -113296,6 +113298,24 @@ PrefabInstance:
       value: Poco a poco aparece delante de ti una calle recta y asfaltada, rodeada
         de edificios que se pierden en las nubes. Comienzas a caminar aunque no quieres,
         por mucho que lo intentas tu cuerpo se mueve solo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[4].text
+      value: "Todo tu cuerpo cubre el planeta suavemente, abraz\xE1ndolo como si
+        fuera un osito de peluche. Y entonces lo sientes; eres capaz de percibir
+        cada suceso existente en este astro."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[5].text
+      value: "Todo tu cuerpo cubre el planeta suavemente, abraz\xE1ndolo como si
+        fuera un osito de peluche. Y entonces lo sientes; eres capaz de percibir
+        cada suceso existente en este astro."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495613458137543248, guid: 9db7e57a4fd82bb499c7002aa4476512, type: 3}
+      propertyPath: dialogues.Array.data[6].text
+      value: "Todo tu cuerpo cubre el planeta suavemente, abraz\xE1ndolo como si
+        fuera un osito de peluche. Y entonces lo sientes; eres capaz de percibir
+        cada suceso existente en este astro."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -113343,6 +113363,8 @@ MonoBehaviour:
           - rid: 8287077585243865088
           - rid: 8287077585243865167
           - rid: 8287077585243865168
+          - rid: 8287077797240242269
+          - rid: 8287077797240242270
         m_UpdateType: 1
         m_Changed:
           m_PersistentCalls:
@@ -113399,6 +113421,32 @@ MonoBehaviour:
           m_WaitForCompletion: 0
           m_LocalVariables: []
         m_PropertyPath: dialogues.Array.data[3].text
+    - rid: 8287077797240242269
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:916d0fa205b19e94e8c2acf7f2fb3530
+          m_TableEntryReference:
+            m_KeyId: 4174427115929600
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[4].text
+    - rid: 8287077797240242270
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:916d0fa205b19e94e8c2acf7f2fb3530
+          m_TableEntryReference:
+            m_KeyId: 4174439296188416
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: dialogues.Array.data[5].text
 --- !u!1001 &6581466273869218819
 PrefabInstance:
   m_ObjectHideFlags: 0

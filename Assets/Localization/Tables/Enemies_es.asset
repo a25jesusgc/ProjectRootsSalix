@@ -125,6 +125,55 @@ MonoBehaviour:
     m_Localized: "Le\xF1oso, Viejo Ermita\xF1o del Bosque"
     m_Metadata:
       m_Items: []
+  - m_Id: 6748177048977408
+    m_Localized: "\xBFQu\xE9 pasa? \xBFNo ves que estoy ocupado talando estas repugnantes
+      ra\xEDces? \xA1Pienso acabar con todas ellas, no molestes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748393529589760
+    m_Localized: "Un momento. T\xFA. T\xFA eres uno de ellos. Hoy es mi d\xEDa de
+      suerte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748452451172352
+    m_Localized: "Pienso acabar con todos vosotros, asquerosa progenie de las ra\xEDces."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748469391966208
+    m_Localized: Ce...lia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748498521407488
+    m_Localized: Perdona... a tu padre... por no haberte protegido.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748719875801088
+    m_Localized: "\xBFQu\xE9 es lo que veo? Est\xE1s muy lejos de casa, cervatillo,
+      este no es lugar para juegos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748777383903232
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748809562603520
+    m_Localized: "Vamos, demu\xE9strame que eres digno. Dame el enfrentamiento que
+      llevo toda la vida buscando."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748817179459584
+    m_Localized: 'Siii, por fin, lo que tanto ansiaba. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748838314557440
+    m_Localized: El sabor de mi propia sangre en las puertas de la muerte, es el
+      mejor de los manjares.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748846099185664
+    m_Localized: Eres un verdadero... asesino.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
