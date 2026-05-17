@@ -104,7 +104,10 @@ public class PlayerData
 
         currency = 0;
 
-        checkpointsDiscovered = new List<string>();
+        checkpointsDiscovered = new List<string>
+        {
+            "town"
+        };
 
         lifeUpgrades = 0;
 

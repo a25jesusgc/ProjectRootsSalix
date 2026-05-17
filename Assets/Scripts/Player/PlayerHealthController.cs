@@ -20,6 +20,7 @@ public class PlayerHealthController : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    [SerializeField] private AudioSource hitSFX;
     [SerializeField] private GameObject deathScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -59,6 +60,7 @@ public class PlayerHealthController : MonoBehaviour
         if (!selfInflicted)
         {
             anim.SetTrigger("hurt");
+            hitSFX.Play();
             StartCoroutine(InvulnerabilityCoroutine());
         }
         if (currentHP <= 0)
@@ -85,6 +87,8 @@ public class PlayerHealthController : MonoBehaviour
     {
         GlobalUtils.pause = true;
         AudioManager.instance.MuteMusic(true, 0, true);
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        anim.SetTrigger("defeated");
 
         Instantiate(deathScreen);
 
