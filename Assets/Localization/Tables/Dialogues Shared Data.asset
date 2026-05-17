@@ -39,6 +39,14 @@ MonoBehaviour:
     m_Key: root_cave_0_3
     m_Metadata:
       m_Items: []
+  - m_Id: 4174427115929600
+    m_Key: root_cave_0_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174439296188416
+    m_Key: root_cave_0_5
+    m_Metadata:
+      m_Items: []
   - m_Id: 752876832079872
     m_Key: root_forest_0_0
     m_Metadata:
@@ -49,6 +57,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 752951922704384
     m_Key: root_forest_0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174054573654016
+    m_Key: root_forest_0_3
     m_Metadata:
       m_Items: []
   - m_Id: 758328928157696

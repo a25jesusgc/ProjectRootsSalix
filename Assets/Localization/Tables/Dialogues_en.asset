@@ -36,20 +36,20 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 744053375418368
-    m_Localized: Little by little, a straight, paved street appears before you, surrounded
-      by buildings that seem to disappear into the clouds. You begin to walk, though
-      you don't want to; no matter how hard you try, your body moves on its own.
+    m_Localized: Your eyes cannot see and your ears cannot hear; all you feel is
+      your body breaking and stretching into infinite shapes, as if a thousand hands
+      were trying to tear a piece of you away.
     m_Metadata:
       m_Items: []
   - m_Id: 746143048974336
-    m_Localized: You don't know why, but somehow you know that the one walking is
-      you. It doesn't feel like a dream, but something far more real.
+    m_Localized: Each cell of your being branches into hundreds of appendages, and
+      these in turn branch into hundreds more successively.
     m_Metadata:
       m_Items: []
   - m_Id: 746145766883328
-    m_Localized: Suddenly, a glow covers the sky, and you can't help but close your
-      eyes. As you squeeze them shut, a constant buzzing fills your ears, and you
-      catch muffled screams before it all ends.
+    m_Localized: Your entire body gently covers the planet, embracing it like a teddy
+      bear. And then you feel it; you are able to perceive every event on this celestial
+      body.
     m_Metadata:
       m_Items: []
   - m_Id: 758333424451584
@@ -74,9 +74,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 752951922704384
-    m_Localized: With difficulty, you lie down on a blanket and close your eyes.
-      The murmur of conversations gradually fades as sleep envelops you. Then you
-      return to reality.
+    m_Localized: You don't know why, but somehow you know that the one walking is
+      you. It doesn't feel like a dream, but something far more real.
     m_Metadata:
       m_Items: []
   - m_Id: 752876832079872
@@ -102,9 +101,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 752912127148032
-    m_Localized: You find yourself in the middle of a crowd, sitting on the ground
-      before a bonfire. You are bruised, feeling as if a thousand wounds cover your
-      skin, burning in pain.
+    m_Localized: Little by little, a straight, paved street appears before you, surrounded
+      by buildings that seem to disappear into the clouds. You begin to walk, though
+      you don't want to; no matter how hard you try, your body moves on its own.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174054573654016
+    m_Localized: Suddenly, a glow covers the sky, and you can't help but close your
+      eyes. As you squeeze them shut, a constant buzzing fills your ears, and you
+      catch muffled screams before it all ends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174427115929600
+    m_Localized: The sea of sensations overwhelms your mind, but before you awaken
+      from this reverie, an idea clarifies in your thoughts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4174439296188416
+    m_Localized: You are the great tree.
     m_Metadata:
       m_Items: []
   references:

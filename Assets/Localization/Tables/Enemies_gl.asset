@@ -124,6 +124,55 @@ MonoBehaviour:
     m_Localized: "Le\xF1oso, Vello Ermit\xE1n do Bosque"
     m_Metadata:
       m_Items: []
+  - m_Id: 6748177048977408
+    m_Localized: "Que pasa? Non ves que estou ocupado cortando estas noxentas ra\xEDces?
+      Penso acabar con todas, as\xED que non molestes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748393529589760
+    m_Localized: "Un momento. Ti. Ti es un deles. Hoxe \xE9 o meu d\xEDa de sorte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748452451172352
+    m_Localized: "Vou acabar con todos v\xF3s, repugnante prole das ra\xEDces."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748469391966208
+    m_Localized: Ce...lia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748498521407488
+    m_Localized: Perdoa... ao teu pai... por non te ter protexido.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748719875801088
+    m_Localized: "Que \xE9 o que vexo? Est\xE1s lonxe da casa, cervati\xF1o. Este
+      non \xE9 lugar para xogos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748777383903232
+    m_Localized: "Entraches no meu territorio e feriches aos meus homes. De verdade
+      pensabas que non haber\xEDa consecuencias?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748809562603520
+    m_Localized: "Ve\xF1a, demostra que es digno. D\xE1me a loita que levo buscando
+      toda a mi\xF1a vida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748817179459584
+    m_Localized: Siii, por fin, o que tanto cobizaba.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748838314557440
+    m_Localized: "O sabor do meu propio sangue \xE1s portas da morte \xE9 o mellor
+      dos manxares."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748846099185664
+    m_Localized: Es un verdadeiro... asasino.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

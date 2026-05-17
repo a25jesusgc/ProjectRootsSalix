@@ -95,6 +95,50 @@ MonoBehaviour:
     m_Key: bear_lumberjack_title
     m_Metadata:
       m_Items: []
+  - m_Id: 6748177048977408
+    m_Key: bear_lumberjack_battle_pre_000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748393529589760
+    m_Key: bear_lumberjack_battle_pre_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748452451172352
+    m_Key: bear_lumberjack_battle_pre_002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748469391966208
+    m_Key: bear_lumberjack_battle_post_000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748498521407488
+    m_Key: bear_lumberjack_battle_post_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748719875801088
+    m_Key: alpha_wolf_battle_pre_000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748777383903232
+    m_Key: alpha_wolf_battle_pre_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748809562603520
+    m_Key: alpha_wolf_battle_pre_002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748817179459584
+    m_Key: alpha_wolf_battle_post_000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748838314557440
+    m_Key: alpha_wolf_battle_post_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748846099185664
+    m_Key: alpha_wolf_battle_post_002
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

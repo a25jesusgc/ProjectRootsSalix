@@ -122,6 +122,54 @@ MonoBehaviour:
     m_Localized: Lumbearjack, Old Forest Hermit
     m_Metadata:
       m_Items: []
+  - m_Id: 6748177048977408
+    m_Localized: What's wrong? Can't you see I'm busy cutting down these disgusting
+      roots? I'm going to wipe them all out, so don't bother me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748393529589760
+    m_Localized: Wait a minute. You. You're one of them. Today's my lucky day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748452451172352
+    m_Localized: I'm going to wipe you all out, you filthy spawn of the roots.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748469391966208
+    m_Localized: Ce...lia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748498521407488
+    m_Localized: Forgive... your father.... for not protecting you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748719875801088
+    m_Localized: What do I see? You're far from home, fawn. This isn't a place for
+      games.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748777383903232
+    m_Localized: You've trespassed into my territory and wounded my men. Did you
+      really think there would be no consequences?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748809562603520
+    m_Localized: Come on, prove yourself worthy. Give me the showdown I've been seeking
+      my whole life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748817179459584
+    m_Localized: Yeees, finally, what I've longed for.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748838314557440
+    m_Localized: The taste of my own blood at death's door is the finest of delicacies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6748846099185664
+    m_Localized: You are a true... murderer.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
