@@ -119,6 +119,12 @@ MonoBehaviour:
     m_Localized: Fertilizer Shop
     m_Metadata:
       m_Items: []
+  - m_Id: 8414671845867520
+    m_Localized: 'Move with WASD.
+
+      Interact with right click or F.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

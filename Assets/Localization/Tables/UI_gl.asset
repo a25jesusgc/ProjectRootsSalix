@@ -119,6 +119,10 @@ MonoBehaviour:
     m_Localized: Tenda de Fertilizantes
     m_Metadata:
       m_Items: []
+  - m_Id: 8414671845867520
+    m_Localized: "M\xF3vete co WASD.\nInteract\xFAa co clic dereito ou F."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

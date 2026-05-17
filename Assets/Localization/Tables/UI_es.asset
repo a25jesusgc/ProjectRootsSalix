@@ -119,6 +119,10 @@ MonoBehaviour:
     m_Localized: Tienda de Fertilizantes
     m_Metadata:
       m_Items: []
+  - m_Id: 8414671845867520
+    m_Localized: "Mu\xE9vete con WASD.\nInteract\xFAa con clic derecho o F."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
