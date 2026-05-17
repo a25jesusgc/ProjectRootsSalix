@@ -52,7 +52,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GlobalUtils.pause) return;
+        if (GlobalUtils.pause)
+        {
+            if(isAttacking)
+            {
+                playerWeaponController.StopCurrentWeapon();
+                isAttacking = false;
+            }
+            return;
+        }
 
         interactBox.transform.localPosition = (movement.magnitude > 0 ? movement : aim) * INTERACT_RANGE;
         crosshair.localPosition = aim * CROSSHAIR_RANGE;
@@ -214,22 +222,5 @@ public class PlayerController : MonoBehaviour
     {
         isHookJumping = false;
         hookTarget = null;
-    }
-
-    // Si choca contra el jugador, o el jugador contra el enemigo, evitar que sea empujado
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
     }
 }

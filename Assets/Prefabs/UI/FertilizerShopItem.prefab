@@ -248,6 +248,7 @@ MonoBehaviour:
   fertilizerType: 0
   amount: 100
   price: 50
+  buySFX: {fileID: 8300000, guid: a74d70f3e6b74684abeeea6668aae922, type: 3}
 --- !u!1 &5456767150159137177
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ public abstract class PickUpItem : MonoBehaviour
 {
     // Identificador del pickup para eliminarlo si el jugador ya lo obtuvo
     [SerializeField] private string id;
+    [SerializeField] private GameObject effect;
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public abstract class PickUpItem : MonoBehaviour
             PlayerData.GetInstance.PickItem(id);
             // Se ejecuta OnPickup
             OnPickup(collision);
+            if(effect != null) Instantiate(effect, transform.position, Quaternion.identity);
             // Y se destruye
             Destroy(gameObject);
         }

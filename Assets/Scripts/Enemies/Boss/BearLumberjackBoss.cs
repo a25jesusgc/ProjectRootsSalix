@@ -173,7 +173,7 @@ public class BearLumberjackBoss : BossController
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.linearVelocity = Vector2.zero;
 
-        yield return new WaitForSeconds(Random.Range(2f, 5f));
+        yield return new WaitForSeconds(Random.Range(3f, 5f));
 
         anim.SetBool("is_tired", false);
 
@@ -282,7 +282,7 @@ public class BearLumberjackBoss : BossController
         col.enabled = true;
         anim.SetBool("walking", true);
         float walkTime = 0;
-        while (walkTime < 0.5f)
+        while (walkTime < 1f)
         {
             walkTime += Time.deltaTime;
             mov = (arenaCenter.position - transform.position).normalized;
@@ -295,7 +295,7 @@ public class BearLumberjackBoss : BossController
         }
         anim.SetBool("walking", false);
         rb.linearVelocity = Vector2.zero;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
     }
 
 
@@ -341,6 +341,17 @@ public class BearLumberjackBoss : BossController
 
     void FixedUpdate()
     {
+        if(isDefeated)
+        {
+            if (isWhirling)
+            {
+                isWhirling = false;
+                whirlSFX.Stop();
+                rb.bodyType = RigidbodyType2D.Kinematic;
+                rb.linearVelocity = Vector2.zero;
+            }
+            return;
+        }
         if(isWhirling) rb.linearVelocity = whirlDirection * whirlSpeed;
     }
 }

@@ -5,6 +5,7 @@ public class FertilizerShopItem : MonoBehaviour
     [SerializeField] private FertilizerType fertilizerType;
     [SerializeField] private int amount;
     [SerializeField] private int price;
+    [SerializeField] private AudioClip buySFX;
 
     // Al darle a comprar fertilizante
     public void BuyFertilizer()
@@ -16,6 +17,7 @@ public class FertilizerShopItem : MonoBehaviour
             PlayerData.GetInstance.AddFertilizer(new PlayerFertilizer(fertilizerType, amount));
             PlayerData.GetInstance.ChangeCurrency(-price);
             PlayerCurrency.instance.ChangeCurrency(-price);
+            AudioSource.PlayClipAtPoint(buySFX, Camera.main.transform.position, 0.5f);
         }
     }
 }

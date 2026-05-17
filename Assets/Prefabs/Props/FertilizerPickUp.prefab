@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpFertilizer
   id: 
+  effect: {fileID: 8598628601494748476, guid: 8c74c653ce9e56243a04c289f05cecb0, type: 3}
   fertilizerType: 0
   amount: 0
 --- !u!1 &9125530109123545904
