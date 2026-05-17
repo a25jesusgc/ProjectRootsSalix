@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Localized: Game saved
     m_Metadata:
       m_Items: []
+  - m_Id: 8407968140115968
+    m_Localized: Fertilizer Shop
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

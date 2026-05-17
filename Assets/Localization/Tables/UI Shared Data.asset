@@ -111,6 +111,10 @@ MonoBehaviour:
     m_Key: game_saved
     m_Metadata:
       m_Items: []
+  - m_Id: 8407968140115968
+    m_Key: fertilizer_shop
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

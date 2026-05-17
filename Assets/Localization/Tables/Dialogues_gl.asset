@@ -119,6 +119,18 @@ MonoBehaviour:
       desta enso\xF1aci\xF3n, unha idea acl\xE1rase nos teus pensamentos."
     m_Metadata:
       m_Items: []
+  - m_Id: 4349827366666240
+    m_Localized: "Cami\xF1o a trav\xE9s do Bosque Esmeralda. Ir con precauci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350188731121664
+    m_Localized: "Cara \xE1 cova."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350996629569536
+    m_Localized: "Sa\xEDda do bosque cara ao leste."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

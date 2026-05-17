@@ -118,6 +118,18 @@ MonoBehaviour:
     m_Localized: "T\xFA eres el gran \xE1rbol."
     m_Metadata:
       m_Items: []
+  - m_Id: 4349827366666240
+    m_Localized: "Camino a trav\xE9s del Bosque Esmeralda. Ir con precauci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350188731121664
+    m_Localized: Hacia la cueva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350996629569536
+    m_Localized: Salida del bosque hacia el este.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

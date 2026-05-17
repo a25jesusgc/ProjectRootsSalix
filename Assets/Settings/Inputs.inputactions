@@ -298,6 +298,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0a4eaa62-b177-4499-a70c-7463587c8f8a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8db7f076-820a-4469-a1ef-7371ff42a0a6",
                     "path": "<Keyboard>/enter",
                     "interactions": "",

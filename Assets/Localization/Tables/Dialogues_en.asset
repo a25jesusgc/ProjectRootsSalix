@@ -121,6 +121,18 @@ MonoBehaviour:
     m_Localized: You are the great tree.
     m_Metadata:
       m_Items: []
+  - m_Id: 4349827366666240
+    m_Localized: Path through the Emerald Forest. Proceed with caution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350188731121664
+    m_Localized: To the cave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4350996629569536
+    m_Localized: Exit from the forest to the east.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
