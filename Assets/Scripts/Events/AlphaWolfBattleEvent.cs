@@ -46,6 +46,9 @@ public class AlphaWolfBattleEvent : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        bossAnim.SetFloat("x", -1);
+        bossAnim.SetFloat("y", 0);
+
         // Diálogos del boss antes de pelear
         DialogueSystem.instance.ShowDialogue(preBattleDialogues, true);
         yield return new WaitUntil(() => !DialogueSystem.instance.IsDialogueOpen);
@@ -54,6 +57,8 @@ public class AlphaWolfBattleEvent : MonoBehaviour
 
         // El boss salta hacia la arena
         bossAnim.SetTrigger("jump");
+        bossAnim.SetFloat("x", 0);
+        bossAnim.SetFloat("y", -1);
 
         yield return new WaitForSeconds(1f);
 
