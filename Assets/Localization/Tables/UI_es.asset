@@ -111,6 +111,10 @@ MonoBehaviour:
     m_Localized: Gracias por jugar
     m_Metadata:
       m_Items: []
+  - m_Id: 8399339630510080
+    m_Localized: Partida guardada
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

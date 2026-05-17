@@ -1650,6 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e48a097975c49459dba0098c7d2aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionController
+  gameSavedNotification: {fileID: 3777985909182382232, guid: 0cad015126868d04e93db467797c69cb, type: 3}
 --- !u!1 &468256439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2095,7 @@ Camera:
   far clip plane: 5000
   field of view: 5
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 3.4453125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

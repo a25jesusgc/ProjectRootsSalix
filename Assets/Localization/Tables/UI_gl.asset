@@ -111,6 +111,10 @@ MonoBehaviour:
     m_Localized: Grazas por xogar
     m_Metadata:
       m_Items: []
+  - m_Id: 8399339630510080
+    m_Localized: Partida gardada
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

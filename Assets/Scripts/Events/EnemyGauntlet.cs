@@ -69,6 +69,9 @@ public class EnemyGauntlet : MonoBehaviour
         started = false;
 
         AudioManager.instance.PlayMusic(areaTheme);
+        
+        PlayerData.Save();
+        TransitionController.instance.ShowGameSavedNotification();
     }
 }
 

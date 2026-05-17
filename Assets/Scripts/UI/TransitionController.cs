@@ -10,6 +10,9 @@ public class TransitionController : MonoBehaviour
     private const float DURATION = 0.5f;
 
     public static TransitionController instance; //Singleton
+
+    [SerializeField] private GameObject gameSavedNotification;
+
     void Awake()
     {
         // Singleton pattern
@@ -43,5 +46,10 @@ public class TransitionController : MonoBehaviour
         }
 
         transitionFinished = true;
+    }
+
+    public void ShowGameSavedNotification()
+    {
+        Instantiate(gameSavedNotification);
     }
 }

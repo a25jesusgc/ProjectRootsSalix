@@ -107,5 +107,8 @@ public class AlphaWolfBattleEvent : MonoBehaviour
         AudioManager.instance.MuteMusic(false);
         AudioManager.instance.PlayMusic(forestTheme);
         GlobalUtils.pause = false;
+        
+        PlayerData.Save();
+        TransitionController.instance.ShowGameSavedNotification();
     }
 }

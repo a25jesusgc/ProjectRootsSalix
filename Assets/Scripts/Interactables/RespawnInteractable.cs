@@ -33,6 +33,7 @@ public class RespawnInteractable : Interactable
         // Se establece como el último checkpoint visitado y se guarda la partida
         PlayerData.GetInstance.SetCheckpoint(checkpoint);
         PlayerData.Save();
+        TransitionController.instance.ShowGameSavedNotification();
 
         // Se reviven los enemigos
         ReviveEnemies();

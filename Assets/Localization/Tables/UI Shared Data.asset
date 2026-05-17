@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Key: end_demo
     m_Metadata:
       m_Items: []
+  - m_Id: 8399339630510080
+    m_Key: game_saved
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

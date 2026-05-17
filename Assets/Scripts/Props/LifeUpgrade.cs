@@ -11,6 +11,8 @@ public class LifeUpgrade : PickUpItem
         {
             Instantiate(healEffect, collision.transform.position, Quaternion.identity);
             playerHealthController.LifeUpgrade();
+            PlayerData.Save();
+            TransitionController.instance.ShowGameSavedNotification();
         }
     }
 }
