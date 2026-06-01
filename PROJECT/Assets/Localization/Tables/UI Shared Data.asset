@@ -119,6 +119,10 @@ MonoBehaviour:
     m_Key: tutorial_move_interact
     m_Metadata:
       m_Items: []
+  - m_Id: 13859063536697344
+    m_Key: rest
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -88,4 +88,13 @@ public class RespawnInteractable : Interactable
             enemy.gameObject.SetActive(false);
         }
     }
+
+    public void RestDay()
+    {
+        DayCycleManager.instance.Rest(true);
+    }
+    public void RestNight()
+    {
+        DayCycleManager.instance.Rest(false);
+    }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -72,10 +73,13 @@ public class DayCycleManager : MonoBehaviour
 
         PlayerData.GetInstance.SetDayTime(dayTime);
 
-        environmentLight.color = GetTimeColor();
+        UpdateEnvironment();
+    }
 
+    private void UpdateEnvironment()
+    {
+        environmentLight.color = GetTimeColor();
         clockSprite.fillAmount = (dayTime > (CYCLE_DURATION / 2f) ? dayTime - (CYCLE_DURATION / 2f) : dayTime) / (CYCLE_DURATION / 2f);
-        Debug.Log(dayTime / 60f);
     }
 
     private Color GetTimeColor()
@@ -143,5 +147,35 @@ public class DayCycleManager : MonoBehaviour
         t = t / COLOR_CYCLE;
 
         return new Color(Mathf.Lerp(cycleStartColor.r, cycleEndColor.r, t), Mathf.Lerp(cycleStartColor.g, cycleEndColor.g, t), Mathf.Lerp(cycleStartColor.b, cycleEndColor.b, t));
+    }
+
+    public void Rest(bool tillMorning)
+    {
+        StartCoroutine(RestCoroutine(tillMorning));
+    }
+
+    private IEnumerator RestCoroutine(bool tillMorning)
+    {
+        float t = 0;
+        float currentTime = dayTime;
+        float target = tillMorning ? DAY_START : NIGHT_START;
+        if(currentTime > target) target = target + CYCLE_DURATION;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+
+            if(dayTime >= CYCLE_DURATION)
+            {
+                dayTime = 0;
+                target = target - CYCLE_DURATION;
+            }
+
+            dayTime = Mathf.Lerp(currentTime, target, t / 1f);
+
+            UpdateEnvironment();
+
+            yield return null;
+        }
     }
 }
