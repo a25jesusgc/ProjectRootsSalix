@@ -312,4 +312,9 @@ public class AlphaWolfBoss : BossController
     {
         clawAttack.gameObject.SetActive(false);
     }
+
+    public override void OnDefeat()
+    {
+        
+    }
 }

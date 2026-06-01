@@ -34,8 +34,9 @@ public class DayCycleManager : MonoBehaviour
     [SerializeField] private Color DUSK_COLOR;
     [SerializeField] private Color MID_NIGHT_COLOR;
 
-    // Imagen para el reloj
-    [SerializeField] private Image clockSprite;
+    // Imagenes del reloj
+    [SerializeField] private RectTransform clockSun;
+    [SerializeField] private RectTransform clockMoon;
 
 
     [SerializeField] private Light2D environmentLight;
@@ -79,7 +80,15 @@ public class DayCycleManager : MonoBehaviour
     private void UpdateEnvironment()
     {
         environmentLight.color = GetTimeColor();
-        clockSprite.fillAmount = (dayTime > (CYCLE_DURATION / 2f) ? dayTime - (CYCLE_DURATION / 2f) : dayTime) / (CYCLE_DURATION / 2f);
+        UpdateClock();
+    }
+
+    private void UpdateClock()
+    {
+        float sunRotation = Mathf.Lerp(0, 360, dayTime < MID_DAY ? (CYCLE_DURATION - MID_DAY + dayTime) / CYCLE_DURATION : (dayTime - MID_DAY) / CYCLE_DURATION);
+        float moonRotation = Mathf.Lerp(0, 360, dayTime < MID_NIGHT ? (CYCLE_DURATION - MID_NIGHT + dayTime) / CYCLE_DURATION : (dayTime - MID_NIGHT) / CYCLE_DURATION);
+        clockSun.rotation = Quaternion.Euler(0f, 0f, -sunRotation);
+        clockMoon.rotation = Quaternion.Euler(0f, 0f, -moonRotation);
     }
 
     private Color GetTimeColor()
@@ -167,7 +176,7 @@ public class DayCycleManager : MonoBehaviour
 
             if(dayTime >= CYCLE_DURATION)
             {
-                dayTime = 0;
+                currentTime = currentTime - CYCLE_DURATION;
                 target = target - CYCLE_DURATION;
             }
 

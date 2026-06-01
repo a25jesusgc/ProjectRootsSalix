@@ -52,6 +52,7 @@ public abstract class BossController : MonoBehaviour
             StopAllCoroutines();
             rb.linearVelocity = Vector2.zero;
             DestroyBossProjectiles();
+            OnDefeat();
             StartCoroutine(DefeatBossCoroutine());
             return;
         }
@@ -79,6 +80,7 @@ public abstract class BossController : MonoBehaviour
     }
 
     public abstract IEnumerator GetAttack(int attackIndex);
+    public abstract void OnDefeat();
 
     void OnCollisionEnter2D(Collision2D collision)
     {
