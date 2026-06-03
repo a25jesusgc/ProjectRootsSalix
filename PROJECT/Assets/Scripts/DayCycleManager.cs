@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -33,8 +34,9 @@ public class DayCycleManager : MonoBehaviour
     [SerializeField] private Color DUSK_COLOR;
     [SerializeField] private Color MID_NIGHT_COLOR;
 
-    // Imagen para el reloj
-    [SerializeField] private Image clockSprite;
+    // Imagenes del reloj
+    [SerializeField] private RectTransform clockSun;
+    [SerializeField] private RectTransform clockMoon;
 
 
     [SerializeField] private Light2D environmentLight;
@@ -72,10 +74,21 @@ public class DayCycleManager : MonoBehaviour
 
         PlayerData.GetInstance.SetDayTime(dayTime);
 
-        environmentLight.color = GetTimeColor();
+        UpdateEnvironment();
+    }
 
-        clockSprite.fillAmount = (dayTime > (CYCLE_DURATION / 2f) ? dayTime - (CYCLE_DURATION / 2f) : dayTime) / (CYCLE_DURATION / 2f);
-        Debug.Log(dayTime / 60f);
+    private void UpdateEnvironment()
+    {
+        environmentLight.color = GetTimeColor();
+        UpdateClock();
+    }
+
+    private void UpdateClock()
+    {
+        float sunRotation = Mathf.Lerp(0, 360, dayTime < MID_DAY ? (CYCLE_DURATION - MID_DAY + dayTime) / CYCLE_DURATION : (dayTime - MID_DAY) / CYCLE_DURATION);
+        float moonRotation = Mathf.Lerp(0, 360, dayTime < MID_NIGHT ? (CYCLE_DURATION - MID_NIGHT + dayTime) / CYCLE_DURATION : (dayTime - MID_NIGHT) / CYCLE_DURATION);
+        clockSun.rotation = Quaternion.Euler(0f, 0f, -sunRotation);
+        clockMoon.rotation = Quaternion.Euler(0f, 0f, -moonRotation);
     }
 
     private Color GetTimeColor()
@@ -143,5 +156,35 @@ public class DayCycleManager : MonoBehaviour
         t = t / COLOR_CYCLE;
 
         return new Color(Mathf.Lerp(cycleStartColor.r, cycleEndColor.r, t), Mathf.Lerp(cycleStartColor.g, cycleEndColor.g, t), Mathf.Lerp(cycleStartColor.b, cycleEndColor.b, t));
+    }
+
+    public void Rest(bool tillMorning)
+    {
+        StartCoroutine(RestCoroutine(tillMorning));
+    }
+
+    private IEnumerator RestCoroutine(bool tillMorning)
+    {
+        float t = 0;
+        float currentTime = dayTime;
+        float target = tillMorning ? DAY_START : NIGHT_START;
+        if(currentTime > target) target = target + CYCLE_DURATION;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+
+            if(dayTime >= CYCLE_DURATION)
+            {
+                currentTime = currentTime - CYCLE_DURATION;
+                target = target - CYCLE_DURATION;
+            }
+
+            dayTime = Mathf.Lerp(currentTime, target, t / 1f);
+
+            UpdateEnvironment();
+
+            yield return null;
+        }
     }
 }
