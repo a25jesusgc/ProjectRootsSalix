@@ -123,6 +123,10 @@ MonoBehaviour:
     m_Localized: "Mu\xE9vete con WASD.\nInteract\xFAa con clic derecho o F."
     m_Metadata:
       m_Items: []
+  - m_Id: 13859063536697344
+    m_Localized: Descansar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

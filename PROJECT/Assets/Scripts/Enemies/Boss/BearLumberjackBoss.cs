@@ -354,4 +354,9 @@ public class BearLumberjackBoss : BossController
         }
         if(isWhirling) rb.linearVelocity = whirlDirection * whirlSpeed;
     }
+
+    public override void OnDefeat()
+    {
+        StopBiteAttack();
+    }
 }
